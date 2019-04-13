@@ -1,0 +1,16 @@
+.elementor-203 .elementor-element.elementor-element-97d183e:not(.elementor-motion-effects-element-type-background), .elementor-203 .elementor-element.elementor-element-97d183e > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-image: url("https://www.sunberry.fr/wp-content/uploads/2019/03/bg-header-1600x908.jpeg");}
+.elementor-203 .elementor-element.elementor-element-97d183e {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin-top: 0px;margin-bottom: 0px;}
+.elementor-203 .elementor-element.elementor-element-97d183e > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+.elementor-203 .elementor-element.elementor-element-97d183e > .elementor-shape-bottom svg {width: calc(100% + 1.3px);height: 33px;}
+.elementor-203 .elementor-element.elementor-element-ad36a23 {text-align: center;}
+.elementor-203 .elementor-element.elementor-element-ad36a23.elementor-widget-heading .elementor-heading-title {color: #ededed;}
+.elementor-203 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-weight: bold;line-height: 5.7em;text-shadow: 0px 0px 10px rgba(0,0,0,.75);}
+.elementor-203 .elementor-element.elementor-element-50a1d44 > .elementor-container {max-width: 750px;}
+.elementor-203 .elementor-element.elementor-element-e8dedb6 {font-size: 17px;}
+.elementor-203 .elementor-element.elementor-element-4d30dc7f:not(.elementor-motion-effects-element-type-background), .elementor-203 .elementor-element.elementor-element-4d30dc7f > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #3a3a3a;}
+.elementor-203 .elementor-element.elementor-element-4d30dc7f {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
+.elementor-203 .elementor-element.elementor-element-4d30dc7f > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+@media (max-width:1024px) {.elementor-203 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 33px;}}
+@media (max-width:767px) {.elementor-203 .elementor-element.elementor-element-97d183e {margin-top: 0px;margin-bottom: 0px;padding: 50px 0px 0px 0px;}
+	.elementor-203 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 17px;line-height: 2.8em;}
+	.elementor-203 .elementor-element.elementor-element-ad36a23 > .elementor-widget-container {margin: -45px 0px 0px 0px;}}
