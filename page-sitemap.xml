@@ -187,10 +187,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/reinventer-le-chauffage-solaire/</loc>
-		<lastmod>2019-04-12T21:44:47+02:00</lastmod>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/idees-recues-chauffage-solaire/</loc>
 		<lastmod>2019-04-13T22:00:10+02:00</lastmod>
 		<image:image>
@@ -200,6 +196,19 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/consommation.gif</image:loc>
 			<image:caption><![CDATA[Consommation d'énergie chauffage en france]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/reinventer-le-chauffage-solaire/</loc>
+		<lastmod>2019-04-16T21:28:51+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-300x225.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170502_125821-300x225.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170501_172246-300x225.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
