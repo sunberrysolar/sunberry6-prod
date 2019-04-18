@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2019-04-17T15:17:36+02:00</lastmod>
+		<lastmod>2019-04-18T12:29:15+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/non-classe/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -109,7 +109,7 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/chauffe-piscine-solaire-de-notre-membre-combine-en-bretagne/</loc>
-		<lastmod>2019-04-17T15:17:36+02:00</lastmod>
+		<lastmod>2019-04-17T22:15:34+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-thermiques-diy-bretagne.jpg</image:loc>
 			<image:title><![CDATA[panneaux-solaires-thermiques-diy-bretagne]]></image:title>
@@ -126,6 +126,104 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/chauffage-piscine-solaire-bretagne-1.jpg</image:loc>
 			<image:caption><![CDATA[Piscine chauffée à l'énergie solaire en Bretagne]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/chauffe-piscine-solaire-de-notre-membre-tomtom80-en-bretagne/</loc>
+		<lastmod>2019-04-17T22:26:42+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/raspberry-pi-mesure-puissance-solaire.jpg</image:loc>
+			<image:title><![CDATA[raspberry-pi-mesure-puissance-solaire]]></image:title>
+			<image:caption><![CDATA[raspberry-pi-mesure-puissance-solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneau-solaires-piscine.jpg</image:loc>
+			<image:caption><![CDATA[Panneaux solaires pour piscine hors sol auto-construits]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/raspberry-pi-mesure-puissance-solaire.jpg</image:loc>
+			<image:caption><![CDATA[raspberry-pi-mesure-puissance-solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/installation-chauffage-piscine-solaire.jpg</image:loc>
+			<image:caption><![CDATA[Branchements des panneaux solaires thermiques pour piscine sur le système de filtration de la piscine hors sol.]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/eau-chaude-solaire-avec-panneaux-thermiques-autoconstruits-diy/</loc>
+		<lastmod>2019-04-18T11:34:08+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-diy.jpeg</image:loc>
+			<image:title><![CDATA[panneaux-solaires-diy]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-diy.jpeg</image:loc>
+			<image:caption><![CDATA[Panneaux solaires autoconstruits DIY]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/regulateur-panneaux-solaires-diy-raspberry.jpeg</image:loc>
+			<image:caption><![CDATA[Régulateur DIY pour chauffage solaire basé sur Arduino]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/affichage-puissance-panneaux-solaires.jpeg</image:loc>
+			<image:caption><![CDATA[Le régulateur solaire en fonctionnement]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/chauffage-solaire-par-radiateur-avec-les-panneaux-sunberry/</loc>
+		<lastmod>2019-04-18T11:44:29+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-thermiques-sunberry.jpg</image:loc>
+			<image:title><![CDATA[panneaux-solaires-thermiques-sunberry]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-thermiques-sunberry.jpg</image:loc>
+			<image:caption><![CDATA[Panneaux solaires thermiques Sunberry posés sur le toit pour les tests de chauffage]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/chauffage-solaire-radiateur.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/chauffage-de-piscine-solaire-diy-en-moselle/</loc>
+		<lastmod>2019-04-18T12:08:02+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-piscine-moselle.jpg</image:loc>
+			<image:title><![CDATA[panneaux-solaires-piscine-moselle]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-piscine-moselle.jpg</image:loc>
+			<image:caption><![CDATA[Les panneaux chauffe piscine Sunberry posés sur le toit de l'abris de jardin]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/production-energie-chauffe-piscine.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/montage-panneaux-solaire-piscine.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/panneaux-solaires-thermiques-orientables-avec-suivi-solaire/</loc>
+		<lastmod>2019-04-18T12:29:15+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneau-solaire-thermique-orientables-pour-eau-chaude.jpg</image:loc>
+			<image:title><![CDATA[panneau-solaire-thermique-orientables-pour-eau-chaude]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/tracker-solaire-autoconstruit.jpg</image:loc>
+			<image:caption><![CDATA[Panneaux solaire thermiques montés sur support orientable pour suivi solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneau-solaire-thermique-orientables-pour-eau-chaude.jpg</image:loc>
+			<image:caption><![CDATA[Le montage sur un pied permet aux panneaux solaire de capter le soleil même derrière une haie]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/production-eau-chaude-sanitaire-solaire.jpg</image:loc>
+			<image:caption><![CDATA[L'eau chaude solaire vient chauffer l'eau du cumulus électrique équipé d'un échangeur]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/enregistrement-puissance-solaire-rapsberry.png</image:loc>
+			<image:caption><![CDATA[Affichage des mesures solaires via la Sunberry App]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
