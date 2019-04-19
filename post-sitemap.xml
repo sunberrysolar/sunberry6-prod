@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2019-04-19T20:52:24+02:00</lastmod>
+		<lastmod>2019-04-19T21:33:38+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -282,14 +282,10 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/chauffage-de-piscine-solaire-en-charente/</loc>
-		<lastmod>2019-04-19T20:48:07+02:00</lastmod>
+		<lastmod>2019-04-19T21:33:38+02:00</lastmod>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/construction-panneaux-solaires-charente.png</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/test.png</image:loc>
 		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/test/</loc>
-		<lastmod>2019-04-19T20:52:24+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/construction-panneaux-solaires-charente.png</image:loc>
 		</image:image>
