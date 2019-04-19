@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2019-04-18T19:26:05+02:00</lastmod>
+		<lastmod>2019-04-19T13:54:21+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -262,6 +262,26 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/chauffage-solaire-sunberry-sur-mr-mondialisation.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/petite-mise-au-point-sur-le-logiciel-libre/</loc>
+		<lastmod>2019-04-19T13:54:21+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/Capture-d%E2%80%99%C3%A9cran_2019-04-19_13-37-01.png</image:loc>
+			<image:title><![CDATA[Capture d’écran_2019-04-19_13-37-01]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/Capture-d%E2%80%99%C3%A9cran_2019-04-19_13-29-01.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/Capture-d%E2%80%99%C3%A9cran_2019-04-19_13-37-01.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/Capture-d%E2%80%99%C3%A9cran_2019-04-19_13-40-16.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/Capture-d%E2%80%99%C3%A9cran_2019-04-19_13-39-44.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
