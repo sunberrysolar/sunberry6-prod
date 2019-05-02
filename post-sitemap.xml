@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2019-05-02T10:21:27+02:00</lastmod>
+		<lastmod>2019-05-02T11:46:14+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -306,19 +306,6 @@
 		<lastmod>2019-04-28T18:46:35+02:00</lastmod>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/bande-dessinee-energie/</loc>
-		<lastmod>2019-04-29T20:17:00+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/bande-dessin%C3%A9e-energie.png</image:loc>
-			<image:title><![CDATA[bande-dessinée-energie]]></image:title>
-			<image:caption><![CDATA[bande-dessinée-energie]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/bande-dessin%C3%A9e-energie.png</image:loc>
-			<image:caption><![CDATA[bande dessinée énergie]]></image:caption>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/panneaux-solaires-hybrides/</loc>
 		<lastmod>2019-05-02T10:21:27+02:00</lastmod>
 		<image:image>
@@ -329,6 +316,17 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/05/panneaux-solaires-hybrides.png</image:loc>
 			<image:caption><![CDATA[Panneaux solaires hybrides]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/bande-dessinee-energie/</loc>
+		<lastmod>2019-05-02T11:46:14+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/05/bande-dessinee-energie.png</image:loc>
+			<image:title><![CDATA[bande-dessinee-energie]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/05/bande-dessinee-energie.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
