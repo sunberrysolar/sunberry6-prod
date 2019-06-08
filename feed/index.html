@@ -13,7 +13,7 @@
 	<link>http://www.sunberry.fr/</link>
 	<description>Le chauffage solaire à construire soit même</description>
 	<lastBuildDate>
-	Thu, 02 May 2019 09:46:14 +0000	</lastBuildDate>
+	Sat, 08 Jun 2019 14:49:57 +0000	</lastBuildDate>
 	<language>fr-FR</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -29,6 +29,74 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>Chauffage solaire et Raspberry Pi</title>
+		<link>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/panneaux-solaires-et-raspberry-pi/</link>
+				<pubDate>Sat, 08 Jun 2019 14:49:06 +0000</pubDate>
+		<dc:creator><![CDATA[Sunberry]]></dc:creator>
+				<category><![CDATA[Blog du Chauffage Solaire Sunberry]]></category>
+
+		<guid isPermaLink="false">https://www.sunberry.fr/?p=768</guid>
+				<description><![CDATA[<p>DIY et presque Low-Tech Comme vous le savez, nous sommes adeptes des Low-Tech. Mais qu&#8217;est ce que c&#8217;est que ce truc? c&#8217;est simple, il s&#8217;agit du fait d’utiliser le moins possible de technologies complexes, qu&#8217;on ne maîtrise pas, qu&#8217;on ne peut pas réparer facilement, qui coûtent cher et son polluantes. [&#8230;]</p>
+<p>L’article <a rel="nofollow" href="https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/panneaux-solaires-et-raspberry-pi/">Chauffage solaire et Raspberry Pi</a> est apparu en premier sur <a rel="nofollow" href="http://www.sunberry.fr/">Chauffage Solaire DIY - Sunberry</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<h2>DIY et presque Low-Tech</h2>
+
+
+
+<p>Comme vous le savez, nous sommes adeptes des Low-Tech. Mais qu&rsquo;est ce que c&rsquo;est que ce truc? c&rsquo;est simple, il s&rsquo;agit du fait d’utiliser le moins possible de technologies complexes, qu&rsquo;on ne maîtrise pas, qu&rsquo;on ne peut pas réparer facilement, qui coûtent cher et son polluantes.</p>
+
+
+
+<p>Et bien nous avons été interviewés à ce sujet par le magasine Socialter ! Vous trouverez dans ce hors sujet très bien réalisé pleins d&rsquo;infos sur les Low-Tech, que ce soit des techniques pleine de malice ou bien les aspects sociaux, environnementaux et politiques du sujet.<br></p>
+
+
+
+<figure class="wp-block-image"><img src="https://www.sunberry.fr/wp-content/uploads/2019/06/IMG_20190603_125429_1280x720-e1560004098578-768x1024.jpg" alt="" class="wp-image-769" srcset="https://www.sunberry.fr/wp-content/uploads/2019/06/IMG_20190603_125429_1280x720-e1560004098578-768x1024.jpg 768w, https://www.sunberry.fr/wp-content/uploads/2019/06/IMG_20190603_125429_1280x720-e1560004098578-225x300.jpg 225w, https://www.sunberry.fr/wp-content/uploads/2019/06/IMG_20190603_125429_1280x720-e1560004098578.jpg 959w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+
+
+
+<p>Sébastien y parle du Raspberry Pi appliqué au chauffage solaire. Vous trouverez le magasine en vente ici: <a href="https://abo.socialter.fr/produits/37/hors-serie-n6">https://abo.socialter.fr/produits/37/hors-serie-n6</a></p>
+
+
+
+<p>Quand nous avons décidé de réinventer le chauffage solaire thermique pour le mettre à la portée de tous, nous avons évidemment choisi de le faire le plus simple et le moins cher possible, et donc avec le moins de technologie possible.</p>
+
+
+
+<p>Pour pousser la low tech jusqu&rsquo;au bout, on aurait pu faire un chauffage solaire en thermosiphon. Le thermosiphon consiste à utiliser le mouvement naturel de l&rsquo;eau (l&rsquo;eau chaude monte) pour se passer de pompe de circulation.</p>
+
+
+
+<p>Mais le thermosiphon a pas mal d&rsquo;inconvénient :</p>
+
+
+
+<ul><li>Pas d’auto-vidange donc sensible au gel, nécessite d&rsquo;utiliser de l&rsquo;antigel (polluant et coûteux)</li><li>Le réservoir doit être plus haut que les panneaux. Allez donc stocker 1000l d&rsquo;eau en haut du toit de votre habitation&#8230;</li><li>Rendement réduit par rapport à un système à pompage</li></ul>
+
+
+
+<p>On a donc fait le choix d&rsquo;utiliser une pompe pour la circulation de l&rsquo;eau chaude solaire dans les panneaux. Et qui dit pompe dit contrôle commande&#8230; Il nous fallait pouvoir piloter la pompe pour qu&rsquo;elle démarre quand le soleil est présent et qu&rsquo;elle s&rsquo;arrête quand ce n&rsquo;est plus le cas, détecter le gel etc.</p>
+
+
+
+<p>On s&rsquo;est alors penché sur le Raspberry Pi, qui est un nano ordinateur sous linux. Et il convenait parfaitement à notre application de chauffage solaire, alors on a décidé de l&rsquo;utiliser.</p>
+
+
+
+<p>C&rsquo;est un peu moins low tech que du thermosiphon, mais cela à l&rsquo;avantage d&rsquo;être programmable donc entièrement configurable. Mais surtout, le Raspberry permet d&rsquo;assurer le suivi de l&rsquo;installation solaire, de suivre jour après jour l&rsquo;énergie produite, et d&rsquo;afficher la puissance solaire en direct, ce qui permet de faire du travail de R&amp;D sur les panneaux, de tester différentes configurations.</p>
+
+
+
+<p>L&rsquo;autre point important est le coté éducatif de l&rsquo;appli. L&rsquo;énergie solaire est impalpable et sans mesure on n &lsquo;y comprend rien. On entend d&rsquo;ailleurs pas de c&#8230; bêtises sur le net à ce sujet du genre : ça ne produit rien, l&rsquo;eau de mon chauffe piscine sort froide donc il ne marche pas etc&#8230;<br>Avec la Sunberry App, on mesure donc on comprend et on améliore.</p>
+
+
+
+<p>Tout est affaire de compromis !<br></p>
+<p>L’article <a rel="nofollow" href="https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/panneaux-solaires-et-raspberry-pi/">Chauffage solaire et Raspberry Pi</a> est apparu en premier sur <a rel="nofollow" href="http://www.sunberry.fr/">Chauffage Solaire DIY - Sunberry</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
 		<title>Panneaux solaires hybrides</title>
 		<link>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/panneaux-solaires-hybrides/</link>
 				<pubDate>Wed, 01 May 2019 09:38:28 +0000</pubDate>
@@ -475,52 +543,6 @@ cet hiver de chauffer son atelier avec une puissance allant jusqu&rsquo;à
 
 <p>Le passage des tubes d&rsquo;alimentation peut se faire via un trou dans le mur, ou beaucoup plus simplement via deux trous de diamètre 16mm dans le montant d&rsquo;un porte ou d&rsquo;une fenêtre.</p>
 <p>L’article <a rel="nofollow" href="https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/chauffage-solaire-par-radiateur-avec-les-panneaux-sunberry/">Chauffage et eau chaude solaire par notre membre Coconox à Lannion (Bretagne)</a> est apparu en premier sur <a rel="nofollow" href="http://www.sunberry.fr/">Chauffage Solaire DIY - Sunberry</a>.</p>
-]]></content:encoded>
-										</item>
-		<item>
-		<title>Chauffage et eau chaude par notre membre Cheors en île-de-france</title>
-		<link>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/eau-chaude-solaire-avec-panneaux-thermiques-autoconstruits-diy/</link>
-				<pubDate>Thu, 18 Apr 2019 09:34:07 +0000</pubDate>
-		<dc:creator><![CDATA[Sunberry]]></dc:creator>
-				<category><![CDATA[Panneaux solaires thermiques auto-construits]]></category>
-
-		<guid isPermaLink="false">https://www.sunberry.fr/?p=650</guid>
-				<description><![CDATA[<p>Chauffage solaire en Ile-de-France Cheors à auto-construit 2m² de panneaux solaires grâce à notre méthode de fabrication pour produire de l&#8217;eau chaude destinée à un usage sanitaire ou au chauffage. Il a adapté un écran pour visualiser les infos en direct sans avoir besoin d&#8217;utiliser un smartphone ou pc. Vidéo [&#8230;]</p>
-<p>L’article <a rel="nofollow" href="https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/eau-chaude-solaire-avec-panneaux-thermiques-autoconstruits-diy/">Chauffage et eau chaude par notre membre Cheors en île-de-france</a> est apparu en premier sur <a rel="nofollow" href="http://www.sunberry.fr/">Chauffage Solaire DIY - Sunberry</a>.</p>
-]]></description>
-								<content:encoded><![CDATA[
-<h2>Chauffage solaire en Ile-de-France</h2>
-
-
-
-<p>Cheors à auto-construit 2m² de panneaux solaires grâce à notre méthode de fabrication pour produire de l&rsquo;eau chaude destinée à un usage sanitaire ou au chauffage. Il a adapté un écran pour visualiser les infos en direct sans avoir besoin d&rsquo;utiliser un smartphone ou pc.</p>
-
-
-
-<figure class="wp-block-image"><img src="https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-diy.jpeg" alt="Panneaux solaires autoconstruits DIY" class="wp-image-651" srcset="https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-diy.jpeg 400w, https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-diy-300x220.jpeg 300w" sizes="(max-width: 400px) 100vw, 400px" /><figcaption>Panneaux solaires thermiques DIY avec leurs sondes de température</figcaption></figure>
-
-
-
-<figure class="wp-block-image"><img src="https://www.sunberry.fr/wp-content/uploads/2019/04/regulateur-panneaux-solaires-diy-raspberry.jpeg" alt="Régulateur DIY pour chauffage solaire basé sur Arduino" class="wp-image-652" srcset="https://www.sunberry.fr/wp-content/uploads/2019/04/regulateur-panneaux-solaires-diy-raspberry.jpeg 400w, https://www.sunberry.fr/wp-content/uploads/2019/04/regulateur-panneaux-solaires-diy-raspberry-300x169.jpeg 300w" sizes="(max-width: 400px) 100vw, 400px" /><figcaption>Régulateur DIY pour chauffage solaire basé sur Arduino</figcaption></figure>
-
-
-
-<figure class="wp-block-image"><img src="https://www.sunberry.fr/wp-content/uploads/2019/04/affichage-puissance-panneaux-solaires.jpeg" alt="Le régulateur solaire en fonctionnement" class="wp-image-653" srcset="https://www.sunberry.fr/wp-content/uploads/2019/04/affichage-puissance-panneaux-solaires.jpeg 400w, https://www.sunberry.fr/wp-content/uploads/2019/04/affichage-puissance-panneaux-solaires-300x169.jpeg 300w" sizes="(max-width: 400px) 100vw, 400px" /><figcaption>Le régulateur solaire en fonctionnement</figcaption></figure>
-
-
-
-<p>Vidéo tournée par Cheors un 28 novembre. Oui, contrairement aux idées reçues le solaire thermique ça chauffe même en hiver <img src="https://s.w.org/images/core/emoji/11.2.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> sinon ça n&rsquo;aurait pas grand intérêt&#8230;</p>
-
-
-
-<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe width="750" height="422" src="https://www.youtube.com/embed/EKtfrbbQZXI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div></figure>
-
-
-
-<p>Il s&rsquo;agit d&rsquo;un test du chauffage solaire dans un coin de garage avant son installation définitive. On peut voir la vapeur s’échapper du réservoir d&rsquo;eau chaude! la puissance affichée est de 400W environ, mais le soleil n&rsquo;était pas optimal ce jour là. Les films plastiques des panneaux n&rsquo;étaient pas suffisamment tendus lors du test, mais une fois tendus correctement, la rendement sera encore meilleur et les panneaux solaires auront une meilleure esthétique.</p>
-<p>L’article <a rel="nofollow" href="https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/eau-chaude-solaire-avec-panneaux-thermiques-autoconstruits-diy/">Chauffage et eau chaude par notre membre Cheors en île-de-france</a> est apparu en premier sur <a rel="nofollow" href="http://www.sunberry.fr/">Chauffage Solaire DIY - Sunberry</a>.</p>
 ]]></content:encoded>
 										</item>
 	</channel>
