@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2019-06-08T22:29:44+02:00</lastmod>
+		<lastmod>2019-06-08T17:14:03+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -340,13 +340,6 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/sunberry-low-tech-socialter.jpg</image:loc>
 			<image:caption><![CDATA[chauffage solaire low tech socialter]]></image:caption>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/test/</loc>
-		<lastmod>2019-06-08T22:29:44+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/IMG_20190603_1255041_1280x720.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
