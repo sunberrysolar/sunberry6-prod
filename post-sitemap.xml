@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2019-08-01T12:54:25+02:00</lastmod>
+		<lastmod>2019-08-01T13:01:45+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -388,7 +388,7 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/fabriquer-une-douche-solaire/</loc>
-		<lastmod>2019-08-01T12:54:25+02:00</lastmod>
+		<lastmod>2019-08-01T13:01:45+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg</image:loc>
 			<image:title><![CDATA[fabrication-douche-solaire]]></image:title>
@@ -398,7 +398,7 @@
 			<image:caption><![CDATA[fabrication douche solaire]]></image:caption>
 		</image:image>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/fabriquer-douche-solaire.jpeg</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/fabriquer-douche-solaire2.jpeg</image:loc>
 		</image:image>
 	</url>
 </urlset>
