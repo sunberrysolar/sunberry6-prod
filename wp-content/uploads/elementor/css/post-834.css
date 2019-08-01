@@ -72,6 +72,9 @@
 .elementor-834 .elementor-element.elementor-element-39ee946c:not(.elementor-motion-effects-element-type-background), .elementor-834 .elementor-element.elementor-element-39ee946c > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #3a3a3a;}
 .elementor-834 .elementor-element.elementor-element-39ee946c {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
 .elementor-834 .elementor-element.elementor-element-39ee946c > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+@media (min-width:768px) {.elementor-834 .elementor-element.elementor-element-2528e7c {width: 33%;}
+	.elementor-834 .elementor-element.elementor-element-981d5ef {width: 33.332%;}
+	.elementor-834 .elementor-element.elementor-element-e093430 {width: 33%;}}
 @media (max-width:1024px) {.elementor-834 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 33px;}}
 @media (max-width:767px) {.elementor-834 .elementor-element.elementor-element-97d183e {margin-top: 70px;margin-bottom: 0px;}
 	.elementor-834 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 17px;line-height: 2.8em;}
