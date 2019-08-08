@@ -305,16 +305,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/confirmation-paypal/</loc>
-		<lastmod>2019-07-28T15:56:59+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-facebook.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-twitter.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/inscription-a-la-formation-pack8965/</loc>
 		<lastmod>2019-08-01T22:20:35+02:00</lastmod>
 		<image:image>
@@ -336,7 +326,7 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/inscription-a-la-formation-pack1098/</loc>
-		<lastmod>2019-08-08T21:19:01+02:00</lastmod>
+		<lastmod>2019-08-08T21:22:39+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or.jpg</image:loc>
 		</image:image>
@@ -352,6 +342,16 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/confirmation-paypal/</loc>
+		<lastmod>2019-08-08T21:25:46+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-facebook.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-twitter.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
