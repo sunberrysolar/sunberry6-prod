@@ -2,10 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/</loc>
-		<lastmod>2019-06-21T17:38:39+02:00</lastmod>
+		<lastmod>2019-08-20T21:03:56+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-photo-groupe-20170810-162130-850x638.jpeg</image:loc>
 			<image:caption><![CDATA[Fabrication d'un panneau solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/Macaron-Maker-MFP19.png</image:loc>
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffe-piscine-solaire-676x507-300x225.jpeg</image:loc>
@@ -253,10 +256,6 @@
 		<lastmod>2019-04-23T18:00:27+02:00</lastmod>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
-		<lastmod>2019-06-21T18:45:27+02:00</lastmod>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/formation-chauffe-piscine/</loc>
 		<lastmod>2019-06-22T00:01:24+02:00</lastmod>
 		<image:image>
@@ -352,6 +351,26 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-twitter.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
+		<lastmod>2019-08-20T20:53:55+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffe-piscine-solaire-676x507.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffe piscine solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
