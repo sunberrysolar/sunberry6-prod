@@ -341,26 +341,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
-		<lastmod>2019-08-20T21:27:16+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffe-piscine-solaire-676x507.jpeg</image:loc>
-			<image:caption><![CDATA[Chauffe piscine solaire]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/detail-formation-chauffage-solaire/</loc>
 		<lastmod>2019-08-22T10:09:39+02:00</lastmod>
 		<image:image>
@@ -414,6 +394,26 @@
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/application-chauffage-solaire-1-852x457.jpeg-o594uzsniftrognxozqpzvanszetbgxkb0afk9xu68.png</image:loc>
 			<image:title><![CDATA[Application panneaux solaires]]></image:title>
 			<image:caption><![CDATA[Sunberry App chauffage solaire]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
+		<lastmod>2019-08-22T10:39:24+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffe-piscine-solaire-676x507.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffe piscine solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
