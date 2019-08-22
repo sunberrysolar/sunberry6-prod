@@ -139,19 +139,6 @@
 		<lastmod>2019-04-08T17:10:37+02:00</lastmod>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/fabriquer-chauffage-solaire/</loc>
-		<lastmod>2019-04-09T15:10:35+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293.jpeg</image:loc>
-			<image:caption><![CDATA[Réalisation d'nu chauffage solaire à Paris]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/application-chauffage-solaire-1-852x457.jpeg-o594uzsniftrognxozqpzvanszetbgxkb0afk9xu68.png</image:loc>
-			<image:title><![CDATA[Application panneaux solaires]]></image:title>
-			<image:caption><![CDATA[Sunberry App chauffage solaire]]></image:caption>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/chauffage-piscine-solaire-diy/</loc>
 		<lastmod>2019-04-09T15:39:36+02:00</lastmod>
 		<image:image>
@@ -371,6 +358,19 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/fabriquer-chauffage-solaire/</loc>
+		<lastmod>2019-08-22T08:13:27+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293.jpeg</image:loc>
+			<image:caption><![CDATA[Réalisation d'nu chauffage solaire à Paris]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/application-chauffage-solaire-1-852x457.jpeg-o594uzsniftrognxozqpzvanszetbgxkb0afk9xu68.png</image:loc>
+			<image:title><![CDATA[Application panneaux solaires]]></image:title>
+			<image:caption><![CDATA[Sunberry App chauffage solaire]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
