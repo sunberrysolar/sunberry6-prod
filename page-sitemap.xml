@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/</loc>
-		<lastmod>2019-08-20T21:17:37+02:00</lastmod>
+		<lastmod>2019-08-22T17:12:52+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-photo-groupe-20170810-162130-850x638.jpeg</image:loc>
 			<image:caption><![CDATA[Fabrication d'un panneau solaire]]></image:caption>
@@ -61,6 +61,9 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
 			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/Simulateur-energie-solaire.png</image:loc>
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneau-solaire-canette-aluminium-150x150.jpg</image:loc>
