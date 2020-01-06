@@ -353,26 +353,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/inscription-a-la-formation-pack1098/</loc>
-		<lastmod>2019-08-25T10:19:10+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffe-piscine-solaire-676x507.jpeg</image:loc>
-			<image:caption><![CDATA[Chauffe piscine solaire]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/confirmation-paypal-pack/</loc>
 		<lastmod>2019-08-25T10:22:29+02:00</lastmod>
 		<image:image>
@@ -412,7 +392,27 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
-		<lastmod>2019-10-07T14:59:05+02:00</lastmod>
+		<lastmod>2020-01-06T13:07:39+01:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffe-piscine-solaire-676x507.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffe piscine solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/inscription-a-la-formation-pack1098/</loc>
+		<lastmod>2020-01-06T13:08:24+01:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or.jpg</image:loc>
 		</image:image>
