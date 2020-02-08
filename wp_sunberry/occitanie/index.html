@@ -285,7 +285,7 @@ pop{
 	
 #content {
 }
-          input, button {
+          button {
               -webkit-appearance: none;
               border-radius: 0;
               outline: none;
@@ -294,7 +294,7 @@ pop{
               -webkit-font-smoothing: antialiased
           }
 
-          p.button input{
+          p.button {
               display: inline-block;
               background: #7ED321;
               border: 0;
@@ -407,7 +407,7 @@ pop{
           }
 
           #news-signup .newsletter-content form p:not(.button) {
-              float: none;
+              float: center;
               width: 100%;
           }
 
@@ -418,15 +418,17 @@ pop{
               border-color: #d0d5d8
           }
 
-          #news-signup .newsletter-content form .button {
-              float: none;
+          #news-signup .newsletter-content .button {
+              float: center;
               width: 100%
           }
 
-          #news-signup .newsletter-content form .button input {
+          #news-signup .newsletter-content .button {
               width: 100%;
               padding: 20px 25px 18px !important;
-              font-size: 12px
+              font-size: 20px;
+			  font-weight: bold;
+			  color: #fff
           }
 
           #news-signup .newsletter-content p.footnote {
@@ -443,12 +445,12 @@ pop{
                   width: 500px;
                   margin: 7% auto;
               }
-              #news-signup .newsletter-content form .button input {
+              #news-signup .newsletter-content .button  {
                   width: auto;
                   margin: 0
               }
-              #news-signup .newsletter-content form .button {
-                  float: left;
+              #news-signup .newsletter-content .button {
+                  float: center;
                   width: auto;
                   margin-left: 15px;
               }
@@ -459,7 +461,7 @@ pop{
                   margin: 0 auto 15px
               }
               #news-signup .newsletter-content form p:not(.button) {
-                  float: left;
+                  float: center;
                   width: auto
               }
               .newsletter-content form p:not(.button) input {
@@ -1523,10 +1525,10 @@ if (waitImage == undefined) {
         <h2>Des questions ?</h2>
 
         <p>On est là pour vous aider à passer<br> au solaire et vous renseigner 😉</p>
-        <form class="signup-form" id="signup-form" action="https://cutt.ly/aePpwu4">
           <p class="button">
-            <input type="submit" value="Cliquez ici"></p>
-        </form>
+            <a href="https://cutt.ly/aePpwu4">Cliquez ici</a>
+          </p>
+        
       </div>
     </div>
   </div>
