@@ -489,20 +489,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/questions-frequentes-sur-le-chauffage-solaire/</loc>
-		<lastmod>2020-04-14T12:09:22+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/04/fabriquer-chauffage-solaire-logo.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-thermiques-diy-bretagne.jpg</image:loc>
-			<image:caption><![CDATA[panneaux-solaires-thermiques-diy-bretagne]]></image:caption>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/inscription-a-la-formation-pack1098/</loc>
 		<lastmod>2020-04-21T09:30:42+02:00</lastmod>
 		<image:image>
@@ -560,6 +546,20 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/questions-frequentes-sur-le-chauffage-solaire/</loc>
+		<lastmod>2020-04-21T11:05:20+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/04/fabriquer-chauffage-solaire-logo.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-thermiques-diy-bretagne.jpg</image:loc>
+			<image:caption><![CDATA[panneaux-solaires-thermiques-diy-bretagne]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
