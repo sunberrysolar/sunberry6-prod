@@ -1324,43 +1324,172 @@ Cela vous permet de vous former à un prix défiant toute concurrence.<br><br>Pa
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-c95a6ef elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="c95a6ef" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="1920" height="1440" src="https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg" class="attachment-full size-full" alt="" srcset="https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg 1920w,https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-300x225.jpg 300w,https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-768x576.jpg 768w,https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-1024x768.jpg 1024w" sizes="(max-width: 1920px) 100vw, 1920px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Douche Solaire</h3><p class="elementor-image-box-description">Construisez vos panneaux et une douche solaire autonome pour piscine, tinyhouse, yourte...<br><b><big>89€</big></b><br><br>Je m'inscris :</p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="1920" height="1440" src="https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg" class="attachment-full size-full" alt="" srcset="https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire.jpg 1920w,https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-300x225.jpg 300w,https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-768x576.jpg 768w,https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-1024x768.jpg 1024w" sizes="(max-width: 1920px) 100vw, 1920px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Douche Solaire</h3><p class="elementor-image-box-description">Construisez vos panneaux et une douche solaire autonome pour piscine, tinyhouse, yourte...<br><b><big>89€</big></b></p></div></div>		</div>
 				</div>
-				<div class="elementor-element elementor-element-11e0fc8 elementor-widget elementor-widget-html" data-id="11e0fc8" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-element elementor-element-7e4a14f elementor-widget elementor-widget-html" data-id="7e4a14f" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			  <div id="paypal-button-container3">
-
-  <script>
-  paypal.Buttons({
-      
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: '89'
-          }
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        //alert('Inscription reussie ! vous allez recevoir votre formation par email ');
-        window.location.href='https://www.sunberry.fr/confirmation-paypal'
-        // Call your server to save the transaction
-        return fetch('/paypal-transaction-complete', {
-          method: 'post',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify({
-            orderID: data.orderID
-          })
-        });
-      });
+			<div id="product-component-1588346123246"></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
     }
-    
-  }).render('#paypal-button-container3');
-</script></div>		</div>
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'sunberry-solaire.myshopify.com',
+      storefrontAccessToken: '358e29af1da7f442dc821b502228e29c',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '5162299260972',
+        node: document.getElementById('product-component-1588346123246'),
+        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "buttonDestination": "checkout",
+    "contents": {
+      "img": false,
+      "title": false,
+      "price": false
+    },
+    "text": {
+      "button": "JE M'INSCRIS"
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "googleFonts": [
+      "Lato"
+    ],
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "cart": {
+    "styles": {
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        "background-color": "#b36ce1",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script></div>
+				</div>
+				<div class="elementor-element elementor-element-94c0220 elementor-widget elementor-widget-image" data-id="94c0220" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img src="https://www.sunberry.fr/wp-content/uploads/2020/05/cb_visa_mastercard_logo-1-e1588331953638.png" title="cb_visa_mastercard_logo-1" alt="cb_visa_mastercard_logo-1"></div>
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-df137d0 elementor-widget elementor-widget-progress" data-id="df137d0" data-element_type="widget" data-widget_type="progress.default">
 				<div class="elementor-widget-container">
@@ -1387,43 +1516,172 @@ Cela vous permet de vous former à un prix défiant toute concurrence.<br><br>Pa
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-79e7f7d elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="79e7f7d" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="640" height="450" src="https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png" class="attachment-full size-full" alt="" srcset="https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png 640w,https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema-300x211.png 300w" sizes="(max-width: 640px) 100vw, 640px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Eau Chaude Sanitaire</h3><p class="elementor-image-box-description">Construisez vos panneaux et alimentez votre cumulus existant en eau préchauffée au solaire.<br><b><big>169€</big> <strike>199€</strike></b> - Tarif réduit précommande<br><br>Je m'inscris :</p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="640" height="450" src="https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png" class="attachment-full size-full" alt="" srcset="https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png 640w,https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema-300x211.png 300w" sizes="(max-width: 640px) 100vw, 640px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Eau Chaude Sanitaire</h3><p class="elementor-image-box-description">Construisez vos panneaux et alimentez votre cumulus existant en eau préchauffée au solaire.<br><b><big>169€</big> <strike>199€</strike></b> - Tarif réduit précommande</p></div></div>		</div>
 				</div>
-				<div class="elementor-element elementor-element-f4fcad9 elementor-widget elementor-widget-html" data-id="f4fcad9" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-element elementor-element-5685a89 elementor-widget elementor-widget-html" data-id="5685a89" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			  <div id="paypal-button-container4">
-
-  <script>
-  paypal.Buttons({
-      
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: '169'
-          }
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        //alert('Inscription reussie ! vous allez recevoir votre formation par email ');
-        window.location.href='https://www.sunberry.fr/confirmation-paypal'
-        // Call your server to save the transaction
-        return fetch('/paypal-transaction-complete', {
-          method: 'post',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify({
-            orderID: data.orderID
-          })
-        });
-      });
+			<div id="product-component-1588346326538"></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
     }
-    
-  }).render('#paypal-button-container4');
-</script></div>		</div>
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'sunberry-solaire.myshopify.com',
+      storefrontAccessToken: '358e29af1da7f442dc821b502228e29c',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '5162307321900',
+        node: document.getElementById('product-component-1588346326538'),
+        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "buttonDestination": "checkout",
+    "contents": {
+      "img": false,
+      "title": false,
+      "price": false
+    },
+    "text": {
+      "button": "JE M'INSCRIS"
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "googleFonts": [
+      "Lato"
+    ],
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "cart": {
+    "styles": {
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        "background-color": "#b36ce1",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script></div>
+				</div>
+				<div class="elementor-element elementor-element-fb9be86 elementor-widget elementor-widget-image" data-id="fb9be86" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img src="https://www.sunberry.fr/wp-content/uploads/2020/05/cb_visa_mastercard_logo-1-e1588331953638.png" title="cb_visa_mastercard_logo-1" alt="cb_visa_mastercard_logo-1"></div>
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-89aecda elementor-widget elementor-widget-progress" data-id="89aecda" data-element_type="widget" data-widget_type="progress.default">
 				<div class="elementor-widget-container">
@@ -1450,43 +1708,172 @@ Cela vous permet de vous former à un prix défiant toute concurrence.<br><br>Pa
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-a134fb1 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="a134fb1" data-element_type="widget" data-widget_type="image-box.default">
 				<div class="elementor-widget-container">
-			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="378" height="253" src="https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg" class="attachment-full size-full" alt="" srcset="https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg 378w,https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire-300x201.jpg 300w,https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire-360x240.jpg 360w" sizes="(max-width: 378px) 100vw, 378px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Chauffage Habitation</h3><p class="elementor-image-box-description">Chauffage solaire à raccorder sur le chauffage existant de votre habitation (chaudière, PAC...)<br><b><big>169€</big> <strike>199€ </strike></b> - Tarif réduit précommande<br><br>Je m'inscris :</p></div></div>		</div>
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="378" height="253" src="https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg" class="attachment-full size-full" alt="" srcset="https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg 378w,https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire-300x201.jpg 300w,https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire-360x240.jpg 360w" sizes="(max-width: 378px) 100vw, 378px"></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Chauffage Habitation</h3><p class="elementor-image-box-description">Chauffage solaire à raccorder sur le chauffage existant de votre habitation (chaudière, PAC...)<br><b><big>169€</big> <strike>199€ </strike></b> - Tarif réduit précommande</p></div></div>		</div>
 				</div>
-				<div class="elementor-element elementor-element-28e4b62 elementor-widget elementor-widget-html" data-id="28e4b62" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-element elementor-element-39d8d33 elementor-widget elementor-widget-html" data-id="39d8d33" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			  <div id="paypal-button-container5">
-
-  <script>
-  paypal.Buttons({
-      
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: '169'
-          }
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        //alert('Inscription reussie ! vous allez recevoir votre formation par email ');
-        window.location.href='https://www.sunberry.fr/confirmation-paypal'
-        // Call your server to save the transaction
-        return fetch('/paypal-transaction-complete', {
-          method: 'post',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify({
-            orderID: data.orderID
-          })
-        });
-      });
+			<div id="product-component-1588346381129"></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
     }
-    
-  }).render('#paypal-button-container5');
-</script></div>		</div>
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'sunberry-solaire.myshopify.com',
+      storefrontAccessToken: '358e29af1da7f442dc821b502228e29c',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '5162310697004',
+        node: document.getElementById('product-component-1588346381129'),
+        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "buttonDestination": "checkout",
+    "contents": {
+      "img": false,
+      "title": false,
+      "price": false
+    },
+    "text": {
+      "button": "JE M'INSCRIS"
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "googleFonts": [
+      "Lato"
+    ],
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "cart": {
+    "styles": {
+      "button": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        "background-color": "#b36ce1",
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "font-family": "Lato, sans-serif",
+        "font-weight": "bold",
+        "background-color": "#b36ce1",
+        ":hover": {
+          "background-color": "#a161cb"
+        },
+        ":focus": {
+          "background-color": "#a161cb"
+        }
+      }
+    },
+    "googleFonts": [
+      "Lato"
+    ]
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script></div>
+				</div>
+				<div class="elementor-element elementor-element-0711571 elementor-widget elementor-widget-image" data-id="0711571" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img src="https://www.sunberry.fr/wp-content/uploads/2020/05/cb_visa_mastercard_logo-1-e1588331953638.png" title="cb_visa_mastercard_logo-1" alt="cb_visa_mastercard_logo-1"></div>
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-067b978 elementor-widget elementor-widget-progress" data-id="067b978" data-element_type="widget" data-widget_type="progress.default">
 				<div class="elementor-widget-container">
@@ -1536,7 +1923,7 @@ Cela vous permet de vous former à un prix défiant toute concurrence.<br><br>Pa
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-92af67d elementor-widget elementor-widget-text-editor" data-id="92af67d" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix"><p>Avec votre inscription, vous aurez accès:</p><p>– au guide du chauffage solaire thermique (79 pages) <br>– aux fichiers Pdf d’explications <br>– à plus de 20 vidéos explicatives vous montrant toutes les étapes de fabrication <br>– au téléchargement de la Sunberry App pour piloter votre chauffage <br>– au forum de la communauté Sunberry</p><p>Le matériel n’est pas compris et sera commandé par vos soins chez les fournisseurs disponibles dans notre liste ou dans votre magasin de bricolage préféré..</p><p>– compter 300€ environ pour le montage complet sans réservoir et radiateur : capteurs, Raspberry, tuyaux, raccord, pompe etc. <br>– à partir de 15€/m² de panneau solaire environ, selon les options choisies, soit 10x moins cher que les panneaux solaires du commerce.</p><p>Les formations en cours de finition et en précommande à prix réduit (en orange et rouge) vous seront transmises automatiquement dès qu’elle seront finalisées. Les panneaux seront les mêmes, vous pouvez les construire dès maintenant, il ne restera plus qu’à les brancher sur votre chauffe-eau ou votre chauffage.<br><br>De nombreuses réponses à vos questions <a href="https://www.sunberry.fr/questions-frequentes-sur-le-chauffage-solaire/" target="_blank" rel="noopener">se trouvent dans la FAQ ici</a>.</p><p><b>Vous avez des questions et n’avez pas trouvé la réponse sur notre site? n’hésitez pas à nous contacter à l’adresse <a href="mailto:sebastien@sunberry.fr" target="_blank" rel="noopener">sebastien@sunberry.fr</a></b></p></div>
+					<div class="elementor-text-editor elementor-clearfix"><p>Avec votre inscription, vous aurez accès:</p><p>– au guide du chauffage solaire thermique (79 pages) <br>– aux fichiers PDF d’explications <br>– à plus de 20 vidéos explicatives vous montrant toutes les étapes de fabrication <br>– au téléchargement de la Sunberry App pour piloter votre chauffage <br>– au forum de la communauté Sunberry</p><p>Le matériel n’est pas compris et sera commandé par vos soins chez les fournisseurs disponibles dans notre liste ou dans votre magasin de bricolage préféré..</p><p>– compter 300€ environ pour le montage complet sans réservoir et radiateur : capteurs, Raspberry, tuyaux, raccord, pompe etc. <br>– à partir de 15€/m² de panneau solaire environ, selon les options choisies, soit 10x moins cher que les panneaux solaires du commerce.</p><p>Les formations en cours de finition et en précommande à prix réduit (en orange et rouge) vous seront transmises automatiquement dès qu’elle seront finalisées. Les panneaux seront les mêmes, vous pouvez les construire dès maintenant, il ne restera plus qu’à les brancher sur votre chauffe-eau ou votre chauffage.</p><p>De nombreuses réponses à vos questions <a href="https://www.sunberry.fr/questions-frequentes-sur-le-chauffage-solaire/" target="_blank" rel="noopener">se trouvent dans la FAQ ici</a>.</p><p><b>Vous avez des questions et n’avez pas trouvé la réponse sur notre site? n’hésitez pas à nous contacter à l’adresse <a href="mailto:sebastien@sunberry.fr" target="_blank" rel="noopener">sebastien@sunberry.fr</a></b></p></div>
 				</div>
 				</div>
 						</div>
