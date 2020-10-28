@@ -74,6 +74,16 @@
 .elementor-72 .elementor-element.elementor-element-d760978 .elementor-heading-title {font-weight: bold;line-height: 2.5em;text-shadow: 0px 0px 10px rgba(0,0,0,.75);}
 .elementor-72 .elementor-element.elementor-element-a29e325 {font-size: 17px;}
 .elementor-72 .elementor-element.elementor-element-61b02c7 {font-size: 17px;}
+.elementor-72 .elementor-element.elementor-element-59cf786:not(.elementor-motion-effects-element-type-background), .elementor-72 .elementor-element.elementor-element-59cf786 > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-image: url("https://www.sunberry.fr/wp-content/uploads/2019/03/bg-header-1600x908-1-e1553606310718.jpeg");}
+.elementor-72 .elementor-element.elementor-element-59cf786 {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
+.elementor-72 .elementor-element.elementor-element-59cf786 > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+.elementor-72 .elementor-element.elementor-element-59cf786 > .elementor-shape-top svg {height: 30px;}
+.elementor-72 .elementor-element.elementor-element-59cf786 > .elementor-shape-bottom svg {height: 25px;}
+.elementor-72 .elementor-element.elementor-element-ab6ff67 {text-align: center;}
+.elementor-72 .elementor-element.elementor-element-ab6ff67.elementor-widget-heading .elementor-heading-title {color: #ededed;}
+.elementor-72 .elementor-element.elementor-element-ab6ff67 .elementor-heading-title {font-weight: bold;line-height: 2.5em;text-shadow: 0px 0px 10px rgba(0,0,0,.75);}
+.elementor-72 .elementor-element.elementor-element-0800528 {text-align: center;}
+.elementor-72 .elementor-element.elementor-element-0d59072 a.elementor-button, .elementor-72 .elementor-element.elementor-element-0d59072 .elementor-button {background-color: #9856ef;}
 .elementor-72 .elementor-element.elementor-element-a67ff2d:not(.elementor-motion-effects-element-type-background), .elementor-72 .elementor-element.elementor-element-a67ff2d > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-image: url("https://www.sunberry.fr/wp-content/uploads/2019/03/bg-testimonials-1599x498.jpeg");background-size: cover;}
 .elementor-72 .elementor-element.elementor-element-a67ff2d {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin-top: 0px;margin-bottom: 0px;}
 .elementor-72 .elementor-element.elementor-element-a67ff2d > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
@@ -149,6 +159,7 @@
 	.elementor-72 .elementor-element.elementor-element-94d3630 .elementor-icon-box-icon {margin-bottom: 15px;}
 	.elementor-72 .elementor-element.elementor-element-d4ce2a5 .elementor-heading-title {line-height: 2.8em;}
 	.elementor-72 .elementor-element.elementor-element-d760978 .elementor-heading-title {line-height: 2.8em;}
+	.elementor-72 .elementor-element.elementor-element-ab6ff67 .elementor-heading-title {line-height: 2.8em;}
 	.elementor-72 .elementor-element.elementor-element-a67ff2d {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-72 .elementor-element.elementor-element-c46db69 {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-72 .elementor-element.elementor-element-ae1be94 .elementor-heading-title {line-height: 2.8em;}}
