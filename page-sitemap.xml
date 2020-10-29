@@ -161,16 +161,6 @@
 		<lastmod>2019-04-10T11:32:49+02:00</lastmod>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/confirmation-inscription-email-accueil/</loc>
-		<lastmod>2019-04-11T10:30:17+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-facebook.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-twitter.png</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/idees-recues-chauffage-solaire/</loc>
 		<lastmod>2019-04-13T22:00:10+02:00</lastmod>
 		<image:image>
@@ -555,6 +545,16 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/confirmation-inscription-email-accueil/</loc>
+		<lastmod>2020-10-29T08:58:08+01:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-facebook.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-twitter.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
