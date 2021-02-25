@@ -538,8 +538,22 @@
 		<lastmod>2020-11-11T11:51:19+01:00</lastmod>
 	</url>
 	<url>
+		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
+		<lastmod>2021-02-25T17:58:50+01:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
+			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
 		<loc>https://www.sunberry.fr/chauffe-eau-solaire-sanitaire-diy/</loc>
-		<lastmod>2021-02-25T17:19:45+01:00</lastmod>
+		<lastmod>2021-02-25T19:56:01+01:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/10/comparatif-chauffage-solaire-360x240.png</image:loc>
 		</image:image>
@@ -564,7 +578,7 @@
 			<image:caption><![CDATA[sunberry-photo-groupe-20170810-162130-850x638-768x576]]></image:caption>
 		</image:image>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/02/IMG_20200529_153417-e1613479146184-1024x791.jpg</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/02/equipe-sunberry-1024x791.jpg</image:loc>
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/Macaron-Maker-MFP19.png</image:loc>
@@ -603,20 +617,6 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
 			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
-		<lastmod>2021-02-25T17:58:50+01:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
-			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
