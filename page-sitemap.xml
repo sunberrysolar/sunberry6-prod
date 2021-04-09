@@ -538,20 +538,6 @@
 		<lastmod>2020-11-11T11:51:19+01:00</lastmod>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
-		<lastmod>2021-02-25T17:58:50+01:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
-			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/chauffe-eau-solaire-sanitaire-diy/</loc>
 		<lastmod>2021-04-03T22:52:20+02:00</lastmod>
 		<image:image>
@@ -621,7 +607,7 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/construire-un-chauffage-de-piscine-solaire/</loc>
-		<lastmod>2021-04-06T03:48:02+02:00</lastmod>
+		<lastmod>2021-04-09T01:57:27+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/10/comparatif-chauffage-solaire-360x240.png</image:loc>
 		</image:image>
@@ -654,6 +640,56 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/04/region-occitanie-solaire.png</image:loc>
 		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-mr-mondialisation.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry mr mondialisation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-canalplus.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry canal plus]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-guide-piscine.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry guide piscine]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-bio-a-la-une.jpeg</image:loc>
+			<image:caption><![CDATA[Sunberry bio a la une]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-bretagne-400x225-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[chauffage solaire piscine bretagne]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293-1-e1553702841945-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[Panneau solaire à paris]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneau-solaire-bordeaux-2-510x383-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffage piscine solaire bordeaux]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
+		<lastmod>2021-04-09T02:10:30+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
+			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/construire-un-chauffage-de-piscine-solaire-inscription/</loc>
+		<lastmod>2021-04-09T15:31:45+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-mr-mondialisation.jpeg</image:loc>
 			<image:caption><![CDATA[sunberry mr mondialisation]]></image:caption>
