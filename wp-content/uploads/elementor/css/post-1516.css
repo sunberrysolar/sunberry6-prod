@@ -14,6 +14,20 @@
 .elementor-1516 .elementor-element.elementor-element-8baf62b.elementor-widget-heading .elementor-heading-title {color: #fff;}
 .elementor-1516 .elementor-element.elementor-element-8baf62b .elementor-heading-title {font-weight: bold;}
 .elementor-1516 .elementor-element.elementor-element-8baf62b > .elementor-widget-container {margin: 0px 0px 0px 0px;padding: 40px 0px 40px 0px;}
+.elementor-1516 .elementor-element.elementor-element-bcd30e8:not(.elementor-motion-effects-element-type-background), .elementor-1516 .elementor-element.elementor-element-bcd30e8 > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #ef9b00;}
+.elementor-1516 .elementor-element.elementor-element-bcd30e8 {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin-top: 15px;margin-bottom: 0px;}
+.elementor-1516 .elementor-element.elementor-element-bcd30e8 > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+.elementor-1516 .elementor-element.elementor-element-b1807ed {text-align: center;}
+.elementor-1516 .elementor-element.elementor-element-b1807ed.elementor-widget-heading .elementor-heading-title {color: #fff;}
+.elementor-1516 .elementor-element.elementor-element-b1807ed .elementor-heading-title {font-weight: bold;}
+.elementor-1516 .elementor-element.elementor-element-b1807ed > .elementor-widget-container {margin: 0px 0px 0px 0px;padding: 40px 0px 40px 0px;}
+.elementor-1516 .elementor-element.elementor-element-6254d08:not(.elementor-motion-effects-element-type-background), .elementor-1516 .elementor-element.elementor-element-6254d08 > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #ef9b00;}
+.elementor-1516 .elementor-element.elementor-element-6254d08 {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin-top: 15px;margin-bottom: 0px;}
+.elementor-1516 .elementor-element.elementor-element-6254d08 > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+.elementor-1516 .elementor-element.elementor-element-f50d960 {text-align: center;}
+.elementor-1516 .elementor-element.elementor-element-f50d960.elementor-widget-heading .elementor-heading-title {color: #fff;}
+.elementor-1516 .elementor-element.elementor-element-f50d960 .elementor-heading-title {font-weight: bold;}
+.elementor-1516 .elementor-element.elementor-element-f50d960 > .elementor-widget-container {margin: 0px 0px 0px 0px;padding: 40px 0px 40px 0px;}
 .elementor-1516 .elementor-element.elementor-element-a67ff2d:not(.elementor-motion-effects-element-type-background), .elementor-1516 .elementor-element.elementor-element-a67ff2d > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-image: url("https://www.sunberry.fr/wp-content/uploads/2019/03/bg-testimonials-1599x498.jpeg");background-size: cover;}
 .elementor-1516 .elementor-element.elementor-element-a67ff2d {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin-top: 0px;margin-bottom: 0px;}
 .elementor-1516 .elementor-element.elementor-element-a67ff2d > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
@@ -62,5 +76,7 @@
 	.elementor-1516 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 25px;line-height: 1.4em;}
 	.elementor-1516 .elementor-element.elementor-element-ad36a23 > .elementor-widget-container {margin: 76px 0px 0px 0px;}
 	.elementor-1516 .elementor-element.elementor-element-319de1a {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
+	.elementor-1516 .elementor-element.elementor-element-bcd30e8 {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
+	.elementor-1516 .elementor-element.elementor-element-6254d08 {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-1516 .elementor-element.elementor-element-a67ff2d {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-1516 .elementor-element.elementor-element-c46db69 {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}}
