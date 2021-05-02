@@ -500,10 +500,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/reglement-cheque-virement/</loc>
-		<lastmod>2020-05-25T11:07:35+02:00</lastmod>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/inscription-a-la-formation-pack1098/</loc>
 		<lastmod>2020-09-12T10:29:57+02:00</lastmod>
 		<image:image>
@@ -659,45 +655,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/construire-un-chauffage-de-piscine-solaire-inscription/</loc>
-		<lastmod>2021-05-02T02:26:01+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/02/equipe-sunberry-1024x791.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-mr-mondialisation.jpeg</image:loc>
-			<image:caption><![CDATA[sunberry mr mondialisation]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-canalplus.jpeg</image:loc>
-			<image:caption><![CDATA[sunberry canal plus]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-guide-piscine.jpeg</image:loc>
-			<image:caption><![CDATA[sunberry guide piscine]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-bio-a-la-une.jpeg</image:loc>
-			<image:caption><![CDATA[Sunberry bio a la une]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-bretagne-400x225-300x169.jpeg</image:loc>
-			<image:caption><![CDATA[chauffage solaire piscine bretagne]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293-1-e1553702841945-300x169.jpeg</image:loc>
-			<image:caption><![CDATA[Panneau solaire à paris]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneau-solaire-bordeaux-2-510x383-300x169.jpeg</image:loc>
-			<image:caption><![CDATA[Chauffage piscine solaire bordeaux]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
-			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/construire-un-chauffage-de-piscine-solaire/</loc>
 		<lastmod>2021-05-02T02:27:12+02:00</lastmod>
 		<image:image>
@@ -764,6 +721,49 @@
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
 			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
 		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/construire-un-chauffage-de-piscine-solaire-inscription/</loc>
+		<lastmod>2021-05-02T15:55:44+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/02/equipe-sunberry-1024x791.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-mr-mondialisation.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry mr mondialisation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-canalplus.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry canal plus]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-guide-piscine.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry guide piscine]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-bio-a-la-une.jpeg</image:loc>
+			<image:caption><![CDATA[Sunberry bio a la une]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-bretagne-400x225-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[chauffage solaire piscine bretagne]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293-1-e1553702841945-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[Panneau solaire à paris]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneau-solaire-bordeaux-2-510x383-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffage piscine solaire bordeaux]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/reglement-cheque-virement/</loc>
+		<lastmod>2021-05-02T16:39:20+02:00</lastmod>
 	</url>
 </urlset>
 <!-- XML Sitemap generated by Yoast SEO -->
