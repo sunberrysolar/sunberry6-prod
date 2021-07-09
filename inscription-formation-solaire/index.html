@@ -210,27 +210,6 @@ var cnArgs = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","h
     // window.sib.email_id = 'sebastien@sunberry.fr';
     window.sendinblue = {}; for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) { (function(k) { window.sendinblue[k] = function() { var arg = Array.prototype.slice.call(arguments); (window.sib[k] || function() { var t = {}; t[k] = arg; window.sib.equeue.push(t);})(arg[0], arg[1], arg[2]);};})(j[i]);}var n = document.createElement("script"),i = document.getElementsByTagName("script")[0]; n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key, i.parentNode.insertBefore(n, i), window.sendinblue.page();
 })();
-</script><script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-// Creates an adblock detection plugin.
-ga('provide', 'adblockTracker', function(tracker, opts) {
-  var ad = document.createElement('ins');
-  ad.className = 'AdSense';
-  ad.style.display = 'block';
-  ad.style.position = 'absolute';
-  ad.style.top = '-1px';
-  ad.style.height = '1px';
-  document.body.appendChild(ad);
-  tracker.set('dimension' + opts.dimensionIndex, !ad.clientHeight);
-  document.body.removeChild(ad);
-});
-// TODO: Replace UA-XXXXX-Y with you tracking ID.
-ga('create', 'UA-86206346-3', 'auto');
-ga('require', 'adblockTracker', {dimensionIndex: 1});
-ga('send', 'pageview');
 </script><style>
 .elementor-text-editor h2 {
     font-size: 34px;
@@ -1020,25 +999,7 @@ Cela vous permet de vous former à un prix défiant toute concurrence.<br><br>Pa
 
 <div id="bottomAd" style="font-size: 2px;"> </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script>
-$(document).ready( function() {
-  window.setTimeout( function() 
-  {
-    var bottomad = $('#bottomAd');
-    if (bottomad.length == 1) 
-    {
-      if (bottomad.height() == 0) 
-      {
-        dataLayer.push({'event': 'adBlock', 'adBlockDetected': 1 });
-      } 
-      else 
-      {
-        dataLayer.push({'event': 'adBlock', 'adBlockDetected': 0 });
-      }
-    }      
-  }, 1);
-});
-</script><link rel="stylesheet" id="elementor-post-305-css" href="https://www.sunberry.fr/wp-content/uploads/elementor/css/post-305.css" type="text/css" media="all"><script type="text/javascript" src="https://www.sunberry.fr/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="https://www.sunberry.fr/wp-includes/js/jquery/ui/core.min.js"></script><script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><link rel="stylesheet" id="elementor-post-305-css" href="https://www.sunberry.fr/wp-content/uploads/elementor/css/post-305.css" type="text/css" media="all"><script type="text/javascript" src="https://www.sunberry.fr/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="https://www.sunberry.fr/wp-includes/js/jquery/ui/core.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
 var requestpost = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","disable_autoslide":"","masonry":""};
 /* ]]> */
