@@ -139,13 +139,21 @@
 .elementor-72 .elementor-element.elementor-element-653d339 .elementor-text-editor {text-align: center;}
 .elementor-72 .elementor-element.elementor-element-2f1e7ea .gallery-item .gallery-caption {text-align: center;}
 .elementor-72 .elementor-element.elementor-element-15ee8bd {font-size: 17px;}
+.elementor-72 .elementor-element.elementor-element-a34f502 .elementor-spacer-inner {height: 14px;}
+.elementor-72 .elementor-element.elementor-element-9d88eeb .elementor-button .elementor-align-icon-right {margin-left: 9px;}
+.elementor-72 .elementor-element.elementor-element-9d88eeb .elementor-button .elementor-align-icon-left {margin-right: 9px;}
+.elementor-72 .elementor-element.elementor-element-9d88eeb a.elementor-button, .elementor-72 .elementor-element.elementor-element-9d88eeb .elementor-button {font-weight: bold;background-color: #9856ef;}
+.elementor-72 .elementor-element.elementor-element-9d88eeb .elementor-button {box-shadow: 0px 0px 10px 0px rgba(0,0,0,.77);}
+.elementor-72 .elementor-element.elementor-element-9d88eeb > .elementor-widget-container {margin: 0px 0px 0px 0px;}
+.elementor-72 .elementor-element.elementor-element-fb7818f .elementor-spacer-inner {height: 14px;}
 .elementor-72 .elementor-element.elementor-element-6f9413c:not(.elementor-motion-effects-element-type-background), .elementor-72 .elementor-element.elementor-element-6f9413c > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #3a3a3a;}
 .elementor-72 .elementor-element.elementor-element-6f9413c {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
 .elementor-72 .elementor-element.elementor-element-6f9413c > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
 @media (max-width:1024px) {.elementor-72 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 34px;}
 	.elementor-72 .elementor-element.elementor-element-dc52fba {font-size: 24px;}
 	.elementor-72 .elementor-element.elementor-element-dc52fba > .elementor-widget-container {margin: 56px 0px 0px 0px;}
-	.elementor-72 .elementor-element.elementor-element-ded70b1 a.elementor-button, .elementor-72 .elementor-element.elementor-element-ded70b1 .elementor-button {font-size: 14px;padding: 19px 19px 19px 19px;}}
+	.elementor-72 .elementor-element.elementor-element-ded70b1 a.elementor-button, .elementor-72 .elementor-element.elementor-element-ded70b1 .elementor-button {font-size: 14px;padding: 19px 19px 19px 19px;}
+	.elementor-72 .elementor-element.elementor-element-9d88eeb a.elementor-button, .elementor-72 .elementor-element.elementor-element-9d88eeb .elementor-button {font-size: 14px;padding: 19px 19px 19px 19px;}}
 @media (max-width:767px) {.elementor-72 .elementor-element.elementor-element-97d183e {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-72 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 25px;line-height: 1.4em;}
 	.elementor-72 .elementor-element.elementor-element-ad36a23 > .elementor-widget-container {margin: 76px 0px 0px 0px;}
@@ -162,4 +170,6 @@
 	.elementor-72 .elementor-element.elementor-element-ab6ff67 .elementor-heading-title {line-height: 2.8em;}
 	.elementor-72 .elementor-element.elementor-element-a67ff2d {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-72 .elementor-element.elementor-element-c46db69 {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
-	.elementor-72 .elementor-element.elementor-element-ae1be94 .elementor-heading-title {line-height: 2.8em;}}
+	.elementor-72 .elementor-element.elementor-element-ae1be94 .elementor-heading-title {line-height: 2.8em;}
+	.elementor-72 .elementor-element.elementor-element-9d88eeb a.elementor-button, .elementor-72 .elementor-element.elementor-element-9d88eeb .elementor-button {font-size: 10px;padding: 10px 10px 10px 10px;}
+	.elementor-72 .elementor-element.elementor-element-9d88eeb > .elementor-widget-container {margin: 0px 0px 30px 0px;}}
