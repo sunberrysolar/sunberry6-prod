@@ -141,14 +141,6 @@
 		<lastmod>2019-04-08T17:10:37+02:00</lastmod>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/chauffage-piscine-solaire-diy/</loc>
-		<lastmod>2019-04-09T15:39:36+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
-			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/les-panneaux-solaires-thermiques/</loc>
 		<lastmod>2019-04-10T11:12:46+02:00</lastmod>
 	</url>
@@ -875,6 +867,14 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
 			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/chauffage-piscine-solaire-diy/</loc>
+		<lastmod>2022-05-27T01:32:02+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
+			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
