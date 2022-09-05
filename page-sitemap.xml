@@ -174,25 +174,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/les-panneaux-solaires-thermiques/construire-un-panneau-solaire/construire-un-panneau-solaire-a-air/</loc>
-		<lastmod>2019-04-16T22:28:05+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-a-air-chaud.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneau-solaire-air-chaud.jpg</image:loc>
-			<image:caption><![CDATA[panneau solaire à air chaud]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneau-solaire-air-canettes.jpg</image:loc>
-			<image:caption><![CDATA[panneau-solaire-air-canettes]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-taule.jpg</image:loc>
-			<image:caption><![CDATA[panneaux-solaires-taule]]></image:caption>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/les-panneaux-solaires-thermiques/construire-un-panneau-solaire/construire-un-panneau-solaire-a-air/orientation-du-panneau-solaire-a-air/</loc>
 		<lastmod>2019-04-16T22:39:25+02:00</lastmod>
 	</url>
@@ -836,7 +817,7 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/commande-groupee-panneaux-solaires/</loc>
-		<lastmod>2022-06-13T19:10:43+02:00</lastmod>
+		<lastmod>2022-09-05T09:22:28+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
 			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
@@ -875,6 +856,25 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/04/mode-de-paiement.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/les-panneaux-solaires-thermiques/construire-un-panneau-solaire/construire-un-panneau-solaire-a-air/</loc>
+		<lastmod>2022-09-05T09:26:50+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-a-air-chaud.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneau-solaire-air-chaud.jpg</image:loc>
+			<image:caption><![CDATA[panneau solaire à air chaud]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneau-solaire-air-canettes.jpg</image:loc>
+			<image:caption><![CDATA[panneau-solaire-air-canettes]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-taule.jpg</image:loc>
+			<image:caption><![CDATA[panneaux-solaires-taule]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
