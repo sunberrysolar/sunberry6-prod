@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2022-04-07T15:09:53+02:00</lastmod>
+		<lastmod>2023-02-21T00:19:46+01:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -527,6 +527,14 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/04/Souflet-YouTube-Miniature.png</image:loc>
 			<image:title><![CDATA[Souflet - YouTube Miniature]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/meilleurs-voeux-les-nouveautes-2023/</loc>
+		<lastmod>2023-02-21T00:19:46+01:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2023/02/Meilleurs-voeux-pour-2023-.jpg</image:loc>
+			<image:title><![CDATA[Meilleurs-voeux-pour-2023-]]></image:title>
 		</image:image>
 	</url>
 </urlset>
