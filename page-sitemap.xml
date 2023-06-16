@@ -909,9 +909,12 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/land1/</loc>
-		<lastmod>2023-06-16T23:14:14+02:00</lastmod>
+		<lastmod>2023-06-16T23:49:37+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/04/Souflet-YouTube-Miniature-1024x576.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2023/06/Design-sans-titre.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
