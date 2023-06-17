@@ -909,9 +909,18 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/landy1/</loc>
-		<lastmod>2023-06-17T18:30:40+02:00</lastmod>
+		<lastmod>2023-06-17T23:30:03+02:00</lastmod>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/04/Souflet-YouTube-Miniature-1024x576.png</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/02/vignette-youtube-alex-drome-e1687022130876-1024x530.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/02/sunberry-photo-groupe-20170810-162130-850x638-768x576.jpeg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/07/panneaux-solaires-cote-d_or-1024x768.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/04/chauffage-piscine-solaire-montelimar-x1-1024x768.jpg</image:loc>
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2023/06/Design-sans-titre.png</image:loc>
@@ -929,7 +938,24 @@
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2023/06/midi-libre-1024x546.png</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2023/06/logo-e1686953518825.png</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneau-solaire-bordeaux-2-510x383.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffage piscine solaire bordeaux]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/04/installation-chauffage-solaire-toit.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/04/IMG_3910.jpeg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2023/06/logo.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/landy1-conf/</loc>
+		<lastmod>2023-06-17T23:47:12+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2023/06/logo.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
