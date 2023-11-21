@@ -560,20 +560,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
-		<lastmod>2023-04-29T17:28:11+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
-			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/les-panneaux-solaires-thermiques/les-panneaux-solaires/les-panneaux-solaires-thermiques/</loc>
 		<lastmod>2023-04-29T17:29:47+02:00</lastmod>
 	</url>
@@ -1054,6 +1040,20 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/01/tip_crea-15-750x375-e1641766037697-150x150.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
+		<lastmod>2023-11-21T10:06:53+01:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
+			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
