@@ -941,8 +941,34 @@
 		</image:image>
 	</url>
 	<url>
+		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
+		<lastmod>2023-11-21T10:24:44+01:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
+			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/reglement-cheque-virement/</loc>
+		<lastmod>2024-02-02T22:30:04+01:00</lastmod>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/stripe-checkout-result/</loc>
+		<lastmod>2024-02-10T17:15:57+01:00</lastmod>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/products/</loc>
+		<lastmod>2024-02-10T17:15:57+01:00</lastmod>
+	</url>
+	<url>
 		<loc>https://www.sunberry.fr/chauffage-solaire-habitation-diy/</loc>
-		<lastmod>2023-11-20T10:59:14+01:00</lastmod>
+		<lastmod>2024-04-03T17:38:39+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/capture-formation-chauffe-eau-solaire-p37lmyowm1zzcaklhx19kbnazlcsxzixvrn6r335c0.png</image:loc>
 			<image:title><![CDATA[capture-formation-chauffe-eau-solaire]]></image:title>
@@ -1039,34 +1065,8 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/inscription-formation-solaire/</loc>
-		<lastmod>2023-11-21T10:24:44+01:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
-			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/reglement-cheque-virement/</loc>
-		<lastmod>2024-02-02T22:30:04+01:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/stripe-checkout-result/</loc>
-		<lastmod>2024-02-10T17:15:57+01:00</lastmod>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/products/</loc>
-		<lastmod>2024-02-10T17:15:57+01:00</lastmod>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/commande-groupee-2024/</loc>
-		<lastmod>2024-03-31T17:37:30+02:00</lastmod>
+		<lastmod>2024-04-03T17:45:27+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/moquette-solaire-piscine-diy.jpeg</image:loc>
 			<image:caption><![CDATA[moquette-solaire-piscine-diy]]></image:caption>
@@ -1076,6 +1076,12 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/chauffage-habitation-solaire.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/02/carte-bancaire.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/10/paypal4x-e1665644653221.png</image:loc>
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/capture-formation-chauffe-eau-solaire-p37lmyowm1zzcaklhx19kbnazlcsxzixvrn6r335c0.png</image:loc>
@@ -1107,6 +1113,12 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/02/equipe-sunberry-1024x791.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/02/carte-bancaire.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/10/paypal4x-e1665644653221.png</image:loc>
 		</image:image>
 	</url>
 </urlset>
