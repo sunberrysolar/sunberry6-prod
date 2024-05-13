@@ -127,7 +127,7 @@
 .elementor-1933 .elementor-element.elementor-element-26345f4 {text-align: center;}
 .elementor-1933 .elementor-element.elementor-element-b4251b0 > .elementor-element-populated {padding: 0px 40px 0px 40px;}
 .elementor-1933 .elementor-element.elementor-element-7138c48 {font-size: 18px;}
-.elementor-1933 .elementor-element.elementor-element-7138c48 > .elementor-widget-container {margin: 0px 0px 0px 0px;padding: 0px 0px 0px 0px;border-style: solid;border-width: 1px 1px 1px 1px;border-radius: 1px 1px 1px 1px;}
+.elementor-1933 .elementor-element.elementor-element-7138c48 > .elementor-widget-container {margin: 0px 0px 0px 0px;padding: 0% 6% 0% 6%;border-style: solid;border-width: 1px 1px 1px 1px;border-radius: 1px 1px 1px 1px;}
 .elementor-1933 .elementor-element.elementor-element-b25af23 .elementor-icon-wrapper {text-align: center;}
 .elementor-1933 .elementor-element.elementor-element-b25af23.elementor-view-stacked .elementor-icon {background-color: #efaf00;}
 .elementor-1933 .elementor-element.elementor-element-b25af23.elementor-view-framed .elementor-icon, .elementor-1933 .elementor-element.elementor-element-b25af23.elementor-view-default .elementor-icon {color: #efaf00;border-color: #efaf00;}
@@ -330,6 +330,16 @@
 .elementor-1933 .elementor-element.elementor-element-702b2ab .elementor-accordion .elementor-tab-title .elementor-accordion-icon .fa:before {color: #ef9b00;}
 .elementor-1933 .elementor-element.elementor-element-702b2ab .elementor-accordion .elementor-tab-content {font-size: 20px;}
 .elementor-1933 .elementor-element.elementor-element-3841656 .elementor-spacer-inner {height: 50px;}
+.elementor-1933 .elementor-element.elementor-element-22ff235:not(.elementor-motion-effects-element-type-background), .elementor-1933 .elementor-element.elementor-element-22ff235 > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #fff;}
+.elementor-1933 .elementor-element.elementor-element-22ff235 {box-shadow: 0px 0px 10px 0px rgba(0,0,0,.5);transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;padding: -15px -15px -15px -15px;}
+.elementor-1933 .elementor-element.elementor-element-22ff235 > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+.elementor-1933 .elementor-element.elementor-element-cb0bef0.elementor-column .elementor-column-wrap {align-items: center;}
+.elementor-1933 .elementor-element.elementor-element-cb0bef0.elementor-column > .elementor-column-wrap > .elementor-widget-wrap {align-content: center;}
+.elementor-1933 .elementor-element.elementor-element-c12f565 {text-align: right;}
+.elementor-1933 .elementor-element.elementor-element-c12f565 .elementor-heading-title {font-size: 18px;font-weight: 400;}
+.elementor-1933 .elementor-element.elementor-element-7a6dd12.elementor-column .elementor-column-wrap {align-items: center;}
+.elementor-1933 .elementor-element.elementor-element-7a6dd12.elementor-column > .elementor-column-wrap > .elementor-widget-wrap {align-content: center;justify-content: center;}
+.elementor-1933 .elementor-element.elementor-element-d8b5f0c > .elementor-widget-container {margin: -24px 0px -24px 0px;padding: 0% 0% 0% 0%;}
 .elementor-1933 .elementor-element.elementor-element-821b3ff {margin-top: 0px;margin-bottom: 0px;}
 .elementor-1933 .elementor-element.elementor-element-6ab0432 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute) {margin-bottom: 20px;}
 .elementor-1933 .elementor-element.elementor-element-6ab0432 > .elementor-element-populated {border-style: solid;border-width: 3px 3px 3px 3px;border-color: #ddd;transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin: 20px 5px 0px 5px;}
@@ -382,7 +392,8 @@
 @media (max-width:1024px) {.elementor-1933 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 34px;}
 	.elementor-1933 .elementor-element.elementor-element-dc52fba {font-size: 24px;}
 	.elementor-1933 .elementor-element.elementor-element-dc52fba > .elementor-widget-container {margin: 56px 0px 0px 0px;}
-	.elementor-1933 .elementor-element.elementor-element-ded70b1 a.elementor-button, .elementor-1933 .elementor-element.elementor-element-ded70b1 .elementor-button {font-size: 14px;padding: 19px 19px 19px 19px;}}
+	.elementor-1933 .elementor-element.elementor-element-ded70b1 a.elementor-button, .elementor-1933 .elementor-element.elementor-element-ded70b1 .elementor-button {font-size: 14px;padding: 19px 19px 19px 19px;}
+	.elementor-1933 .elementor-element.elementor-element-22ff235 {padding: 0px 0px 43px 0px;}}
 @media (max-width:767px) {.elementor-1933 .elementor-element.elementor-element-97d183e {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-1933 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 40px;line-height: 1.4em;}
 	.elementor-1933 .elementor-element.elementor-element-ad36a23 > .elementor-widget-container {margin: 76px 0px 0px 0px;}
@@ -403,4 +414,11 @@
 	.elementor-1933 .elementor-element.elementor-element-a67ff2d {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-1933 .elementor-element.elementor-element-c46db69 {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-1933 .elementor-element.elementor-element-6f5291d {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
+	.elementor-1933 .elementor-element.elementor-element-22ff235 {margin-top: 0px;margin-bottom: 0px;padding: -5px 0px 30px 0px;}
+	.elementor-1933 .elementor-element.elementor-element-c12f565 {text-align: center;}
+	.elementor-1933 .elementor-element.elementor-element-c12f565 .elementor-heading-title {font-size: 12px;}
+	.elementor-1933 .elementor-element.elementor-element-c12f565 > .elementor-widget-container {margin: -4px 0px -8px 0px;}
+	.elementor-1933 .elementor-element.elementor-element-7a6dd12 > .elementor-element-populated {margin: -10px 0px -10px 0px;}
+	.elementor-1933 .elementor-element.elementor-element-d8b5f0c > .elementor-widget-container {margin: -12px 0px -20px 0px;padding: -10px 0px -10px 0px;}
+	.elementor-1933 .elementor-element.elementor-element-d8b5f0c {width: auto;max-width: auto;}
 	.elementor-1933 .elementor-element.elementor-element-2bfcf39 > .elementor-element-populated {margin: 15px 15px 15px 15px;}}
