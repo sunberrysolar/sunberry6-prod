@@ -923,8 +923,11 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/chauffage-solaire-habitation-diy/</loc>
-		<lastmod>2024-04-08T22:20:34+02:00</lastmod>
+		<loc>https://www.sunberry.fr/chauffe-eau-solaire-sanitaire-diy/</loc>
+		<lastmod>2024-04-08T22:20:52+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/10/comparatif-chauffage-solaire-360x240.png</image:loc>
+		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/capture-formation-chauffe-eau-solaire-p37lmyowm1zzcaklhx19kbnazlcsxzixvrn6r335c0.png</image:loc>
 			<image:title><![CDATA[capture-formation-chauffe-eau-solaire]]></image:title>
@@ -1026,11 +1029,8 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/chauffe-eau-solaire-sanitaire-diy/</loc>
-		<lastmod>2024-04-08T22:20:52+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/10/comparatif-chauffage-solaire-360x240.png</image:loc>
-		</image:image>
+		<loc>https://www.sunberry.fr/chauffage-solaire-habitation-diy/</loc>
+		<lastmod>2024-05-12T20:05:04+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/capture-formation-chauffe-eau-solaire-p37lmyowm1zzcaklhx19kbnazlcsxzixvrn6r335c0.png</image:loc>
 			<image:title><![CDATA[capture-formation-chauffe-eau-solaire]]></image:title>
