@@ -9,6 +9,9 @@ window.ec = window.ec || {};
 window.ec.config = window.ec.config || {};
 window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 
+// Variable pour suivre la page actuelle
+var currentPageType = '';
+
 // S'assurer que le code s'exécute après le chargement complet d'Ecwid
 Ecwid.OnAPILoaded.add(function() {
   console.log("Ecwid API chargée");
@@ -57,15 +60,23 @@ Ecwid.OnAPILoaded.add(function() {
           console.log("Vidage du panier...");
           
           // Utiliser l'API Ecwid de manière correcte pour vider le panier
-          Ecwid.Cart.clearCart({
-            callback: function(success) {
-              if (success) {
-                console.log("Panier vidé avec succès");
-              } else {
-                console.error("Erreur lors du vidage du panier");
-              }
+          try {
+            Ecwid.Cart.clear(function() {
+              console.log("Panier vidé avec succès");
+            });
+          } catch (error) {
+            console.error("Erreur lors du vidage du panier:", error);
+            
+            // Alternative si la première méthode échoue
+            try {
+              window.ec.storefront.cart.clear(function() {
+                console.log("Panier vidé avec succès (méthode alternative)");
+              });
+            } catch (err) {
+              console.error("Erreur avec la méthode alternative:", err);
+              alert("Impossible de vider le panier. Veuillez rafraîchir la page et réessayer.");
             }
-          });
+          }
         });
         
         // Insérer le bouton en haut du panier
@@ -89,6 +100,9 @@ Ecwid.OnAPILoaded.add(function() {
   Ecwid.OnPageLoaded.add(function(page) {
     console.log("Page Ecwid chargée:", page.type);
     
+    // Mémoriser la page actuelle
+    currentPageType = page.type;
+    
     // Appliquer les modifications seulement sur la page du panier
     if (page.type == "CART") {
       // Attendre que le DOM du panier soit complètement chargé
@@ -111,8 +125,8 @@ Ecwid.OnAPILoaded.add(function() {
   Ecwid.OnCartChanged.add(function(cart) {
     console.log("Contenu du panier modifié");
     
-    // Vérifier si nous sommes sur la page du panier
-    if (Ecwid.getPage().type == "CART") {
+    // Vérifier si nous sommes sur la page du panier en utilisant la variable currentPageType
+    if (currentPageType == "CART") {
       setTimeout(customizeCart, 500);
     }
   });
