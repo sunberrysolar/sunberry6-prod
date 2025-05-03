@@ -55,7 +55,7 @@ Ecwid.OnAPILoaded.add(function() {
         clearButton.classList.add('ec-cart__btn');
         
         // Styling du bouton
-        clearButton.style.backgroundColor = '#ff4d4d';
+        clearButton.style.backgroundColor = '#e672f7';
         clearButton.style.color = '#ffffff';
         clearButton.style.border = 'none';
         clearButton.style.padding = '10px 15px';
@@ -138,7 +138,7 @@ Ecwid.OnAPILoaded.add(function() {
   const style = document.createElement('style');
   style.textContent = `
     #ecwid-clear-cart-button:hover {
-      background-color: #ff3333 !important;
+      background-color: #000000 !important;
     }
     
     /* Masquer les boutons de suppression */
