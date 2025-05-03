@@ -558,34 +558,46 @@ display: none;
 <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71288281&data_platform=code&data_date=2024-01-01" charset="utf-8">
 </script><div id="my-store-71288281"></div>
 
+
 <script type="text/javascript">
+// Configuration Ecwid
 window.ec = window.ec || {};
 window.ec.config = window.ec.config || {};
 window.ec.config.store_main_minicart_autoinit = false;
 
-// Déclarer la fonction au niveau global dès le début
-window.addBundleToCart = function() {
-  console.log("Tentative d'ajout au panier...");
-  if (typeof Ecwid === 'undefined') {
-    console.error("Ecwid n'est pas encore chargé");
+// Variable pour suivre l'état de chargement
+let ecwidReady = false;
+
+// Fonction pour ajouter le pack au panier
+function addBundleToCart() {
+  if (!ecwidReady) {
+    console.log("Veuillez patienter, chargement d'Ecwid en cours...");
+    setTimeout(addBundleToCart, 300); // Réessayer après 300ms
     return;
   }
   
+  console.log("Ajout du pack au panier...");
   Ecwid.Cart.addProduct(15, 1, {}, function() {
     Ecwid.Cart.addProduct(16, 1, {}, function() {
+      console.log("Pack ajouté, ouverture du panier");
       Ecwid.openCart();
     });
   });
-};
+}
 
+// Callback quand Ecwid est prêt
 window.ec.storefrontReadyCallback = function() {
+  console.log("Ecwid est maintenant prêt");
+  ecwidReady = true;
+  
+  // Initialiser Ecwid
   if (typeof Ecwid !== 'undefined') {
     Ecwid.init();
     
-    // Gestion du panier
+    // Gestion du panier pour cacher les boutons supprimer
     Ecwid.OnPageLoaded.add(function(page) {
       if (page.type === "CART") {
-        const interval = setInterval(() => {
+        const checkCartItems = setInterval(() => {
           const items = document.querySelectorAll('.ec-cart__item');
           if (items.length > 0) {
             items.forEach(item => {
@@ -595,14 +607,43 @@ window.ec.storefrontReadyCallback = function() {
                 if (removeBtn) removeBtn.style.display = 'none';
               }
             });
-            clearInterval(interval);
+            clearInterval(checkCartItems);
           }
         }, 300);
       }
     });
   }
 };
-</script><button onclick="window.addBundleToCart()">Acheter le Pack</button>		</div>
+
+// Exposer la fonction globalement
+window.addBundleToCart = addBundleToCart;
+</script><button onclick="addBundleToCart()" id="packButton">Acheter le Pack</button>
+
+
+<style>
+#packButton[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+</style><script>
+// Désactiver le bouton tant qu'Ecwid n'est pas prêt
+document.addEventListener('DOMContentLoaded', function() {
+  const button = document.getElementById('packButton');
+  if (!ecwidReady) {
+    button.disabled = true;
+    button.textContent = "Chargement en cours...";
+  }
+  
+  // Vérifier périodiquement si Ecwid est prêt
+  const checkEcwid = setInterval(() => {
+    if (ecwidReady) {
+      button.disabled = false;
+      button.textContent = "Acheter le Pack";
+      clearInterval(checkEcwid);
+    }
+  }, 500);
+});
+</script></div>
 				</div>
 						</div>
 			</div>
