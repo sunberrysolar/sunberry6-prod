@@ -2,6 +2,7 @@
  * Script de personnalisation du panier Ecwid
  * - Ajoute un bouton "Vider le panier"
  * - Supprime les boutons de suppression des produits individuels
+ * - Masque les contrôles de quantité
  */
 
 // Attendre que le script Ecwid soit complètement chargé
@@ -29,7 +30,16 @@ Ecwid.OnAPILoaded.add(function() {
       });
     }
     
-    // 2. AJOUTER UN BOUTON "VIDER LE PANIER" S'IL N'EXISTE PAS DÉJÀ
+    // 2. MASQUER LES CONTRÔLES DE QUANTITÉ
+    const quantityControls = document.querySelectorAll('.ec-cart-item__quantity');
+    if (quantityControls.length > 0) {
+      console.log(`${quantityControls.length} contrôles de quantité masqués`);
+      quantityControls.forEach(control => {
+        control.style.display = 'none';
+      });
+    }
+    
+    // 3. AJOUTER UN BOUTON "VIDER LE PANIER" S'IL N'EXISTE PAS DÉJÀ
     if (!document.getElementById('ecwid-clear-cart-button')) {
       const cartContainer = document.querySelector('.ec-cart__body') || 
                            document.querySelector('.ec-cart-container') || 
@@ -131,8 +141,20 @@ Ecwid.OnAPILoaded.add(function() {
       background-color: #ff3333 !important;
     }
     
+    /* Masquer les boutons de suppression */
     .ec-cart-item__delete {
       display: none !important;
+    }
+    
+    /* Masquer les contrôles de quantité */
+    .ec-cart-item__quantity {
+      display: none !important;
+    }
+    
+    /* Assurer que le bouton du panier reste bien visible */
+    #ecwid-clear-cart-button {
+      display: block !important;
+      margin: 10px 0 !important;
     }
   `;
   document.head.appendChild(style);
