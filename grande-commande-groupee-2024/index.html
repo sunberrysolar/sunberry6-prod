@@ -486,37 +486,6 @@ border: 1px solid #904be5;
   gtag('js', new Date());
 
   gtag('config', 'G-QK1ZSDHCJ6');
-</script><script>
-Ecwid.OnPageLoaded.add(function(page) {
-    if (page.type !== 'CART') return;
-    
-    var emptyCartBtn = document.createElement('a');
-    emptyCartBtn.href = '#';
-    emptyCartBtn.innerHTML = 'Vider le panier';
-    emptyCartBtn.style.display = 'inline-block';
-    emptyCartBtn.style.margin = '10px 5px';
-    emptyCartBtn.style.padding = '10px';
-    emptyCartBtn.style.background = '#ff0000';
-    emptyCartBtn.style.color = '#fff';
-    
-    emptyCartBtn.onclick = function() {
-        if (confirm('Vider tout le panier ?')) {
-            Ecwid.Cart.empty(function() {
-                Ecwid.Cart.get(function(cart) {
-                    if (cart.itemsCount === 0) {
-                        window.location.reload();
-                    }
-                });
-            });
-        }
-        return false;
-    };
-    
-    var checkoutButton = document.querySelector('.ec-cart__checkout-button');
-    if (checkoutButton) {
-        checkoutButton.parentNode.insertBefore(emptyCartBtn, checkoutButton);
-    }
-});
 </script><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="32x32"><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><meta name="msapplication-TileImage" content="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><style type="text/css" id="wp-custom-css">
 			.page-id-1309 .navbar .navbar-nav {
 display: none;
