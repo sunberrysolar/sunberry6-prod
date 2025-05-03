@@ -486,37 +486,6 @@ border: 1px solid #904be5;
   gtag('js', new Date());
 
   gtag('config', 'G-LEKD4D57E8');
-</script><script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Vérifie si nous sommes sur la page panier
-    if (document.querySelector('.ec-cart')) {
-        // Crée le bouton Vider le panier
-        const emptyCartBtn = document.createElement('button');
-        emptyCartBtn.textContent = 'Vider le panier';
-        emptyCartBtn.className = 'ec-cart__empty-cart-btn';
-        emptyCartBtn.style.margin = '10px 0';
-        emptyCartBtn.style.padding = '10px 15px';
-        emptyCartBtn.style.backgroundColor = '#ff0000';
-        emptyCartBtn.style.color = 'white';
-        emptyCartBtn.style.border = 'none';
-        emptyCartBtn.style.borderRadius = '4px';
-        emptyCartBtn.style.cursor = 'pointer';
-        
-        // Ajoute l'événement click
-        emptyCartBtn.addEventListener('click', function() {
-            Ecwid.Cart.empty(function() {
-                // Recharge la page après avoir vidé le panier
-                window.location.reload();
-            });
-        });
-        
-        // Trouve l'endroit où ajouter le bouton (avant le bouton de paiement)
-        const checkoutBtn = document.querySelector('.ec-cart__checkout-button');
-        if (checkoutBtn) {
-            checkoutBtn.parentNode.insertBefore(emptyCartBtn, checkoutBtn);
-        }
-    }
-});
 </script><script type="text/javascript">
 window.bioEp={bgEl:{},popupEl:{},closeBtnEl:{},shown:!1,overflowDefault:"visible",transformDefault:"",width:400,height:220,html:"",css:"",fonts:[],delay:5,showOnDelay:!1,cookieExp:30,showOncePerSession:!1,onPopup:null,cookieManager:{create:function(a,b,d,c){var e="";c?e="; expires=0":d&&(c=new Date,c.setTime(c.getTime()+864E5*d),e="; expires="+c.toGMTString());document.cookie=a+"="+b+e+"; path=/"},get:function(a){a+="=";for(var b=document.cookie.split(";"),d=0;d<b.length;d++){for(var c=b[d];" "==
 c.charAt(0);)c=c.substring(1,c.length);if(0===c.indexOf(a))return c.substring(a.length,c.length)}return null},erase:function(a){this.create(a,"",-1)}},checkCookie:function(){if(0>=this.cookieExp){if(this.showOncePerSession&&"true"==this.cookieManager.get("bioep_shown_session"))return!0;this.cookieManager.erase("bioep_shown");return!1}return"true"==this.cookieManager.get("bioep_shown")?!0:!1},addCSS:function(){for(var a=0;a<this.fonts.length;a++){var b=document.createElement("link");b.href=this.fonts[a];
