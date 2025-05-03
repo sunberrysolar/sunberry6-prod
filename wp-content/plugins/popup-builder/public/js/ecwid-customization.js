@@ -142,12 +142,12 @@ Ecwid.OnAPILoaded.add(function() {
     }
     
     /* Masquer les boutons de suppression */
-    .ec-cart-item__delete {
+    .ec-cart-item__control {
       display: none !important;
     }
     
     /* Masquer les contrôles de quantité */
-    .ec-cart-item__quantity {
+    .ec-cart-item__count-inner {
       display: none !important;
     }
     
