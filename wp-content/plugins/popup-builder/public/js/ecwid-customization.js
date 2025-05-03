@@ -1,78 +1,132 @@
-// Script pour ajouter un bouton "Vider le panier" et supprimer les boutons de suppression individuels
-// À placer dans votre code HTML, idéalement juste avant la fermeture du </body>
+/**
+ * Script de personnalisation du panier Ecwid
+ * - Ajoute un bouton "Vider le panier"
+ * - Supprime les boutons de suppression des produits individuels
+ */
 
+// Attendre que le script Ecwid soit complètement chargé
+window.ec = window.ec || {};
+window.ec.config = window.ec.config || {};
+window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
+
+// S'assurer que le code s'exécute après le chargement complet d'Ecwid
 Ecwid.OnAPILoaded.add(function() {
-  // S'abonner aux événements de mise à jour du panier
-  Ecwid.OnCartChanged.add(function(cart) {
-    // Attendre que le DOM du panier soit prêt
-    setTimeout(customizeCartPage, 500);
-  });
+  console.log("Ecwid API chargée");
   
-  // S'abonner aux événements de changement de page
-  Ecwid.OnPageLoaded.add(function(page) {
-    // Si nous sommes sur la page du panier
-    if (page.type == 'CART') {
-      setTimeout(customizeCartPage, 500);
+  // Fonction pour appliquer les personnalisations du panier
+  function customizeCart() {
+    console.log("Personnalisation du panier en cours...");
+    
+    // 1. MASQUER LES BOUTONS DE SUPPRESSION INDIVIDUELS
+    const deleteButtons = document.querySelectorAll('.ec-cart-item__delete');
+    if (deleteButtons.length > 0) {
+      console.log(`${deleteButtons.length} boutons de suppression masqués`);
+      deleteButtons.forEach(button => {
+        button.style.display = 'none';
+      });
     }
-  });
-
-  // Fonction pour personnaliser la page du panier
-  function customizeCartPage() {
-    // Vérifie si le bouton "Vider le panier" existe déjà
-    if (!document.getElementById('clear-cart-button')) {
-      // Trouver le conteneur du panier
-      const cartContainer = document.querySelector('.ec-cart-container');
+    
+    // 2. AJOUTER UN BOUTON "VIDER LE PANIER" S'IL N'EXISTE PAS DÉJÀ
+    if (!document.getElementById('ecwid-clear-cart-button')) {
+      const cartContainer = document.querySelector('.ec-cart__body') || 
+                           document.querySelector('.ec-cart-container') || 
+                           document.querySelector('.ec-cart');
       
       if (cartContainer) {
-        // Créer le bouton "Vider le panier"
+        console.log("Conteneur du panier trouvé");
+        
+        // Créer le bouton
         const clearButton = document.createElement('button');
-        clearButton.id = 'clear-cart-button';
-        clearButton.className = 'ec-cart-clear-button';
+        clearButton.id = 'ecwid-clear-cart-button';
         clearButton.textContent = 'Vider le panier';
-        clearButton.style.marginTop = '10px';
-        clearButton.style.marginBottom = '10px';
-        clearButton.style.padding = '8px 16px';
+        clearButton.classList.add('ec-cart__btn');
+        
+        // Styling du bouton
         clearButton.style.backgroundColor = '#ff4d4d';
-        clearButton.style.color = 'white';
+        clearButton.style.color = '#ffffff';
         clearButton.style.border = 'none';
-        clearButton.style.borderRadius = '4px';
+        clearButton.style.padding = '10px 15px';
+        clearButton.style.margin = '10px 0';
+        clearButton.style.borderRadius = '5px';
         clearButton.style.cursor = 'pointer';
+        clearButton.style.fontWeight = 'bold';
         
         // Ajouter l'événement pour vider le panier
-        clearButton.addEventListener('click', function() {
-          // Utiliser l'API Ecwid pour vider le panier
-          Ecwid.Cart.clear();
+        clearButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log("Vidage du panier...");
+          
+          // Utiliser l'API Ecwid de manière correcte pour vider le panier
+          Ecwid.Cart.clearCart({
+            callback: function(success) {
+              if (success) {
+                console.log("Panier vidé avec succès");
+              } else {
+                console.error("Erreur lors du vidage du panier");
+              }
+            }
+          });
         });
         
         // Insérer le bouton en haut du panier
-        const headerSection = cartContainer.querySelector('.ec-cart__head') || cartContainer.firstChild;
+        const headerSection = cartContainer.querySelector('.ec-cart__head') || 
+                             cartContainer.querySelector('.ec-cart-item:first-child');
+        
         if (headerSection) {
-          headerSection.parentNode.insertBefore(clearButton, headerSection.nextSibling);
+          headerSection.parentNode.insertBefore(clearButton, headerSection);
         } else {
-          cartContainer.prepend(clearButton);
+          cartContainer.insertBefore(clearButton, cartContainer.firstChild);
         }
+        
+        console.log("Bouton 'Vider le panier' ajouté");
+      } else {
+        console.log("Conteneur du panier non trouvé");
       }
     }
-    
-    // Masquer les boutons de suppression individuels
-    const deleteButtons = document.querySelectorAll('.ec-cart-item__delete');
-    deleteButtons.forEach(function(button) {
-      button.style.display = 'none';
-    });
-  }
-});
-
-// CSS supplémentaire (à ajouter à votre feuille de style ou dans une balise <style>)
-const style = document.createElement('style');
-style.textContent = `
-  /* Style pour le bouton "Vider le panier" au survol */
-  #clear-cart-button:hover {
-    background-color: #ff3333;
   }
   
-  /* Cacher définitivement les boutons de suppression individuels */
-  .ec-cart-item__delete {
-    display: none !important;
-  }
-`;
-document.head.appendChild(style);
+  // Exécuter les personnalisations à chaque changement de page
+  Ecwid.OnPageLoaded.add(function(page) {
+    console.log("Page Ecwid chargée:", page.type);
+    
+    // Appliquer les modifications seulement sur la page du panier
+    if (page.type == "CART") {
+      // Attendre que le DOM du panier soit complètement chargé
+      setTimeout(customizeCart, 500);
+      
+      // Ajouter une surveillance des modifications pour les changements dynamiques
+      const observer = new MutationObserver(function(mutations) {
+        customizeCart();
+      });
+      
+      // Observer les changements dans le DOM du panier
+      const cartRoot = document.querySelector('.ec-cart') || document.querySelector('.ec-cart-container');
+      if (cartRoot) {
+        observer.observe(cartRoot, { childList: true, subtree: true });
+      }
+    }
+  });
+  
+  // Appliquer les personnalisations également lors des changements du panier
+  Ecwid.OnCartChanged.add(function(cart) {
+    console.log("Contenu du panier modifié");
+    
+    // Vérifier si nous sommes sur la page du panier
+    if (Ecwid.getPage().type == "CART") {
+      setTimeout(customizeCart, 500);
+    }
+  });
+  
+  // CSS supplémentaire
+  const style = document.createElement('style');
+  style.textContent = `
+    #ecwid-clear-cart-button:hover {
+      background-color: #ff3333 !important;
+    }
+    
+    .ec-cart-item__delete {
+      display: none !important;
+    }
+  `;
+  document.head.appendChild(style);
+});
