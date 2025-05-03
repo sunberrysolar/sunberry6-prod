@@ -543,75 +543,7 @@ display: none;
 	
 		</div>
 	</div>
-
-    <script>
-    function initEcwidEmptyCartButton() {
-        // Vérifie si l'API Ecwid est disponible
-        if (typeof Ecwid == 'undefined') {
-            setTimeout(initEcwidEmptyCartButton, 500);
-            return;
-        }
-        
-        // Vérifie si on est sur la page panier
-        if (!Ecwid.isCartPage()) return;
-        
-        // Vérifie si le bouton existe déjà
-        if (document.getElementById('ec-empty-cart-btn')) return;
-        
-        // Crée le bouton
-        const emptyCartBtn = document.createElement('button');
-        emptyCartBtn.id = 'ec-empty-cart-btn';
-        emptyCartBtn.textContent = 'Vider le panier';
-        emptyCartBtn.style.cssText = `
-            display: inline-block;
-            margin: 15px 5px;
-            padding: 12px 24px;
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        `;
-        
-        emptyCartBtn.onmouseover = () => emptyCartBtn.style.backgroundColor = '#c0392b';
-        emptyCartBtn.onmouseout = () => emptyCartBtn.style.backgroundColor = '#e74c3c';
-        
-        emptyCartBtn.onclick = function(e) {
-            e.preventDefault();
-            if (confirm('Êtes-vous sûr de vouloir vider votre panier ?')) {
-                Ecwid.Cart.empty(function() {
-                    Ecwid.Cart.get(function(cart) {
-                        if (cart.itemsCount === 0) {
-                            window.location.reload();
-                        }
-                    });
-                });
-            }
-        };
-        
-        // Trouve le conteneur du panier
-        const cartContainer = document.querySelector('.ec-cart') || 
-                             document.querySelector('.ec-store') || 
-                             document.querySelector('#ecwid-cart');
-        
-        // Trouve le bouton de paiement pour positionner notre bouton avant
-        const checkoutBtn = document.querySelector('.ec-cart__checkout-button');
-        if (cartContainer) {
-            if (checkoutBtn) {
-                checkoutBtn.parentNode.insertBefore(emptyCartBtn, checkoutBtn);
-            } else {
-                // Fallback: ajoute à la fin du panier
-                cartContainer.appendChild(emptyCartBtn);
-            }
-        }
-    }
-    
-    // Démarre la vérification
-    document.addEventListener('DOMContentLoaded', initEcwidEmptyCartButton);
-    Ecwid.OnAPILoaded.add(initEcwidEmptyCartButton);
-    </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="https://www.sunberry.fr/wp-includes/js/jquery/ui/core.min.js"></script><script type="text/javascript">
+<script type="text/javascript" src="https://www.sunberry.fr/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="https://www.sunberry.fr/wp-includes/js/jquery/ui/core.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
 var requestpost = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","disable_autoslide":"","masonry":""};
 /* ]]> */
