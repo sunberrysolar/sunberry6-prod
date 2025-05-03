@@ -57,26 +57,19 @@ Ecwid.OnAPILoaded.add(function() {
         // Ajouter l'événement pour vider le panier
         clearButton.addEventListener('click', function(e) {
           e.preventDefault();
-          console.log("Vidage du panier...");
+          console.log("Tentative de vidage du panier...");
           
-          // Utiliser l'API Ecwid de manière correcte pour vider le panier
-          try {
-            Ecwid.Cart.clear(function() {
-              console.log("Panier vidé avec succès");
-            });
-          } catch (error) {
-            console.error("Erreur lors du vidage du panier:", error);
-            
-            // Alternative si la première méthode échoue
-            try {
-              window.ec.storefront.cart.clear(function() {
-                console.log("Panier vidé avec succès (méthode alternative)");
-              });
-            } catch (err) {
-              console.error("Erreur avec la méthode alternative:", err);
-              alert("Impossible de vider le panier. Veuillez rafraîchir la page et réessayer.");
+          // Utiliser exactement la méthode documentée par Ecwid
+          Ecwid.Cart.clear(function(success, error) { 
+            if (success == true) {
+              console.log("Le panier a été vidé avec succès");
+              // Optionnel: Afficher un message à l'utilisateur
+              alert("Votre panier a été vidé");
+            } else {
+              console.error("Échec du vidage du panier. Message d'erreur: " + error);
+              alert("Impossible de vider le panier: " + error);
             }
-          }
+          });
         });
         
         // Insérer le bouton en haut du panier
