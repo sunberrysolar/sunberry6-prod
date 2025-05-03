@@ -486,6 +486,37 @@ border: 1px solid #904be5;
   gtag('js', new Date());
 
   gtag('config', 'G-LEKD4D57E8');
+</script><script>
+Ecwid.OnPageLoaded.add(function(page) {
+    if (page.type !== 'CART') return;
+    
+    var emptyCartBtn = document.createElement('a');
+    emptyCartBtn.href = '#';
+    emptyCartBtn.innerHTML = 'Vider le panier';
+    emptyCartBtn.style.display = 'inline-block';
+    emptyCartBtn.style.margin = '10px 5px';
+    emptyCartBtn.style.padding = '10px';
+    emptyCartBtn.style.background = '#ff0000';
+    emptyCartBtn.style.color = '#fff';
+    
+    emptyCartBtn.onclick = function() {
+        if (confirm('Vider tout le panier ?')) {
+            Ecwid.Cart.empty(function() {
+                Ecwid.Cart.get(function(cart) {
+                    if (cart.itemsCount === 0) {
+                        window.location.reload();
+                    }
+                });
+            });
+        }
+        return false;
+    };
+    
+    var checkoutButton = document.querySelector('.ec-cart__checkout-button');
+    if (checkoutButton) {
+        checkoutButton.parentNode.insertBefore(emptyCartBtn, checkoutButton);
+    }
+});
 </script><script type="text/javascript">
 window.bioEp={bgEl:{},popupEl:{},closeBtnEl:{},shown:!1,overflowDefault:"visible",transformDefault:"",width:400,height:220,html:"",css:"",fonts:[],delay:5,showOnDelay:!1,cookieExp:30,showOncePerSession:!1,onPopup:null,cookieManager:{create:function(a,b,d,c){var e="";c?e="; expires=0":d&&(c=new Date,c.setTime(c.getTime()+864E5*d),e="; expires="+c.toGMTString());document.cookie=a+"="+b+e+"; path=/"},get:function(a){a+="=";for(var b=document.cookie.split(";"),d=0;d<b.length;d++){for(var c=b[d];" "==
 c.charAt(0);)c=c.substring(1,c.length);if(0===c.indexOf(a))return c.substring(a.length,c.length)}return null},erase:function(a){this.create(a,"",-1)}},checkCookie:function(){if(0>=this.cookieExp){if(this.showOncePerSession&&"true"==this.cookieManager.get("bioep_shown_session"))return!0;this.cookieManager.erase("bioep_shown");return!1}return"true"==this.cookieManager.get("bioep_shown")?!0:!1},addCSS:function(){for(var a=0;a<this.fonts.length;a++){var b=document.createElement("link");b.href=this.fonts[a];
