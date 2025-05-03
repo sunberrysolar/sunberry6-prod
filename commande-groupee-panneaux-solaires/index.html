@@ -197,7 +197,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","h
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/cookie-notice/js/front.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
 var sibErrMsg = {"invalidMail":"Please fill out valid email address","requiredField":"Please fill out required fields","invalidDateFormat":"Please fill out valid date format","invalidSMSFormat":"Please fill out valid phone number"};
-var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"65e7cc6b03","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
+var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"83d842407f","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
 /* ]]> */
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/mailin/js/mailin-front.js"></script><style type="text/css"> .ae_data .elementor-editor-element-setting {
                         display:none !important;
@@ -475,6 +475,29 @@ border: 1px solid #904be5;
   gtag('js', new Date());
 
   gtag('config', 'G-QK1ZSDHCJ6');
+</script><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71288281" charset="utf-8">
+</script><script type="text/javascript">Ecwid.init();</script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  Ecwid.OnPageLoaded.add(function (page) {
+    if (page.type === "CART") {
+      const interval = setInterval(() => {
+        const items = document.querySelectorAll('.ec-cart__item');
+        if (items.length > 0) {
+          items.forEach(item => {
+            const nameEl = item.querySelector('.ec-cart__product-name');
+            if (nameEl && nameEl.textContent.includes('[PACK001]')) {
+              const removeBtn = item.querySelector('.ec-cart__product-remove');
+              if (removeBtn) {
+                removeBtn.style.display = 'none';
+              }
+            }
+          });
+          clearInterval(interval);
+        }
+      }, 300);
+    }
+  });
+});
 </script><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="32x32"><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><meta name="msapplication-TileImage" content="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><style type="text/css" id="wp-custom-css">
 			.page-id-1309 .navbar .navbar-nav {
 display: none;
