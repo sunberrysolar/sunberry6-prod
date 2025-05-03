@@ -558,28 +558,29 @@ display: none;
 <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71288281&data_platform=code&data_date=2024-01-01" charset="utf-8">
 </script><div id="my-store-71288281"></div>
 
-
 <script type="text/javascript">
 window.ec = window.ec || {};
 window.ec.config = window.ec.config || {};
 window.ec.config.store_main_minicart_autoinit = false;
 
+// Déclarer la fonction au niveau global dès le début
+window.addBundleToCart = function() {
+  console.log("Tentative d'ajout au panier...");
+  if (typeof Ecwid === 'undefined') {
+    console.error("Ecwid n'est pas encore chargé");
+    return;
+  }
+  
+  Ecwid.Cart.addProduct(15, 1, {}, function() {
+    Ecwid.Cart.addProduct(16, 1, {}, function() {
+      Ecwid.openCart();
+    });
+  });
+};
+
 window.ec.storefrontReadyCallback = function() {
-  // Initialiser Ecwid
   if (typeof Ecwid !== 'undefined') {
     Ecwid.init();
-    
-    // Tout le reste de votre code peut aller ici
-    function addBundleToCart() {
-      Ecwid.Cart.addProduct(15, 1, {}, function() {
-        Ecwid.Cart.addProduct(16, 1, {}, function() {
-          Ecwid.openCart();
-        });
-      });
-    }
-    
-    // Exposer la fonction au scope global
-    window.addBundleToCart = addBundleToCart;
     
     // Gestion du panier
     Ecwid.OnPageLoaded.add(function(page) {
@@ -601,7 +602,7 @@ window.ec.storefrontReadyCallback = function() {
     });
   }
 };
-</script><button onclick="addBundleToCart()">Acheter le Pack</button>		</div>
+</script><button onclick="window.addBundleToCart()">Acheter le Pack</button>		</div>
 				</div>
 						</div>
 			</div>
