@@ -22,7 +22,7 @@ Ecwid.OnAPILoaded.add(function() {
     console.log("Personnalisation du panier en cours...");
     
     // 1. MASQUER LES BOUTONS DE SUPPRESSION INDIVIDUELS
-    const deleteButtons = document.querySelectorAll('.ec-cart-item__delete');
+    const deleteButtons = document.querySelectorAll('.ec-cart-item__control');
     if (deleteButtons.length > 0) {
       console.log(`${deleteButtons.length} boutons de suppression masqués`);
       deleteButtons.forEach(button => {
@@ -31,7 +31,7 @@ Ecwid.OnAPILoaded.add(function() {
     }
     
     // 2. MASQUER LES CONTRÔLES DE QUANTITÉ
-    const quantityControls = document.querySelectorAll('.ec-cart-item__quantity');
+    const quantityControls = document.querySelectorAll('.ec-cart-item__count');
     if (quantityControls.length > 0) {
       console.log(`${quantityControls.length} contrôles de quantité masqués`);
       quantityControls.forEach(control => {
@@ -147,6 +147,21 @@ Ecwid.OnAPILoaded.add(function() {
     }
     
     /* Masquer les contrôles de quantité */
+    .ec-cart-item__count {
+      display: none !important;
+    }
+    
+    /* Masquer le sélecteur de quantité */
+    .form-control--select-inline {
+      display: none !important;
+    }
+    
+    /* Masquer les menus déroulants de quantité */
+    .ec-cart-item__count--select {
+      display: none !important;
+    }
+    
+    /* Pour être sûr que rien ne s'affiche */
     .ec-cart-item__count-inner {
       display: none !important;
     }
