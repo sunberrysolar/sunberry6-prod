@@ -51,7 +51,7 @@ Ecwid.OnAPILoaded.add(function() {
         // Créer le bouton
         const clearButton = document.createElement('button');
         clearButton.id = 'ecwid-clear-cart-button';
-        clearButton.textContent = 'Vider le panier';
+        clearButton.textContent = 'X Vider le panier';
         clearButton.classList.add('ec-cart__btn');
         
         // Styling du bouton
