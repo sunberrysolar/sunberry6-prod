@@ -107,7 +107,7 @@ Ecwid.OnAPILoaded.add(function() {
     currentPageType = page.type;
     
     // Appliquer les modifications seulement sur la page du panier
-    if (page.type == "CART") {
+    //if (page.type == "CART") {
       // Attendre que le DOM du panier soit complètement chargé
       setTimeout(customizeCart, 500);
       
@@ -120,7 +120,7 @@ Ecwid.OnAPILoaded.add(function() {
       const cartRoot = document.querySelector('.ec-cart') || document.querySelector('.ec-cart-container');
       if (cartRoot) {
         observer.observe(cartRoot, { childList: true, subtree: true });
-      }
+    //  }
     }
   });
   
@@ -129,9 +129,9 @@ Ecwid.OnAPILoaded.add(function() {
     console.log("Contenu du panier modifié");
     
     // Vérifier si nous sommes sur la page du panier en utilisant la variable currentPageType
-    if (currentPageType == "CART") {
+    //if (currentPageType == "CART") {
       setTimeout(customizeCart, 500);
-    }
+    //}
   });
   
   // CSS supplémentaire
