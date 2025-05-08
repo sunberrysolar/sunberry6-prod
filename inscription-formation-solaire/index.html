@@ -810,6 +810,23 @@ Cela vous permet de vous former à un prix défiant toute concurrence.</span>
 			</div>
 		</div>
 						</div>
+<div id="add-multiple-btn">Ajouter plusieurs produits</div>
+<script src="https://app.ecwid.com/script.js?71288281" type="text/javascript"></script>
+<script>
+  Ecwid.init();
+
+  document.getElementById('add-multiple-btn').addEventListener('click', function() {
+    var items = [
+      { id: PREV-00018, quantity: 1 },
+      { id: PREV-Panneau, quantity: 1 }
+    ];
+    items.forEach(function(item) {
+      Ecwid.Cart.addProduct(item);
+    });
+    Ecwid.openPage('cart');
+  });
+</script>
+						
 			</div>
 		</section><section class="elementor-element elementor-element-341db38 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="341db38" data-element_type="section"><div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
