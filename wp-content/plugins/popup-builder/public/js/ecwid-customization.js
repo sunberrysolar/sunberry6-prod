@@ -22,7 +22,7 @@ Ecwid.OnAPILoaded.add(function() {
     // 1. DÉSACTIVER LES BOUTONS DE SUPPRESSION INDIVIDUELS
     const deleteButtons = document.querySelectorAll('.ec-cart-item__control');
     if (deleteButtons.length > 0) {
-      console.log(`${deleteButtons.length} boutons de suppression désactivés`);
+      console.log(`${deleteButtons.length} boutons de suppression désactivés 18h58`);
       deleteButtons.forEach(button => {
         button.style.pointerEvents = 'none';
         button.style.opacity = '0';
@@ -32,7 +32,7 @@ Ecwid.OnAPILoaded.add(function() {
     // 2. DÉSACTIVER LES CONTRÔLES DE QUANTITÉ (sans affecter le résumé "4 produits")
     const quantityControls = document.querySelectorAll('.ec-cart-item__count');
     if (quantityControls.length > 0) {
-      console.log(`${quantityControls.length} contrôles de quantité désactivés 18h54`);
+      console.log(`${quantityControls.length} contrôles de quantité désactivés`);
       quantityControls.forEach(control => {
         // Désactiver seulement les boutons et sélecteurs internes
         const selectControls = control.querySelectorAll('select, button');
@@ -103,6 +103,12 @@ Ecwid.OnAPILoaded.add(function() {
     .ec-cart-item__control {
       opacity: 0 !important;
       pointer-events: none !important;
+    }
+    .form-control--select-inline {
+      pointer-events: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      cursor: pointer !important;
     }
   `;
   document.head.appendChild(style);
