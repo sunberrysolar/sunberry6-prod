@@ -32,7 +32,7 @@ Ecwid.OnAPILoaded.add(function() {
     // 2. DÉSACTIVER LES CONTRÔLES DE QUANTITÉ (sans affecter le résumé "4 produits")
     const quantityControls = document.querySelectorAll('.ec-cart-item__count');
     if (quantityControls.length > 0) {
-      console.log(`${quantityControls.length} contrôles de quantité désactivés`);
+      console.log(`${quantityControls.length} contrôles de quantité désactivés 18h54`);
       quantityControls.forEach(control => {
         // Désactiver seulement les boutons et sélecteurs internes
         const selectControls = control.querySelectorAll('select, button');
