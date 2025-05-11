@@ -74,10 +74,10 @@ Ecwid.OnAPILoaded.add(function() {
             if (success == true) {
               console.log("Le panier a été vidé avec succès");
               // Optionnel: Afficher un message à l'utilisateur
-              alert("Votre panier a été vidé");
+              // alert("Votre panier a été vidé");
             } else {
               console.error("Échec du vidage du panier. Message d'erreur: " + error);
-              alert("Impossible de vider le panier: " + error);
+              // alert("Impossible de vider le panier: " + error);
             }
           });
         });
