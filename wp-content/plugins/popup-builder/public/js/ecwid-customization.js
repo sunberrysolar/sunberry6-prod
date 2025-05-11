@@ -156,6 +156,11 @@ Ecwid.OnAPILoaded.add(function() {
       display: none !important;
     }*/
     
+    /* Masquer le sélecteur de quantité */
+    .ec-cart-item__control {
+      display: none !important;
+    }    
+    
     /* Masquer les menus déroulants de quantité */
     .ec-cart-item__count--select {
       display: none !important;
