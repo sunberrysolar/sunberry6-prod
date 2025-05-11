@@ -155,12 +155,12 @@ Ecwid.OnAPILoaded.add(function() {
       visibility: hidden !important;
     }
     
-    /*/* Masquer le sélecteur de quantité avec visibility:hidden */
+    /* Masquer le sélecteur de quantité avec visibility:hidden 
     .form-control--select-inline {
       visibility: hidden !important;
-    }
+    }*/
     
-    /* Masquer les menus déroulants de quantité avec visibility:hidden */
+    /* Masquer les menus déroulants de quantité avec visibility:hidden
     .ec-cart-item__count--select {
       visibility: hidden !important;
     }*/
