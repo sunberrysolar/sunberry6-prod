@@ -155,7 +155,7 @@ Ecwid.OnAPILoaded.add(function() {
       visibility: hidden !important;
     }
     
-    /* Masquer le sélecteur de quantité avec visibility:hidden */
+    /*/* Masquer le sélecteur de quantité avec visibility:hidden */
     .form-control--select-inline {
       visibility: hidden !important;
     }
