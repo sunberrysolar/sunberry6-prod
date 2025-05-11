@@ -1,4 +1,3 @@
-<script>
 window.ec = window.ec || {};
 window.ec.config = window.ec.config || {};
 window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
@@ -62,4 +61,3 @@ Ecwid.OnAPILoaded.add(function() {
     }
   });
 });
-</script>
