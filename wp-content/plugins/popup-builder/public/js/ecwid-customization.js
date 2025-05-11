@@ -31,7 +31,7 @@ Ecwid.OnAPILoaded.add(function() {
     }
     
     // 2. MASQUER LES CONTRÔLES DE QUANTITÉ
-    const quantityControls = document.querySelectorAll('.form-control--select-inline');
+    const quantityControls = document.querySelectorAll('.ec-cart-item__count');
     if (quantityControls.length > 0) {
       console.log(`${quantityControls.length} contrôles de quantité masqués`);
       quantityControls.forEach(control => {
