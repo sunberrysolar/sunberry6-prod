@@ -30,6 +30,7 @@ Ecwid.OnAPILoaded.add(function() {
       });
     }
     
+    /*
     // 2. MASQUER LES CONTRÔLES DE QUANTITÉ
     const quantityControls = document.querySelectorAll('.ec-cart-item__count');
     if (quantityControls.length > 0) {
@@ -37,7 +38,7 @@ Ecwid.OnAPILoaded.add(function() {
       quantityControls.forEach(control => {
         control.style.visibility = 'hidden';
       });
-    }
+    }*/
     
     // 3. AJOUTER UN BOUTON "VIDER LE PANIER" SEULEMENT SUR LA PAGE PANIER (pas sur paiement)
     const clearButtonExists = document.getElementById('ecwid-clear-cart-button');
