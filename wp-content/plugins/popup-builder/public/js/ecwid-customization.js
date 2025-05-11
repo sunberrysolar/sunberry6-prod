@@ -21,7 +21,7 @@ Ecwid.OnAPILoaded.add(function() {
   function customizeCart() {
     console.log("Personnalisation du panier en cours...");
     
-    /*// 1. MASQUER LES BOUTONS DE SUPPRESSION INDIVIDUELS
+    // 1. MASQUER LES BOUTONS DE SUPPRESSION INDIVIDUELS
     const deleteButtons = document.querySelectorAll('.ec-cart-item__control');
     if (deleteButtons.length > 0) {
       console.log(`${deleteButtons.length} boutons de suppression masqués`);
@@ -37,7 +37,7 @@ Ecwid.OnAPILoaded.add(function() {
       quantityControls.forEach(control => {
         control.style.display = 'none';
       });
-    }*/
+    }
     
     // 3. AJOUTER UN BOUTON "VIDER LE PANIER" S'IL N'EXISTE PAS DÉJÀ
     if (!document.getElementById('ecwid-clear-cart-button')) {
@@ -144,37 +144,37 @@ Ecwid.OnAPILoaded.add(function() {
     /* Masquer les boutons de suppression */
     .ec-cart-item__control {
       //display: none !important;
-      visiblity: hidden;
+      visiblity: hidden; !important;
     }
     
     /* Masquer les contrôles de quantité */
     .ec-cart-item__count {
       //display: none !important;
-      visiblity: hidden;
+      visiblity: hidden; !important;
     }
     
     /* Masquer le sélecteur de quantité 
     .form-control--select-inline {
       //display: none !important;
-      visiblity: hidden;
+      visiblity: hidden; !important;
     }*/
     
     /* Masquer le sélecteur de quantité */
     .ec-cart-item__control {
       //display: none !important;
-      visiblity: hidden;
+      visiblity: hidden; !important;
     }    
     
     /* Masquer les menus déroulants de quantité */
     .ec-cart-item__count--select {
       //display: none !important;
-      visiblity: hidden;
+      visiblity: hidden; !important;
     }
     
     /* Pour être sûr que rien ne s'affiche */
     .ec-cart-item__count-inner {
       //display: none !important;
-      visiblity: hidden;
+      visiblity: hidden; !important;
     }
     
     /* Assurer que le bouton du panier reste bien visible */
