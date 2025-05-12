@@ -14,7 +14,7 @@ function logDebug(message) {
 
 // S'assurer que le code s'exécute après le chargement complet d'Ecwid
 Ecwid.OnAPILoaded.add(function() {
-  logDebug("Ecwid API chargée 9h38");
+  logDebug("Ecwid API chargée 9h44");
   
   // Variable pour suivre la page actuelle
   var currentPageType = '';
@@ -78,65 +78,7 @@ Ecwid.OnAPILoaded.add(function() {
     
     // Ajouter le bouton avec un délai pour s'assurer que le DOM est prêt
     setTimeout(addClearCartButton, 500);
-    
-    // Correction pour les liens de code promo
-    if (page.type === "CART") {
-      setTimeout(fixCouponLinks, 800);
-    }
   });
-  
-  // Fonction pour corriger les liens de code promo
-  function fixCouponLinks() {
-    // Observer les changements dans le DOM pour détecter l'ajout des liens de code promo
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.addedNodes && mutation.addedNodes.length > 0) {
-          // Vérifier si les liens de code promo sont présents
-          const couponLinks = document.querySelectorAll('.ec-cart-coupon__text .ec-link, .ec-cart__coupon .ec-link');
-          
-          if (couponLinks.length > 0) {
-            logDebug("Liens de code promo détectés, application des correctifs");
-            
-            couponLinks.forEach(link => {
-              // S'assurer que le lien est cliquable
-              link.style.pointerEvents = 'auto';
-              link.style.cursor = 'pointer';
-              
-              // Remplacer l'événement de clic par un qui ouvre directement le champ de saisie
-              link.onclick = function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Trouver le conteneur parent du coupon
-                const couponContainer = link.closest('.ec-cart__coupon') || link.closest('.ec-cart-coupon');
-                if (couponContainer) {
-                  // Afficher le champ de saisie du code promo
-                  const discountGroup = couponContainer.nextElementSibling;
-                  if (discountGroup && discountGroup.classList.contains('ec-cart-discount-group')) {
-                    discountGroup.style.display = 'block';
-                    
-                    // Mettre le focus sur le champ de saisie
-                    const input = discountGroup.querySelector('input[type="text"]');
-                    if (input) {
-                      setTimeout(() => input.focus(), 100);
-                    }
-                  }
-                }
-                
-                return false;
-              };
-            });
-          }
-        }
-      });
-    });
-    
-    // Observer les changements dans tout le document
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  }
   
   // CSS uniquement - approche non intrusive
   const style = document.createElement('style');
@@ -172,60 +114,17 @@ Ecwid.OnAPILoaded.add(function() {
       visibility: visible !important;
     }
     
-    /* Fix pour les liens de code promo pour qu'ils soient cliquables */
+    /* S'assurer que les liens de code promo sont cliquables */
     .ec-cart-coupon__text .ec-link, 
     .ec-cart__coupon .ec-link {
       cursor: pointer !important;
       pointer-events: auto !important;
-      display: inline-block !important;
-      position: relative !important;
-      z-index: 100 !important;
-    }
-    
-    /* Style de survol pour les liens du code promo */
-    .ec-cart-coupon__text .ec-link:hover,
-    .ec-cart__coupon .ec-link:hover {
-      text-decoration: underline !important;
-      color: #e672f7 !important;
     }
     
     /* S'assurer que l'interaction avec le code promo soit possible */
     .ec-cart__coupon,
-    .ec-cart-discount-group,
-    .ec-cart-coupon__wrap,
-    .ec-cart-coupon__input,
-    .ec-cart-coupon__buttons {
+    .ec-cart-discount-group {
       pointer-events: auto !important;
-      position: relative !important;
-      z-index: 50 !important;
-    }
-    
-    /* Assurer que le champ de saisie du code promo est accessible */
-    .ec-cart-coupon__input input,
-    .ec-cart-coupon__buttons button {
-      pointer-events: auto !important;
-      cursor: pointer !important;
-    }
-    
-    /* Fix pour le conteneur de résumé afin d'éviter des erreurs JS */
-    .ec-cart-item__summary {
-      display: block !important;
-      pointer-events: none !important;
-    }
-    
-    /* Mais permettre aux liens et boutons dans le résumé d'être cliquables */
-    .ec-cart-item__summary a,
-    .ec-cart-item__summary button,
-    .ec-cart-item__summary .ec-link {
-      pointer-events: auto !important;
-    }
-    
-    /* Fixer l'affichage du texte du résumé pour éviter les erreurs JS */
-    .ec-cart-item__summary-text {
-      pointer-events: auto !important;
-      cursor: default !important;
-      display: inline-block !important;
-      padding: 5px !important;
     }
   `;
   document.head.appendChild(style);
