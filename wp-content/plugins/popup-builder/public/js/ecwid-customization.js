@@ -13,7 +13,7 @@ function logDebug(message) {
 }
 // S'assurer que le code s'exécute après le chargement complet d'Ecwid
 Ecwid.OnAPILoaded.add(function() {
-  logDebug("Ecwid API chargée");
+  logDebug("Ecwid API chargée 8h42");
   
   // Fonction minimale qui ajoute seulement le bouton "Vider le panier"
   function addClearCartButton() {
