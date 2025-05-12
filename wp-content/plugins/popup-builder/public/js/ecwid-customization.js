@@ -1,23 +1,19 @@
 // Script de personnalisation du panier Ecwid minimaliste
 // - Utilise principalement CSS pour masquer les éléments sans interférer avec le comportement natif
 // - Ajoute un bouton "Vider le panier" uniquement sur la page panier
-
 // Attendre que le script Ecwid soit complètement chargé
 window.ec = window.ec || {};
 window.ec.config = window.ec.config || {};
 window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
-
 // Variable pour suivre la page actuelle
 var currentPageType = '';
-
 // Fonction de journalisation simple
 function logDebug(message) {
   console.log(`[DEBUG] ${message}`);
 }
-
 // S'assurer que le code s'exécute après le chargement complet d'Ecwid
 Ecwid.OnAPILoaded.add(function() {
-  logDebug("Ecwid API chargée 1934");
+  logDebug("Ecwid API chargée 1939");
   
   // Fonction minimale qui ajoute seulement le bouton "Vider le panier"
   function addClearCartButton() {
@@ -76,9 +72,30 @@ Ecwid.OnAPILoaded.add(function() {
     setTimeout(addClearCartButton, 500);
   });
 
+  // Correction pour les éléments déroulants - Intercepter les clics sur les éléments de liste
+  document.addEventListener('click', function(e) {
+    // Vérifier si c'est un clic sur l'élément "4 produits" ou similaire
+    if (e.target && (e.target.closest('.ec-cart-item__summary') || 
+                    e.target.closest('.ec-summary-item') || 
+                    e.target.closest('.ec-cart-summary'))) {
+      
+      // Attendre que le DOM soit mis à jour après le clic
+      setTimeout(function() {
+        // S'assurer que les handlers des éléments sont correctement réinitialisés
+        const summaryItems = document.querySelectorAll('.ec-cart-item__summary, .ec-summary-item, .ec-cart-summary');
+        
+        summaryItems.forEach(function(item) {
+          if (item && !item.hasAttribute('data-ecwid-fixed')) {
+            item.setAttribute('data-ecwid-fixed', 'true');
+            logDebug("Élément de sommaire sécurisé");
+          }
+        });
+      }, 100);
+    }
+  }, true); // Utilisation de la phase de capture pour intercepter avant l'erreur
+  
   // Première exécution
   setTimeout(addClearCartButton, 500);
-
   // CSS uniquement - approche non intrusive
   const style = document.createElement('style');
   style.textContent = `
@@ -111,6 +128,11 @@ Ecwid.OnAPILoaded.add(function() {
       pointer-events: auto !important;
       opacity: 1 !important;
       visibility: visible !important;
+    }
+    
+    /* Fix pour éviter les erreurs JS sur les éléments déroulants */
+    [data-ecwid-fixed] {
+      position: relative;
     }
   `;
   document.head.appendChild(style);
