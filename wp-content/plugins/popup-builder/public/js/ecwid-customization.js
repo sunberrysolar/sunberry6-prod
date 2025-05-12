@@ -14,7 +14,7 @@ function logDebug(message) {
 
 // S'assurer que le code s'exécute après le chargement complet d'Ecwid
 Ecwid.OnAPILoaded.add(function() {
-  logDebug("Ecwid API chargée");
+  logDebug("Ecwid API chargée 9h38");
   
   // Variable pour suivre la page actuelle
   var currentPageType = '';
