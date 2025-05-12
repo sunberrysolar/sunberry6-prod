@@ -1,6 +1,7 @@
 // Script de personnalisation du panier Ecwid corrigé
 // - Désactive les boutons de suppression des produits individuels
 // - Désactive les contrôles de quantité tout en préservant l'affichage
+// - Permet au résumé "4 produits" de se dérouler au clic
 // - Ajoute un bouton "Vider le panier" uniquement sur la page panier
 
 // Attendre que le script Ecwid soit complètement chargé
@@ -22,7 +23,7 @@ Ecwid.OnAPILoaded.add(function() {
     // 1. DÉSACTIVER LES BOUTONS DE SUPPRESSION INDIVIDUELS
     const deleteButtons = document.querySelectorAll('.ec-cart-item__control');
     if (deleteButtons.length > 0) {
-      console.log(`${deleteButtons.length} boutons de suppression désactivés 18h58`);
+      console.log(`${deleteButtons.length} boutons de suppression désactivés`);
       deleteButtons.forEach(button => {
         button.style.pointerEvents = 'none';
         button.style.opacity = '0';
@@ -32,7 +33,7 @@ Ecwid.OnAPILoaded.add(function() {
     // 2. DÉSACTIVER LES CONTRÔLES DE QUANTITÉ (sans affecter le résumé "4 produits")
     const quantityControls = document.querySelectorAll('.ec-cart-item__count');
     if (quantityControls.length > 0) {
-      console.log(`${quantityControls.length} contrôles de quantité désactivés`);
+      console.log(`${quantityControls.length} contrôles de quantité désactivés 1908`);
       quantityControls.forEach(control => {
         // Désactiver seulement les boutons et sélecteurs internes
         const selectControls = control.querySelectorAll('select, button');
@@ -43,7 +44,16 @@ Ecwid.OnAPILoaded.add(function() {
       });
     }
 
-    // 3. AJOUTER UN BOUTON "VIDER LE PANIER" SEULEMENT SUR LA PAGE PANIER (pas sur paiement)
+    // 3. S'ASSURER QUE LE RÉSUMÉ "4 PRODUITS" RESTE CLIQUABLE
+    const productSummary = document.querySelector('.ec-cart-item--summary .form-control--select-inline');
+    if (productSummary) {
+      productSummary.style.pointerEvents = 'auto';
+      productSummary.style.opacity = '1';
+      productSummary.style.cursor = 'pointer';
+      console.log("Résumé des produits rendu cliquable");
+    }
+
+    // 4. AJOUTER UN BOUTON "VIDER LE PANIER" SEULEMENT SUR LA PAGE PANIER (pas sur paiement)
     const clearButtonExists = document.getElementById('ecwid-clear-cart-button');
     if (currentPageType === "CART") {
       if (!clearButtonExists) {
@@ -90,6 +100,9 @@ Ecwid.OnAPILoaded.add(function() {
     setTimeout(customizeCart, 500);
   });
 
+  // Exécuter une première fois pour les éléments déjà présents
+  setTimeout(customizeCart, 500);
+
   // CSS supplémentaire
   const style = document.createElement('style');
   style.textContent = `
@@ -104,7 +117,8 @@ Ecwid.OnAPILoaded.add(function() {
       opacity: 0 !important;
       pointer-events: none !important;
     }
-    .form-control--select-inline {
+    /* Cette classe assurera que le résumé "4 produits" reste cliquable */
+    .ec-cart-item--summary .form-control--select-inline {
       pointer-events: auto !important;
       opacity: 1 !important;
       visibility: visible !important;
