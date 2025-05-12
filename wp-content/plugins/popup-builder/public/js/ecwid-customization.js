@@ -1,7 +1,7 @@
 // Script de personnalisation du panier Ecwid corrigé
 // - Désactive les boutons de suppression des produits individuels
-// - Désactive les contrôles de quantité tout en préservant l'affichage
-// - Permet au résumé "4 produits" de se dérouler au clic
+// - Désactive les contrôles de quantité tout en préservant l'affichage 
+// - Conserve la fonctionnalité du clic sur "X produits" pour afficher la liste
 // - Ajoute un bouton "Vider le panier" uniquement sur la page panier
 
 // Attendre que le script Ecwid soit complètement chargé
@@ -25,17 +25,20 @@ Ecwid.OnAPILoaded.add(function() {
     if (deleteButtons.length > 0) {
       console.log(`${deleteButtons.length} boutons de suppression désactivés`);
       deleteButtons.forEach(button => {
-        button.style.pointerEvents = 'none';
-        button.style.opacity = '0';
+        // On garde la fonctionnalité pour les items dans le résumé
+        if (!button.closest('.ec-cart-item--summary')) {
+          button.style.pointerEvents = 'none';
+          button.style.opacity = '0';
+        }
       });
     }
     
-    // 2. DÉSACTIVER LES CONTRÔLES DE QUANTITÉ (sans affecter le résumé "4 produits")
-    const quantityControls = document.querySelectorAll('.ec-cart-item__count');
+    // 2. DÉSACTIVER LES CONTRÔLES DE QUANTITÉ (mais seulement pour les produits individuels)
+    const quantityControls = document.querySelectorAll('.ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__count');
     if (quantityControls.length > 0) {
-      console.log(`${quantityControls.length} contrôles de quantité désactivés 1908`);
+      console.log(`${quantityControls.length} contrôles de quantité désactivés`);
       quantityControls.forEach(control => {
-        // Désactiver seulement les boutons et sélecteurs internes
+        // Désactiver seulement les boutons et sélecteurs internes des produits individuels
         const selectControls = control.querySelectorAll('select, button');
         selectControls.forEach(element => {
           element.style.pointerEvents = 'none';
@@ -44,14 +47,8 @@ Ecwid.OnAPILoaded.add(function() {
       });
     }
 
-    // 3. S'ASSURER QUE LE RÉSUMÉ "4 PRODUITS" RESTE CLIQUABLE
-    const productSummary = document.querySelector('.ec-cart-item--summary .form-control--select-inline');
-    if (productSummary) {
-      productSummary.style.pointerEvents = 'auto';
-      productSummary.style.opacity = '1';
-      productSummary.style.cursor = 'pointer';
-      console.log("Résumé des produits rendu cliquable");
-    }
+    // 3. NE PAS MODIFIER LE COMPORTEMENT DU RÉSUMÉ "X PRODUITS"
+    // Au lieu de modifier le style en JavaScript, nous utiliserons le CSS pour préserver les événements par défaut
 
     // 4. AJOUTER UN BOUTON "VIDER LE PANIER" SEULEMENT SUR LA PAGE PANIER (pas sur paiement)
     const clearButtonExists = document.getElementById('ecwid-clear-cart-button');
@@ -113,12 +110,18 @@ Ecwid.OnAPILoaded.add(function() {
       visibility: visible !important;
       opacity: 1 !important;
     }
-    .ec-cart-item__control {
+    /* Masquer uniquement les contrôles de suppression pour les articles normaux, pas ceux du résumé */
+    .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__control {
       opacity: 0 !important;
       pointer-events: none !important;
     }
-    /* Cette classe assurera que le résumé "4 produits" reste cliquable */
-    .ec-cart-item--summary .form-control--select-inline {
+    /* Assurez-vous que les contrôles dans le résumé restent actifs */
+    .ec-cart-item--summary {
+      pointer-events: auto !important;
+    }
+    .ec-cart-item--summary .form-control--select-inline,
+    .ec-cart-item--summary .form-control__select-text,
+    .ec-cart-item--summary .form-control__arrow {
       pointer-events: auto !important;
       opacity: 1 !important;
       visibility: visible !important;
