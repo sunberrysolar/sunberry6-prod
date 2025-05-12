@@ -38,7 +38,7 @@ Ecwid.OnAPILoaded.add(function() {
     
     if (!cartContainer) return;
     
-    logDebug("Ajout du bouton 'Vider le panier' 1944");
+    logDebug("Ajout du bouton 'Vider le panier' 1948");
     
     // Créer le bouton
     const clearButton = document.createElement('button');
@@ -114,26 +114,26 @@ Ecwid.OnAPILoaded.add(function() {
       visibility: visible !important;
     }
     
-    /* Fix pour le conteneur de résumé afin d'éviter des erreurs JS */
+    /* Fix pour le conteneur de résumé afin d'éviter des erreurs JS 
     .ec-cart-item__summary {
       display: block !important;
       pointer-events: none !important;
-    }
+    }*/
     
-    /* Mais permettre aux liens et boutons dans le résumé d'être cliquables */
+    /* Mais permettre aux liens et boutons dans le résumé d'être cliquables
     .ec-cart-item__summary a,
     .ec-cart-item__summary button,
     .ec-cart-item__summary .ec-link {
       pointer-events: auto !important;
-    }
+    }*/
     
-    /* Fixer l'affichage du texte du résumé pour éviter les erreurs JS */
+    /* Fixer l'affichage du texte du résumé pour éviter les erreurs JS
     .ec-cart-item__summary-text {
       pointer-events: auto !important;
       cursor: default !important;
       display: inline-block !important;
       padding: 5px !important;
-    }
+    }*/
   `;
   document.head.appendChild(style);
   logDebug("Styles CSS appliqués");
