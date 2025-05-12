@@ -23,7 +23,7 @@ Ecwid.OnAPILoaded.add(function() {
     // 1. DÉSACTIVER LES BOUTONS DE SUPPRESSION INDIVIDUELS
     const deleteButtons = document.querySelectorAll('.ec-cart-item__control');
     if (deleteButtons.length > 0) {
-      console.log(`${deleteButtons.length} boutons de suppression désactivés`);
+      console.log(`${deleteButtons.length} boutons de suppression désactivés 1920`);
       deleteButtons.forEach(button => {
         // On garde la fonctionnalité pour les items dans le résumé
         if (!button.closest('.ec-cart-item--summary')) {
