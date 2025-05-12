@@ -9,12 +9,12 @@ function logDebug(message) {
 
 // S'assurer que le code s'exécute après le chargement complet d'Ecwid
 Ecwid.OnAPILoaded.add(function() {
-  logDebug("Ecwid API chargée");
+  logDebug("Ecwid API chargée 2008");
   
   // Fonction pour ajouter le bouton "Vider le panier"
-  function addClearCartButton() {
+  function addClearCartButton(pageType) {
     // Vérifier si nous sommes sur la page CART
-    if (Ecwid.getCurrentPage().type !== "CART") return;
+    if (pageType !== "CART") return;
     
     // Vérifier si le bouton existe déjà
     if (document.getElementById('ecwid-clear-cart-button')) return;
@@ -62,17 +62,17 @@ Ecwid.OnAPILoaded.add(function() {
     cartContainer.insertBefore(clearButton, cartContainer.firstChild);
   }
 
-  // Observer pour détecter les changements dynamiques du DOM
-  const observer = new MutationObserver(addClearCartButton);
-  
-  // Surveiller tout le body pour les changements
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
+  // Surveiller les changements de page
+  Ecwid.OnPageLoaded.add(function(page) {
+    logDebug(`Page chargée: ${page.type}`);
+    addClearCartButton(page.type);
   });
   
-  // Exécuter le bouton une première fois
-  addClearCartButton();
+  // Exécuter une première fois pour la page actuelle
+  Ecwid.getCurrentPage && Ecwid.getCurrentPage(function(page) {
+    logDebug(`Page actuelle détectée: ${page.type}`);
+    addClearCartButton(page.type);
+  });
   
-  logDebug("Observation des changements du DOM activée");
+  logDebug("Observation des changements de page activée");
 });
