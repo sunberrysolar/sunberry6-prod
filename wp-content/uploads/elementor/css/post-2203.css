@@ -134,7 +134,12 @@
 .elementor-2203 .elementor-element.elementor-element-0b83d87 .elementor-divider {padding-top: 15px;padding-bottom: 15px;}
 .elementor-2203 .elementor-element.elementor-element-cc4e28d {font-size: 18px;}
 .elementor-2203 .elementor-element.elementor-element-cc4e28d > .elementor-widget-container {margin: 0px 0px 0px 0px;padding: 0px 0px 0px 0px;}
+.elementor-2203 .elementor-element.elementor-element-5df21a0:not(.elementor-motion-effects-element-type-background), .elementor-2203 .elementor-element.elementor-element-5df21a0 > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #ef9b00;}
+.elementor-2203 .elementor-element.elementor-element-5df21a0 {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin-top: 15px;margin-bottom: 0px;}
+.elementor-2203 .elementor-element.elementor-element-5df21a0 > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
 .elementor-2203 .elementor-element.elementor-element-d6dbe0c {text-align: center;}
+.elementor-2203 .elementor-element.elementor-element-d6dbe0c.elementor-widget-heading .elementor-heading-title {color: #fff;}
+.elementor-2203 .elementor-element.elementor-element-d6dbe0c .elementor-heading-title {font-weight: bold;text-shadow: 0px 0px 4px rgba(0,0,0,.3);}
 .elementor-2203 .elementor-element.elementor-element-2b20dd7 {text-align: center;}
 .elementor-2203 .elementor-element.elementor-element-ee45598.elementor-position-right .elementor-image-box-img {margin-left: 0px;}
 .elementor-2203 .elementor-element.elementor-element-ee45598.elementor-position-left .elementor-image-box-img {margin-right: 0px;}
@@ -425,6 +430,7 @@
 	.elementor-2203 .elementor-element.elementor-element-319de1a {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-2203 .elementor-element.elementor-element-8baf62b .elementor-heading-title {font-size: 19px;}
 	.elementor-2203 .elementor-element.elementor-element-fbb8cec {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
+	.elementor-2203 .elementor-element.elementor-element-5df21a0 {margin-top: 0px;margin-bottom: 0px;padding: 0px 0px 0px 0px;}
 	.elementor-2203 .elementor-element.elementor-element-ee45598 .elementor-image-box-img {margin-bottom: 0px;}
 	.elementor-2203 .elementor-element.elementor-element-29a2e4d7 .elementor-image-box-img {margin-bottom: 0px;}
 	.elementor-2203 .elementor-element.elementor-element-312e4c8b .elementor-image-box-img {margin-bottom: 0px;}
