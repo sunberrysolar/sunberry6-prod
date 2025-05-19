@@ -2,15 +2,90 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/</loc>
-		<lastmod>2019-04-16T21:28:51+02:00</lastmod>
+		<lastmod>2025-05-19T20:02:22+02:00</lastmod>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-300x225.jpg</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-photo-groupe-20170810-162130-850x638.jpeg</image:loc>
+			<image:caption><![CDATA[Fabrication d'un panneau solaire]]></image:caption>
 		</image:image>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170502_125821-300x225.jpg</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/Macaron-Maker-MFP19.png</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170501_172246-300x225.jpg</image:loc>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/04/region-occitanie-solaire.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffe-piscine-solaire-676x507-300x225.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffe piscine solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/production-eau-chaude-sanitaire-676x507-300x225.jpeg</image:loc>
+			<image:caption><![CDATA[eau chaude sanitaire solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-habitation-solaire-676x507-300x225.jpeg</image:loc>
+			<image:caption><![CDATA[panneau solaire chauffage habitation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/fabrication-des-panneaux-solaires-1062x797-768x576.jpeg</image:loc>
+			<image:caption><![CDATA[fabrication d'un panneau solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/application-chauffage-solaire-3-1062x1062-768x576.png</image:loc>
+			<image:caption><![CDATA[raspberry pi panneaux solaire]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/10/comparatif-chauffage-solaire-360x240.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-mr-mondialisation.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry mr mondialisation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-canalplus.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry canal plus]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-guide-piscine.jpeg</image:loc>
+			<image:caption><![CDATA[sunberry guide piscine]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-bio-a-la-une.jpeg</image:loc>
+			<image:caption><![CDATA[Sunberry bio a la une]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-bretagne-400x225-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[chauffage solaire piscine bretagne]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293-1-e1553702841945-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[Panneau solaire à paris]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneau-solaire-bordeaux-2-510x383-300x169.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffage piscine solaire bordeaux]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneaux-solaire-autoconstruits-cote-dor-1-510x383-300x168.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffage solaire cote d'or]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/panneau-solaire-canette-aluminium-150x150.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-cuivre-900x506-150x150.jpeg</image:loc>
+			<image:caption><![CDATA[panneau solaire cuivre]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/tuyau-arrosage-enroul-solaire-900x814-150x150.jpeg</image:loc>
+			<image:caption><![CDATA[Panneau solaire tuyau noir enroulé]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/radiateur-frigo-panneau-solaire-560x420-150x150.jpeg</image:loc>
+			<image:caption><![CDATA[Panneau solaire radiateur frigo]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/tuyau-noir-enroule-solaire-664x498-150x150.jpeg</image:loc>
+			<image:caption><![CDATA[Chauffe piscine tuyau noir]]></image:caption>
 		</image:image>
 	</url>
 	<url>
@@ -79,6 +154,19 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/consommation.gif</image:loc>
 			<image:caption><![CDATA[Consommation d'énergie chauffage en france]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/reinventer-le-chauffage-solaire/</loc>
+		<lastmod>2019-04-16T21:28:51+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-300x225.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170502_125821-300x225.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170501_172246-300x225.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -1307,8 +1395,8 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/page-daccueil/</loc>
-		<lastmod>2025-05-19T20:02:22+02:00</lastmod>
+		<loc>https://www.sunberry.fr/page-daccueil-2/</loc>
+		<lastmod>2025-05-19T20:47:28+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-photo-groupe-20170810-162130-850x638.jpeg</image:loc>
 			<image:caption><![CDATA[Fabrication d'un panneau solaire]]></image:caption>
