@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/</loc>
-		<lastmod>2023-06-09T16:25:07+02:00</lastmod>
+		<lastmod>2025-05-19T18:02:22+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-photo-groupe-20170810-162130-850x638.jpeg</image:loc>
 			<image:caption><![CDATA[Fabrication d'un panneau solaire]]></image:caption>
@@ -251,34 +251,6 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-twitter.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/fabriquer-chauffage-solaire/</loc>
-		<lastmod>2019-08-22T10:17:34+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/20170204_120929-768x576.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/20170416_115145-768x576.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-768x576.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293.jpeg</image:loc>
-			<image:caption><![CDATA[Réalisation d'nu chauffage solaire à Paris]]></image:caption>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/application-chauffage-solaire-1-852x457.jpeg-o594uzsniftrognxozqpzvanszetbgxkb0afk9xu68.png</image:loc>
-			<image:title><![CDATA[Application panneaux solaires]]></image:title>
-			<image:caption><![CDATA[Sunberry App chauffage solaire]]></image:caption>
 		</image:image>
 	</url>
 	<url>
@@ -1498,6 +1470,34 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-bio-a-la-une.jpeg</image:loc>
 			<image:caption><![CDATA[Sunberry bio a la une]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/fabriquer-chauffage-solaire/</loc>
+		<lastmod>2025-05-19T18:09:56+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/20170204_120929-768x576.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/20170416_115145-768x576.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/06/fabrication-douche-solaire-768x576.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-paris-400x293.jpeg</image:loc>
+			<image:caption><![CDATA[Réalisation d'nu chauffage solaire à Paris]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/application-chauffage-solaire-1-852x457.jpeg-o594uzsniftrognxozqpzvanszetbgxkb0afk9xu68.png</image:loc>
+			<image:title><![CDATA[Application panneaux solaires]]></image:title>
+			<image:caption><![CDATA[Sunberry App chauffage solaire]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
