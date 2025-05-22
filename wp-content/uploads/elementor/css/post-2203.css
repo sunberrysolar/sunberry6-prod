@@ -366,11 +366,27 @@
 .elementor-2203 .elementor-element.elementor-element-906773c .elementor-button {box-shadow: 3px 3px 10px 0px rgba(0,0,0,.5);}
 .elementor-2203 .elementor-element.elementor-element-204ea27 a.elementor-button, .elementor-2203 .elementor-element.elementor-element-204ea27 .elementor-button {font-weight: bold;background-color: #ef3700;}
 .elementor-2203 .elementor-element.elementor-element-204ea27 .elementor-button {box-shadow: 3px 3px 10px 0px rgba(0,0,0,.5);}
-.elementor-2203 .elementor-element.elementor-element-eee4fa2 .elementor-spacer-inner {height: 50px;}
-.elementor-2203 .elementor-element.elementor-element-46901dd {text-align: center;}
-.elementor-2203 .elementor-element.elementor-element-46901dd .elementor-heading-title {font-weight: bold;}
-.elementor-2203 .elementor-element.elementor-element-6e7ac28 {text-align: center;}
-.elementor-2203 .elementor-element.elementor-element-6e7ac28 .elementor-heading-title {font-weight: bold;}
+.elementor-2203 .elementor-element.elementor-element-66134fa .elementor-spacer-inner {height: 50px;}
+.elementor-2203 .elementor-element.elementor-element-6ea1308 {text-align: center;}
+.elementor-2203 .elementor-element.elementor-element-6ea1308 .elementor-heading-title {font-weight: bold;}
+.elementor-2203 .elementor-element.elementor-element-d4ac625 {text-align: center;}
+.elementor-2203 .elementor-element.elementor-element-d4ac625 .elementor-heading-title {font-weight: bold;}
+.elementor-2203 .elementor-element.elementor-element-1e49eec .elementor-spacer-inner {height: 50px;}
+.elementor-2203 .elementor-element.elementor-element-a1df4a4.elementor-column .elementor-column-wrap {align-items: center;}
+.elementor-2203 .elementor-element.elementor-element-a1df4a4.elementor-column > .elementor-column-wrap > .elementor-widget-wrap {align-content: center;}
+.elementor-2203 .elementor-element.elementor-element-889aa1a {text-align: right;}
+.elementor-2203 .elementor-element.elementor-element-889aa1a .elementor-heading-title {font-weight: bold;}
+.elementor-2203 .elementor-element.elementor-element-121ddc6 {text-align: left;}
+.elementor-2203 .elementor-element.elementor-element-f3c8e1a.elementor-column .elementor-column-wrap {align-items: center;}
+.elementor-2203 .elementor-element.elementor-element-f3c8e1a.elementor-column > .elementor-column-wrap > .elementor-widget-wrap {align-content: center;}
+.elementor-2203 .elementor-element.elementor-element-5e06f27 {text-align: right;}
+.elementor-2203 .elementor-element.elementor-element-5e06f27 .elementor-heading-title {font-weight: bold;}
+.elementor-2203 .elementor-element.elementor-element-ce12138 {text-align: left;}
+.elementor-2203 .elementor-element.elementor-element-41e3a56.elementor-column .elementor-column-wrap {align-items: center;}
+.elementor-2203 .elementor-element.elementor-element-41e3a56.elementor-column > .elementor-column-wrap > .elementor-widget-wrap {align-content: center;}
+.elementor-2203 .elementor-element.elementor-element-2f6be16 {text-align: center;}
+.elementor-2203 .elementor-element.elementor-element-2f6be16 .elementor-heading-title {font-weight: bold;}
+.elementor-2203 .elementor-element.elementor-element-380dc41 {text-align: left;}
 .elementor-2203 .elementor-element.elementor-element-6f9413c:not(.elementor-motion-effects-element-type-background), .elementor-2203 .elementor-element.elementor-element-6f9413c > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #3a3a3a;}
 .elementor-2203 .elementor-element.elementor-element-6f9413c {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
 .elementor-2203 .elementor-element.elementor-element-6f9413c > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
@@ -378,7 +394,13 @@
 	.elementor-2203 .elementor-element.elementor-element-7aee9f0 {width: 78.06%;}
 	.elementor-2203 .elementor-element.elementor-element-71afb68 {width: 27.143%;}
 	.elementor-2203 .elementor-element.elementor-element-41a66d3 {width: 51.518%;}
-	.elementor-2203 .elementor-element.elementor-element-90f0630 {width: 21.335%;}}
+	.elementor-2203 .elementor-element.elementor-element-90f0630 {width: 21.335%;}
+	.elementor-2203 .elementor-element.elementor-element-a1df4a4 {width: 56.786%;}
+	.elementor-2203 .elementor-element.elementor-element-cdd8c29 {width: 43.214%;}
+	.elementor-2203 .elementor-element.elementor-element-f3c8e1a {width: 48.214%;}
+	.elementor-2203 .elementor-element.elementor-element-58ef603 {width: 8.84%;}
+	.elementor-2203 .elementor-element.elementor-element-41e3a56 {width: 7.143%;}
+	.elementor-2203 .elementor-element.elementor-element-de4b74e {width: 35.803%;}}
 @media (max-width:1024px) {.elementor-2203 .elementor-element.elementor-element-ad36a23 .elementor-heading-title {font-size: 34px;}
 	.elementor-2203 .elementor-element.elementor-element-dc52fba {font-size: 24px;}
 	.elementor-2203 .elementor-element.elementor-element-dc52fba > .elementor-widget-container {margin: 56px 0px 0px 0px;}}
