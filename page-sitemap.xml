@@ -1339,7 +1339,7 @@
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/nouveaux-panneaux-thermiques-2025/</loc>
-		<lastmod>2025-05-22T01:48:01+02:00</lastmod>
+		<lastmod>2025-05-22T02:43:08+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2025/05/construire-panneaux-solaires-1024x577.jpeg</image:loc>
 		</image:image>
@@ -1480,6 +1480,21 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-bio-a-la-une.jpeg</image:loc>
 			<image:caption><![CDATA[Sunberry bio a la une]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/Flag_of_France-r65s1y1m8700ttthrz53kmpdtrbfrfssq3sesxam44.png</image:loc>
+			<image:title><![CDATA[Flag_of_France]]></image:title>
+			<image:caption><![CDATA[Flag_of_France]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/Flag_of_Switzerland-r65saxe3j7anrortbuwred3y6b1pbbggmk7fw3z6no.png</image:loc>
+			<image:title><![CDATA[Flag_of_Switzerland]]></image:title>
+			<image:caption><![CDATA[Flag_of_Switzerland]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/Flag_of_Belgium-r65saxe3j7anrortbuwred3y6b1pbbggmk7fw3z6no.png</image:loc>
+			<image:title><![CDATA[Flag_of_Belgium]]></image:title>
+			<image:caption><![CDATA[Flag_of_Belgium]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
