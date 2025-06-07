@@ -133,6 +133,12 @@ Ecwid.OnAPILoaded.add(function() {
       opacity: 1 !important;
       visibility: visible !important;
     }
+
+    /* Masquer le bouton "Parcourir la boutique" */
+    .ec-cart--empty .ec-cart__button {
+    display: none !important;
+    }
+
   `;
   document.head.appendChild(style);
   logDebug("Styles CSS appliqués");
