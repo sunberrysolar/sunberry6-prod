@@ -135,7 +135,7 @@ Ecwid.OnAPILoaded.add(function() {
     }
 
     /* Masquer le bouton "Parcourir la boutique" */
-    .ec-cart--empty .ec-cart__button {
+    .ec-cart__button {
     display: none !important;
     }
 
