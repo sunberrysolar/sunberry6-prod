@@ -140,7 +140,7 @@ Ecwid.OnAPILoaded.add(function() {
     }
 
     /* Masquer lien "Continuer mes achats" */
-    .ec-cart__shopping .ec-cart-shopping {
+    .ec-cart__shopping {
     display: none !important;
     }
   `;
