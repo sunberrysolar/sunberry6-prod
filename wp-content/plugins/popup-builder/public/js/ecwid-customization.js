@@ -134,6 +134,11 @@ Ecwid.OnAPILoaded.add(function() {
       visibility: visible !important;
     }
 
+    /* Masquer le bouton "Parcourir la boutique" */
+    .ec-cart--empty .form-control__button {
+    display: none !important;
+    }
+
     /* Masquer lien "Continuer mes achats" */
     .ec-cart-shopping__wrap {
     display: none !important;
