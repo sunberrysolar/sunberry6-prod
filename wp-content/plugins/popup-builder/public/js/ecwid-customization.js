@@ -134,15 +134,6 @@ Ecwid.OnAPILoaded.add(function() {
       visibility: visible !important;
     }
 
-    /* Masquer le bouton "Parcourir la boutique" */
-    .ec-cart__button {
-    display: none !important;
-    }
-
-    /* Masquer lien "Continuer mes achats" */
-    .ec-cart__shopping {
-    display: none !important;
-    }
   `;
   document.head.appendChild(style);
   logDebug("Styles CSS appliqués");
