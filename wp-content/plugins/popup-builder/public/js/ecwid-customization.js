@@ -12,7 +12,7 @@ function logDebug(message) {
 }
 
 Ecwid.OnAPILoaded.add(function () {
-  logDebug("Ecwid API chargée 17h01");
+  logDebug("Ecwid API chargée 17h07");
 
   var currentPageType = '';
 
