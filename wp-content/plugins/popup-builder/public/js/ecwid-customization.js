@@ -72,7 +72,7 @@ Ecwid.OnAPILoaded.add(function () {
 
   function masquerPrixLignesPanier() {
     // Cible les éléments contenant les prix ligne par ligne
-    document.querySelectorAll('.ec-cart__item .ec-cart__item-price, .ec-cart__item .ec-cart__total-price').forEach(el => {
+    document.querySelectorAll('.ec-cart-item__price-inner').forEach(el => {
       el.style.display = 'none';
     });
 
