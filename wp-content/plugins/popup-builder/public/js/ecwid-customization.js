@@ -31,7 +31,7 @@ function logDebug(message) {
 }
 
 Ecwid.OnAPILoaded.add(function () {
-  logDebug("Ecwid API chargée 17h13");
+  logDebug("Ecwid API chargée 17h33");
 
   var currentPageType = '';
 
@@ -138,6 +138,10 @@ Ecwid.OnAPILoaded.add(function () {
     }
 
     .ec-cart--empty .form-control__button {
+      display: none !important;
+    }
+    
+    .ec-confirmation__continue {
       display: none !important;
     }
 
