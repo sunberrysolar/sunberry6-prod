@@ -1,18 +1,37 @@
 // Script de personnalisation du panier Ecwid
 // - Bouton "Vider le panier"
-// - Masquage des prix ligne par ligne
+// - Masquage des prix ligne par ligne dès le premier chargement
 // - Affichage uniquement du sous-total et total
 
 window.ec = window.ec || {};
 window.ec.config = window.ec.config || {};
 window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 
+// 🔒 Injecter un style global immédiatement pour cacher les prix à l'affichage initial
+(function injectImmediateCSS() {
+  const style = document.createElement('style');
+  style.textContent = `
+    /* Masquer le prix unitaire et total ligne dès le début */
+    .ec-cart__item-price,
+    .ec-cart__total-price,
+    .ec-cart-item__price-inner {
+      display: none !important;
+    }
+
+    /* Masquer TVA éventuelle */
+    .ec-cart__tax {
+      display: none !important;
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
 function logDebug(message) {
   console.log(`[DEBUG] ${message}`);
 }
 
 Ecwid.OnAPILoaded.add(function () {
-  logDebug("Ecwid API chargée 17h07");
+  logDebug("Ecwid API chargée 17h13");
 
   var currentPageType = '';
 
@@ -70,14 +89,9 @@ Ecwid.OnAPILoaded.add(function () {
     }
   }
 
-  function masquerPrixLignesPanier() {
-    // Cible les éléments contenant les prix ligne par ligne
-    document.querySelectorAll('.ec-cart-item__price-inner').forEach(el => {
-      el.style.display = 'none';
-    });
-
-    // Optionnel : masquer aussi les éventuels éléments TVA par ligne s'ils existent
-    document.querySelectorAll('.ec-cart__tax').forEach(el => {
+  function forcerMasquagePrixSiRedessiné() {
+    // Renforce le masquage après chargement dynamique
+    document.querySelectorAll('.ec-cart-item__price-inner, .ec-cart__item-price, .ec-cart__total-price, .ec-cart__tax').forEach(el => {
       el.style.display = 'none';
     });
   }
@@ -89,11 +103,12 @@ Ecwid.OnAPILoaded.add(function () {
     if (page.type === "CART") {
       setTimeout(() => {
         addClearCartButton();
-        masquerPrixLignesPanier();
+        forcerMasquagePrixSiRedessiné();
       }, 1000);
     }
   });
 
+  // Autres styles CSS non liés aux prix
   const style = document.createElement('style');
   style.textContent = `
     #ecwid-clear-cart-button:hover {
@@ -105,7 +120,6 @@ Ecwid.OnAPILoaded.add(function () {
       opacity: 1 !important;
     }
 
-    /* Masquer les boutons de suppression */
     .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__control {
       opacity: 0 !important;
       visibility: hidden !important;
@@ -130,13 +144,6 @@ Ecwid.OnAPILoaded.add(function () {
     .ec-cart-shopping__wrap {
       display: none !important;
     }
-
-    /* Masquer le prix unitaire et total ligne */
-    .ec-cart__item-price,
-    .ec-cart__total-price {
-      display: none !important;
-    }
   `;
   document.head.appendChild(style);
-  logDebug("Styles CSS appliqués");
 });
