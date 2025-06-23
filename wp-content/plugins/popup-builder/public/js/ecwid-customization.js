@@ -1,4 +1,4 @@
-// Script de personnalisation du panier Ecwid
+// Script de personnalisation du panier Ecwid ok
 // - Bouton "Vider le panier"
 // - Masquage des prix ligne par ligne dès le premier chargement
 // - Affichage uniquement du sous-total et total
