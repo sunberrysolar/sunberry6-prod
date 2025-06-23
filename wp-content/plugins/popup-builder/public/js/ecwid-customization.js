@@ -1,3 +1,4 @@
+// OK fonctionnel multiproduits 23/06
 // Script de personnalisation du panier Ecwid minimaliste
 // - Uniquement JS pour le bouton "Vider le panier"
 // - Tout le reste en CSS pur
