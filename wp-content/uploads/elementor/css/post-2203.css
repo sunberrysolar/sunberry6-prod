@@ -27,6 +27,8 @@
 .elementor-2203 .elementor-element.elementor-element-685a161:not(.elementor-motion-effects-element-type-background), .elementor-2203 .elementor-element.elementor-element-685a161 > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #fff;}
 .elementor-2203 .elementor-element.elementor-element-685a161 {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
 .elementor-2203 .elementor-element.elementor-element-685a161 > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+.elementor-2203 .elementor-element.elementor-element-e0acee2 .elementor-divider-separator {border-top-style: solid;border-top-width: 1px;width: 51%;}
+.elementor-2203 .elementor-element.elementor-element-e0acee2 .elementor-divider {text-align: center;padding-top: 15px;padding-bottom: 15px;}
 .elementor-2203 .elementor-element.elementor-element-22cc583 .elementor-button .elementor-align-icon-right {margin-left: 9px;}
 .elementor-2203 .elementor-element.elementor-element-22cc583 .elementor-button .elementor-align-icon-left {margin-right: 9px;}
 .elementor-2203 .elementor-element.elementor-element-22cc583 a.elementor-button, .elementor-2203 .elementor-element.elementor-element-22cc583 .elementor-button {font-weight: bold;background-color: #a200ed;}
