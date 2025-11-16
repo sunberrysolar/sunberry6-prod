@@ -1,7 +1,10 @@
-// Script de personnalisation du panier Ecwid ok
+<script>
+// Script de personnalisation du panier Ecwid
 // - Bouton "Vider le panier"
 // - Masquage des prix ligne par ligne dès le premier chargement
 // - Affichage uniquement du sous-total et total
+// - Réactivation des croix pour supprimer chaque produit
+// - Désactivation du clic sur les produits du panier
 
 window.ec = window.ec || {};
 window.ec.config = window.ec.config || {};
@@ -27,7 +30,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 })();
 
 function logDebug(message) {
-  console.log(`[DEBUG] ${message}`);
+  console.log(\`[DEBUG] \${message}\`);
 }
 
 Ecwid.OnAPILoaded.add(function () {
@@ -98,7 +101,7 @@ Ecwid.OnAPILoaded.add(function () {
 
   Ecwid.OnPageLoaded.add(function (page) {
     currentPageType = page.type;
-    logDebug(`Page chargée: ${page.type}`);
+    logDebug(\`Page chargée: \${page.type}\`);
 
     if (page.type === "CART") {
       setTimeout(() => {
@@ -115,28 +118,49 @@ Ecwid.OnAPILoaded.add(function () {
       background-color: #000000 !important;
     }
 
+    /* Afficher correctement la quantité */
     .ec-cart-item__count-value {
       visibility: visible !important;
       opacity: 1 !important;
     }
 
-    .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__control {
-      opacity: 0 !important;
-      visibility: hidden !important;
-    }
-
+    /* Désactiver les actions sur les contrôles de quantité (si tu veux garder ça) */
     .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__count select,
     .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__count button {
       opacity: 0.5 !important;
       pointer-events: none !important;
     }
 
+    /* Laisser les éléments du résumé fonctionnels */
     .ec-cart-item--summary * {
       pointer-events: auto !important;
       opacity: 1 !important;
       visibility: visible !important;
     }
 
+    /* Réafficher les croix de suppression (icône X) */
+    .ec-size .ec-store .ec-cart-item__control {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .ec-size .ec-store .ec-cart-item__control-inner svg {
+      opacity: 1 !important;
+      width: 22px;
+      height: 22px;
+    }
+    .ec-size .ec-store .ec-cart-item__control-inner svg g {
+      stroke-width: 2px;
+    }
+
+    /* Désactiver le clic sur les liens produits (titre + image) dans le panier */
+    .ec-size .ec-store .ec-cart__items .ec-cart-item__title a,
+    .ec-size .ec-store .ec-cart__items .ec-cart-item__image a {
+      pointer-events: none !important;
+      cursor: default !important;
+      text-decoration: none !important;
+    }
+
+    /* Masquer certains boutons inutiles selon ton flux */
     .ec-cart--empty .form-control__button {
       display: none !important;
     }
@@ -151,3 +175,4 @@ Ecwid.OnAPILoaded.add(function () {
   `;
   document.head.appendChild(style);
 });
+</script>
