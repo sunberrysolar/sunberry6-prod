@@ -30,7 +30,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 })();
 
 function logDebug(message) {
-  console.log(\`[DEBUG] \${message}\`);
+  console.log("[DEBUG] " + message);
 }
 
 Ecwid.OnAPILoaded.add(function () {
@@ -101,10 +101,10 @@ Ecwid.OnAPILoaded.add(function () {
 
   Ecwid.OnPageLoaded.add(function (page) {
     currentPageType = page.type;
-    logDebug(\`Page chargée: \${page.type}\`);
+    logDebug("Page chargée: " + page.type);
 
     if (page.type === "CART") {
-      setTimeout(() => {
+      setTimeout(function () {
         addClearCartButton();
         forcerMasquagePrixSiRedessiné();
       }, 1000);
@@ -118,49 +118,38 @@ Ecwid.OnAPILoaded.add(function () {
       background-color: #000000 !important;
     }
 
-    /* Afficher correctement la quantité */
     .ec-cart-item__count-value {
       visibility: visible !important;
       opacity: 1 !important;
     }
 
-    /* Désactiver les actions sur les contrôles de quantité (si tu veux garder ça) */
+    /* On NE cache PLUS la zone de contrôle (croix de suppression) */
+    /* .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__control {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    } */
+
+    /* Si tu veux toujours limiter les changements de quantité */
     .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__count select,
     .ec-cart-item:not(.ec-cart-item--summary) .ec-cart-item__count button {
       opacity: 0.5 !important;
       pointer-events: none !important;
     }
 
-    /* Laisser les éléments du résumé fonctionnels */
     .ec-cart-item--summary * {
       pointer-events: auto !important;
       opacity: 1 !important;
       visibility: visible !important;
     }
 
-    /* Réafficher les croix de suppression (icône X) */
-    .ec-size .ec-store .ec-cart-item__control {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    .ec-size .ec-store .ec-cart-item__control-inner svg {
-      opacity: 1 !important;
-      width: 22px;
-      height: 22px;
-    }
-    .ec-size .ec-store .ec-cart-item__control-inner svg g {
-      stroke-width: 2px;
-    }
-
-    /* Désactiver le clic sur les liens produits (titre + image) dans le panier */
-    .ec-size .ec-store .ec-cart__items .ec-cart-item__title a,
-    .ec-size .ec-store .ec-cart__items .ec-cart-item__image a {
+    /* Désactiver le clic sur le nom et l'image du produit dans le panier */
+    .ec-cart__items .ec-cart-item__title a,
+    .ec-cart__items .ec-cart-item__image a {
       pointer-events: none !important;
       cursor: default !important;
       text-decoration: none !important;
     }
 
-    /* Masquer certains boutons inutiles selon ton flux */
     .ec-cart--empty .form-control__button {
       display: none !important;
     }
