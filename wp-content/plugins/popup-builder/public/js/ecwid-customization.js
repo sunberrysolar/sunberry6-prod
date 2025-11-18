@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test15*/
+    /* Masquer le prix unitaire et total ligne dès le début test16*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -115,70 +115,62 @@ function attachToEcwid() {
         return;
       }
 
-      Ecwid.Cart.get(function(cart) {
-        const itemsCount = cart && cart.items ? cart.items.length : 0;
-        if (!itemsCount) {
-          const existingContainer = document.getElementById('ecwid-clear-cart-button-container');
-          if (existingContainer) existingContainer.remove();
-          return;
+      const summaryRow = getSummaryRow(cartContainer);
+      const hasSkeletons = cartContainer.querySelector('.ec-cart-item--skeleton');
+      const renderedItems = cartContainer.querySelectorAll('.ec-cart-item:not(.ec-cart-item--summary)').length;
+
+      if (!renderedItems) {
+        const existingContainer = document.getElementById('ecwid-clear-cart-button-container');
+        if (existingContainer) existingContainer.remove();
+        return;
+      }
+
+      if (!summaryRow || hasSkeletons) {
+        if (retryCount > 0) {
+          setTimeout(() => addClearCartButton(retryCount - 1), 200);
         }
+        return;
+      }
 
-        const renderedItems = cartContainer.querySelectorAll('.ec-cart-item:not(.ec-cart-item--summary):not(.ec-cart-item--skeleton)').length;
-        if (renderedItems < itemsCount) {
-          if (retryCount > 0) {
-            setTimeout(() => addClearCartButton(retryCount - 1), 200);
-          }
-          return;
-        }
+      const existingButton = document.getElementById('ecwid-clear-cart-button');
+      if (existingButton) {
+        ensureButtonPlacement();
+        return;
+      }
 
-        const summaryRow = getSummaryRow(cartContainer);
-        if (!summaryRow) {
-          if (retryCount > 0) {
-            setTimeout(() => addClearCartButton(retryCount - 1), 200);
-          }
-          return;
-        }
+      const buttonContainer = document.createElement('div');
+      buttonContainer.id = 'ecwid-clear-cart-button-container';
+      buttonContainer.style.textAlign = 'center';
+      buttonContainer.style.margin = '20px 0';
 
-        const existingButton = document.getElementById('ecwid-clear-cart-button');
-        if (existingButton) {
-          ensureButtonPlacement();
-          return;
-        }
+      const helperText = document.createElement('p');
+      helperText.className = 'ecwid-clear-cart-helper';
+      helperText.textContent = 'Pour changer de formation, videz le panier puis ajoutez à nouveau la formation souhaitée :';
+      buttonContainer.appendChild(helperText);
 
-        const buttonContainer = document.createElement('div');
-        buttonContainer.id = 'ecwid-clear-cart-button-container';
-        buttonContainer.style.textAlign = 'center';
-        buttonContainer.style.margin = '20px 0';
+      const clearButton = document.createElement('button');
+      clearButton.id = 'ecwid-clear-cart-button';
+      clearButton.textContent = 'Vider le panier';
+      clearButton.style.backgroundColor = '#e672f7';
+      clearButton.style.color = '#ffffff';
+      clearButton.style.border = 'none';
+      clearButton.style.padding = '15px 30px';
+      clearButton.style.borderRadius = '8px';
+      clearButton.style.cursor = 'pointer';
+      clearButton.style.fontWeight = 'bold';
+      clearButton.style.fontSize = '16px';
+      clearButton.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+      clearButton.style.transition = 'all 0.3s ease';
 
-        const helperText = document.createElement('p');
-        helperText.className = 'ecwid-clear-cart-helper';
-        helperText.textContent = 'Pour changer de formation, videz le panier puis ajoutez à nouveau la formation souhaitée :';
-        buttonContainer.appendChild(helperText);
-
-        const clearButton = document.createElement('button');
-        clearButton.id = 'ecwid-clear-cart-button';
-        clearButton.textContent = 'Vider le panier';
-        clearButton.style.backgroundColor = '#e672f7';
-        clearButton.style.color = '#ffffff';
-        clearButton.style.border = 'none';
-        clearButton.style.padding = '15px 30px';
-        clearButton.style.borderRadius = '8px';
-        clearButton.style.cursor = 'pointer';
-        clearButton.style.fontWeight = 'bold';
-        clearButton.style.fontSize = '16px';
-        clearButton.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
-        clearButton.style.transition = 'all 0.3s ease';
-
-        clearButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          clearEntireCart();
-          return false;
-        });
-
-        buttonContainer.appendChild(clearButton);
-        cartContainer.insertBefore(buttonContainer, summaryRow);
+      clearButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        clearEntireCart();
+        return false;
       });
+
+      buttonContainer.appendChild(clearButton);
+      cartContainer.insertBefore(buttonContainer, summaryRow);
     }
 
     function ensureButtonPlacement() {
