@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test17*/
+    /* Masquer le prix unitaire et total ligne dès le début test18*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -92,7 +92,7 @@ function attachToEcwid() {
     logDebug("Ecwid API chargée");
 
     function getCartContainer() {
-      return document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
+      return document.querySelector('.ec-page-title') || document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
     }
 
     function addClearCartButton(retryCount = 25) {
@@ -119,7 +119,10 @@ function attachToEcwid() {
       const buttonContainer = document.createElement('div');
       buttonContainer.id = 'ecwid-clear-cart-button-container';
       buttonContainer.style.textAlign = 'center';
-      buttonContainer.style.margin = '20px 0';
+      buttonContainer.style.margin = '10px 0';
+      buttonContainer.style.padding = '10px';
+      buttonContainer.style.background = 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)';
+      buttonContainer.style.borderRadius = '8px';
 
       const helperText = document.createElement('p');
       helperText.className = 'ecwid-clear-cart-helper';
@@ -148,7 +151,11 @@ function attachToEcwid() {
       });
 
       buttonContainer.appendChild(clearButton);
-      cartContainer.prepend(buttonContainer);
+      if (cartContainer.classList.contains('ec-page-title')) {
+        cartContainer.appendChild(buttonContainer);
+      } else {
+        cartContainer.prepend(buttonContainer);
+      }
     }
 
     function ensureButtonPlacement() {
@@ -156,8 +163,8 @@ function attachToEcwid() {
       if (!cartContainer) return;
       const buttonContainer = document.getElementById('ecwid-clear-cart-button-container');
       if (!buttonContainer) return;
-      if (buttonContainer.parentElement !== cartContainer || buttonContainer !== cartContainer.firstElementChild) {
-        cartContainer.prepend(buttonContainer);
+      if (buttonContainer.parentElement !== cartContainer || buttonContainer.previousElementSibling !== cartContainer.querySelector(':scope > .ec-page-title-text')) {
+        cartContainer.appendChild(buttonContainer);
       }
     }
 
