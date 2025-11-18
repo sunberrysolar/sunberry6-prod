@@ -197,7 +197,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","h
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/cookie-notice/js/front.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
 var sibErrMsg = {"invalidMail":"Please fill out valid email address","requiredField":"Please fill out required fields","invalidDateFormat":"Please fill out valid date format","invalidSMSFormat":"Please fill out valid phone number"};
-var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"4257141532","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
+var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"34e6289b0d","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
 /* ]]> */
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/mailin/js/mailin-front.js"></script><style type="text/css"> .ae_data .elementor-editor-element-setting {
                         display:none !important;
@@ -1591,6 +1591,22 @@ Gagnez en indépendance</h3>		</div>
       document.getElementById(cardId + '-content-' + offerType).classList.add('active');
     }
     
+    function addProductsSequentially(items, index = 0) {
+      if (index >= items.length) {
+        Ecwid.openPage('cart');
+        return;
+      }
+
+      Ecwid.Cart.addProduct(items[index], function(success, product, error) {
+        if (!success) {
+          console.error('Erreur lors de l\'ajout au panier:', error);
+          Ecwid.openPage('cart');
+          return;
+        }
+        addProductsSequentially(items, index + 1);
+      });
+    }
+
     // Fonction pour ajouter au panier
     function addToCart(productType, cardId) {
       // Initialisation d'Ecwid (si disponible)
@@ -1645,13 +1661,12 @@ Gagnez en indépendance</h3>		</div>
           }
         }
         
-        // Ajout des produits au panier
-        items.forEach(function(item) {
-          Ecwid.Cart.addProduct(item);
-        });
-        
-        // Redirection vers le panier
-        Ecwid.openPage('cart');
+        if (items.length === 0) {
+          console.warn('Aucun article défini pour', cardId, productType);
+          return;
+        }
+
+        addProductsSequentially(items);
       } else {
         console.log('Ecwid n\'est pas chargé');
         alert('Ajout au panier: Type ' + productType + ' pour ' + cardId);
