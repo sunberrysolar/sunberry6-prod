@@ -1613,23 +1613,8 @@ Gagnez en indépendance</h3>		</div>
         return;
       }
 
-      const addNext = (index) => {
-        if (index >= items.length) {
-          openCart();
-          return;
-        }
-
-        Ecwid.Cart.addProduct(items[index], function(success, product, error) {
-          if (!success) {
-            console.error('Erreur lors de l\'ajout au panier:', error);
-            openCart();
-            return;
-          }
-          addNext(index + 1);
-        });
-      };
-
-      addNext(0);
+      items.forEach(item => Ecwid.Cart.addProduct(item));
+      setTimeout(openCart, 100);
     }
 
     // Fonction pour ajouter au panier
