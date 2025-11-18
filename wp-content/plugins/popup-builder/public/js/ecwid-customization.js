@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test4*/
+    /* Masquer le prix unitaire et total ligne dès le début test5*/
     .ec-cart__item-price,
     .ec-cart__total-price,
     .ec-cart-item__price-inner {
@@ -104,45 +104,42 @@ Ecwid.OnAPILoaded.add(function () {
     });
   }
 
-  function intercepterCroixSuppression() {
-    // Sélectionner toutes les croix de suppression des produits
+  // Intercepter les clics au niveau du document (phase capture)
+  // pour bloquer l'événement avant qu'Ecwid ne le traite
+  document.addEventListener('click', function(e) {
+    if (currentPageType !== "CART") return;
+
+    // Vérifier si le clic est sur une croix de suppression ou un de ses enfants
+    const deleteButton = e.target.closest('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove');
+
+    if (deleteButton) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+
+      logDebug("Clic sur croix de suppression - vidage complet du panier");
+      clearEntireCart();
+
+      return false;
+    }
+  }, true); // true = phase capture, avant la phase bubbling
+
+  function styliserCroixSuppression() {
+    // Rendre les croix visibles
     const deleteButtons = document.querySelectorAll('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove');
 
     deleteButtons.forEach(button => {
-      // Éviter de réattacher l'événement si déjà fait
-      if (button.dataset.intercepted === 'true') return;
-
-      // Cloner le bouton pour supprimer tous les event listeners natifs d'Ecwid
-      const newButton = button.cloneNode(true);
-      newButton.dataset.intercepted = 'true';
-
-      // Rendre le bouton visible
-      newButton.style.opacity = '1';
-      newButton.style.visibility = 'visible';
-      newButton.style.pointerEvents = 'auto';
-
-      // Ajouter notre propre event listener
-      newButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-
-        logDebug("Clic sur croix de suppression - vidage complet du panier");
-        clearEntireCart();
-
-        return false;
-      }, true);
-
-      // Remplacer l'ancien bouton par le nouveau
-      button.parentNode.replaceChild(newButton, button);
+      button.style.opacity = '1';
+      button.style.visibility = 'visible';
+      button.style.pointerEvents = 'auto';
     });
   }
 
-  // Observer les changements du DOM pour intercepter les nouvelles croix
+  // Observer les changements du DOM pour styliser les nouvelles croix
   function setupMutationObserver() {
     const observer = new MutationObserver(function(mutations) {
       if (currentPageType === "CART") {
-        intercepterCroixSuppression();
+        styliserCroixSuppression();
         forcerMasquagePrixSiRedessiné();
       }
     });
@@ -162,12 +159,12 @@ Ecwid.OnAPILoaded.add(function () {
       setTimeout(() => {
         addClearCartButton();
         forcerMasquagePrixSiRedessiné();
-        intercepterCroixSuppression();
+        styliserCroixSuppression();
       }, 500);
 
       // Réappliquer après un délai supplémentaire pour gérer le chargement asynchrone
       setTimeout(() => {
-        intercepterCroixSuppression();
+        styliserCroixSuppression();
         forcerMasquagePrixSiRedessiné();
       }, 1500);
     }
