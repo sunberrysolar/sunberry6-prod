@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test12*/
+    /* Masquer le prix unitaire et total ligne dès le début test13*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -91,40 +91,24 @@ function attachToEcwid() {
   Ecwid.OnAPILoaded.add(function () {
     logDebug("Ecwid API chargée");
 
-    function placeClearCartButton() {
-      const cartContainer = document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
-      const buttonContainer = document.getElementById('ecwid-clear-cart-button-container');
-
-      if (!cartContainer || !buttonContainer) {
-        return;
-      }
-
-      if (buttonContainer.parentElement !== cartContainer) {
-        cartContainer.appendChild(buttonContainer);
-      }
-
-      const summaryRow = cartContainer.querySelector('.ec-cart-item--summary');
-      if (summaryRow) {
-        if (buttonContainer.nextElementSibling !== summaryRow) {
-          cartContainer.insertBefore(buttonContainer, summaryRow);
-        }
-      } else if (buttonContainer.nextElementSibling) {
-        cartContainer.appendChild(buttonContainer);
-      }
-    }
-
-    function addClearCartButton() {
+    function addClearCartButton(retryCount = 25) {
       if (currentPageType !== "CART") {
-        const existingButton = document.getElementById('ecwid-clear-cart-button');
-        if (existingButton) existingButton.remove();
+        const existingContainer = document.getElementById('ecwid-clear-cart-button-container');
+        if (existingContainer) existingContainer.remove();
         return;
       }
 
-      if (document.getElementById('ecwid-clear-cart-button')) return;
-
       const cartContainer = document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
-      if (!cartContainer) {
-        logDebug("Conteneur du panier non trouvé");
+      const summaryRow = cartContainer && cartContainer.querySelector('.ec-cart-item--summary');
+      if (!cartContainer || !summaryRow) {
+        if (retryCount > 0) {
+          setTimeout(() => addClearCartButton(retryCount - 1), 200);
+        }
+        return;
+      }
+
+      if (document.getElementById('ecwid-clear-cart-button')) {
+        ensureButtonPlacement(cartContainer, summaryRow);
         return;
       }
 
@@ -160,9 +144,15 @@ function attachToEcwid() {
       });
 
       buttonContainer.appendChild(clearButton);
+      cartContainer.insertBefore(buttonContainer, summaryRow);
+    }
 
-      cartContainer.appendChild(buttonContainer);
-      placeClearCartButton();
+    function ensureButtonPlacement(cartContainer, summaryRow) {
+      const buttonContainer = document.getElementById('ecwid-clear-cart-button-container');
+      if (!buttonContainer) return;
+      if (buttonContainer.parentElement !== cartContainer || buttonContainer.nextElementSibling !== summaryRow) {
+        cartContainer.insertBefore(buttonContainer, summaryRow);
+      }
     }
 
     function clearEntireCart() {
@@ -200,7 +190,7 @@ function attachToEcwid() {
         if (currentPageType === "CART") {
         styliserCroixSuppression();
         forcerMasquagePrixSiRedessiné();
-        placeClearCartButton();
+        addClearCartButton();
       }
     });
 
@@ -220,14 +210,13 @@ function attachToEcwid() {
           addClearCartButton();
           forcerMasquagePrixSiRedessiné();
           styliserCroixSuppression();
-          placeClearCartButton();
         }, 500);
 
         // Réappliquer après un délai supplémentaire pour gérer le chargement asynchrone
         setTimeout(() => {
           styliserCroixSuppression();
           forcerMasquagePrixSiRedessiné();
-          placeClearCartButton();
+          addClearCartButton();
         }, 1500);
       }
     });
