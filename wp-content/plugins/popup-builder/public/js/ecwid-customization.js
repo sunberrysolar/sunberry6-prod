@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test8*/
+    /* Masquer le prix unitaire et total ligne dès le début test9*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -100,7 +100,7 @@ function attachToEcwid() {
 
       if (document.getElementById('ecwid-clear-cart-button')) return;
 
-      const cartContainer = document.querySelector('.ec-cart__body');
+      const cartContainer = document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
       if (!cartContainer) {
         logDebug("Conteneur du panier non trouvé");
         return;
@@ -137,8 +137,6 @@ function attachToEcwid() {
       const summaryRow = cartContainer.querySelector('.ec-cart-item--summary');
       if (summaryRow) {
         cartContainer.insertBefore(buttonContainer, summaryRow);
-      } else if (cartContainer.firstChild) {
-        cartContainer.appendChild(buttonContainer);
       } else {
         cartContainer.appendChild(buttonContainer);
       }
