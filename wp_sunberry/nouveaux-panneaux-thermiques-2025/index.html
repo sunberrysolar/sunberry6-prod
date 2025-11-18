@@ -1591,20 +1591,45 @@ Gagnez en indépendance</h3>		</div>
       document.getElementById(cardId + '-content-' + offerType).classList.add('active');
     }
     
-    function addProductsSequentially(items, index = 0) {
-      if (index >= items.length) {
-        Ecwid.openPage('cart');
+    function addItemsToCart(items) {
+      if (!items || !items.length) {
+        console.warn('Aucun article à ajouter au panier');
         return;
       }
 
-      Ecwid.Cart.addProduct(items[index], function(success, product, error) {
-        if (!success) {
-          console.error('Erreur lors de l\'ajout au panier:', error);
+      const openCart = () => {
+        if (typeof Ecwid !== 'undefined' && Ecwid.openPage) {
           Ecwid.openPage('cart');
+        }
+      };
+
+      if (Ecwid.Cart && typeof Ecwid.Cart.addProducts === 'function') {
+        Ecwid.Cart.addProducts(items, function(success, cart, error) {
+          if (!success) {
+            console.error('Erreur lors de l\'ajout multiple au panier:', error);
+          }
+          openCart();
+        });
+        return;
+      }
+
+      const addNext = (index) => {
+        if (index >= items.length) {
+          openCart();
           return;
         }
-        addProductsSequentially(items, index + 1);
-      });
+
+        Ecwid.Cart.addProduct(items[index], function(success, product, error) {
+          if (!success) {
+            console.error('Erreur lors de l\'ajout au panier:', error);
+            openCart();
+            return;
+          }
+          addNext(index + 1);
+        });
+      };
+
+      addNext(0);
     }
 
     // Fonction pour ajouter au panier
@@ -1661,12 +1686,12 @@ Gagnez en indépendance</h3>		</div>
           }
         }
         
-        if (items.length === 0) {
+        if (!items.length) {
           console.warn('Aucun article défini pour', cardId, productType);
           return;
         }
 
-        addProductsSequentially(items);
+        addItemsToCart(items);
       } else {
         console.log('Ecwid n\'est pas chargé');
         alert('Ajout au panier: Type ' + productType + ' pour ' + cardId);
