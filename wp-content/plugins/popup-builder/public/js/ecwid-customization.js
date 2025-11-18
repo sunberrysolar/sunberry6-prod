@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test19*/
+    /* Masquer le prix unitaire et total ligne dès le début retour*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -91,38 +91,25 @@ function attachToEcwid() {
   Ecwid.OnAPILoaded.add(function () {
     logDebug("Ecwid API chargée");
 
-    function getCartContainer() {
-      return document.querySelector('.ec-page-title') || document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
-    }
-
-    function addClearCartButton(retryCount = 25) {
+    function addClearCartButton() {
       if (currentPageType !== "CART") {
-        const existingContainer = document.getElementById('ecwid-clear-cart-button-container');
-        if (existingContainer) existingContainer.remove();
+        const existingButton = document.getElementById('ecwid-clear-cart-button');
+        if (existingButton) existingButton.remove();
         return;
       }
 
-      const cartContainer = getCartContainer();
+      if (document.getElementById('ecwid-clear-cart-button')) return;
+
+      const cartContainer = document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
       if (!cartContainer) {
-        if (retryCount > 0) {
-          setTimeout(() => addClearCartButton(retryCount - 1), 200);
-        }
-        return;
-      }
-
-      const existingButton = document.getElementById('ecwid-clear-cart-button');
-      if (existingButton) {
-        ensureButtonPlacement();
+        logDebug("Conteneur du panier non trouvé");
         return;
       }
 
       const buttonContainer = document.createElement('div');
       buttonContainer.id = 'ecwid-clear-cart-button-container';
       buttonContainer.style.textAlign = 'center';
-      buttonContainer.style.margin = '10px 0';
-      buttonContainer.style.padding = '10px';
-      buttonContainer.style.background = 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)';
-      buttonContainer.style.borderRadius = '8px';
+      buttonContainer.style.margin = '20px 0';
 
       const helperText = document.createElement('p');
       helperText.className = 'ecwid-clear-cart-helper';
@@ -151,19 +138,11 @@ function attachToEcwid() {
       });
 
       buttonContainer.appendChild(clearButton);
-      if (cartContainer.classList.contains('ec-page-title')) {
-        cartContainer.appendChild(buttonContainer);
-      } else {
-        cartContainer.prepend(buttonContainer);
-      }
-    }
 
-    function ensureButtonPlacement() {
-      const cartContainer = getCartContainer();
-      if (!cartContainer) return;
-      const buttonContainer = document.getElementById('ecwid-clear-cart-button-container');
-      if (!buttonContainer) return;
-      if (buttonContainer.parentElement !== cartContainer || buttonContainer.previousElementSibling !== cartContainer.querySelector(':scope > .ec-page-title-text')) {
+      const summaryRow = cartContainer.querySelector('.ec-cart-item--summary');
+      if (summaryRow) {
+        cartContainer.insertBefore(buttonContainer, summaryRow);
+      } else {
         cartContainer.appendChild(buttonContainer);
       }
     }
@@ -201,11 +180,10 @@ function attachToEcwid() {
     function setupMutationObserver() {
       const observer = new MutationObserver(function(mutations) {
         if (currentPageType === "CART") {
-        styliserCroixSuppression();
-        forcerMasquagePrixSiRedessiné();
-        addClearCartButton();
-      }
-    });
+          styliserCroixSuppression();
+          forcerMasquagePrixSiRedessiné();
+        }
+      });
 
       // Observer le body pour les changements
       observer.observe(document.body, {
@@ -229,7 +207,6 @@ function attachToEcwid() {
         setTimeout(() => {
           styliserCroixSuppression();
           forcerMasquagePrixSiRedessiné();
-          addClearCartButton();
         }, 1500);
       }
     });
