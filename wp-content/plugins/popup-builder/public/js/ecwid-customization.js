@@ -1,3 +1,4 @@
+// test1
 // Script de personnalisation du panier Ecwid ok
 // - Bouton "Vider le panier"
 // - Masquage des prix ligne par ligne dès le premier chargement
