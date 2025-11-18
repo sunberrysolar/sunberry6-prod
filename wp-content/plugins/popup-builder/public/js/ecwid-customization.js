@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test133*/
+    /* Masquer le prix unitaire et total ligne dès le début test14*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -91,6 +91,15 @@ function attachToEcwid() {
   Ecwid.OnAPILoaded.add(function () {
     logDebug("Ecwid API chargée");
 
+    function getCartContainer() {
+      return document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
+    }
+
+    function getSummaryRow(cartContainer) {
+      if (!cartContainer) return null;
+      return cartContainer.querySelector('.ec-cart-item--summary, .ec-cart__summary, .ec-cart__totals, .ec-cart__order-total');
+    }
+
     function addClearCartButton(retryCount = 25) {
       if (currentPageType !== "CART") {
         const existingContainer = document.getElementById('ecwid-clear-cart-button-container');
@@ -98,17 +107,21 @@ function attachToEcwid() {
         return;
       }
 
-      const cartContainer = document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
-      const summaryRow = cartContainer && cartContainer.querySelector('.ec-cart-item--summary');
-      if (!cartContainer || !summaryRow) {
+      const cartContainer = getCartContainer();
+      if (!cartContainer) {
         if (retryCount > 0) {
           setTimeout(() => addClearCartButton(retryCount - 1), 200);
         }
         return;
       }
 
-      if (document.getElementById('ecwid-clear-cart-button')) {
-        ensureButtonPlacement(cartContainer, summaryRow);
+      const summaryRow = getSummaryRow(cartContainer);
+      const existingButton = document.getElementById('ecwid-clear-cart-button');
+      if (existingButton) {
+        ensureButtonPlacement();
+        if (!summaryRow && retryCount > 0) {
+          setTimeout(() => addClearCartButton(retryCount - 1), 200);
+        }
         return;
       }
 
@@ -144,14 +157,28 @@ function attachToEcwid() {
       });
 
       buttonContainer.appendChild(clearButton);
-      cartContainer.insertBefore(buttonContainer, summaryRow);
+      if (summaryRow) {
+        cartContainer.insertBefore(buttonContainer, summaryRow);
+      } else {
+        cartContainer.appendChild(buttonContainer);
+        if (retryCount > 0) {
+          setTimeout(() => addClearCartButton(retryCount - 1), 200);
+        }
+      }
     }
 
-    function ensureButtonPlacement(cartContainer, summaryRow) {
+    function ensureButtonPlacement() {
+      const cartContainer = getCartContainer();
+      if (!cartContainer) return;
       const buttonContainer = document.getElementById('ecwid-clear-cart-button-container');
       if (!buttonContainer) return;
-      if (buttonContainer.parentElement !== cartContainer || buttonContainer.nextElementSibling !== summaryRow) {
-        cartContainer.insertBefore(buttonContainer, summaryRow);
+      const summaryRow = getSummaryRow(cartContainer);
+      if (summaryRow) {
+        if (buttonContainer.parentElement !== cartContainer || buttonContainer.nextElementSibling !== summaryRow) {
+          cartContainer.insertBefore(buttonContainer, summaryRow);
+        }
+      } else if (buttonContainer.parentElement !== cartContainer) {
+        cartContainer.appendChild(buttonContainer);
       }
     }
 
