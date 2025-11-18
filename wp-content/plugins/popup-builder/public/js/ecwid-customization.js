@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début retour*/
+    /* Masquer le prix unitaire et total ligne dès le début remis*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -100,7 +100,7 @@ function attachToEcwid() {
 
       if (document.getElementById('ecwid-clear-cart-button')) return;
 
-      const cartContainer = document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
+      const cartContainer = document.querySelector('.ec-cart__body');
       if (!cartContainer) {
         logDebug("Conteneur du panier non trouvé");
         return;
@@ -111,14 +111,9 @@ function attachToEcwid() {
       buttonContainer.style.textAlign = 'center';
       buttonContainer.style.margin = '20px 0';
 
-      const helperText = document.createElement('p');
-      helperText.className = 'ecwid-clear-cart-helper';
-      helperText.textContent = 'Pour changer de formation, videz le panier puis ajoutez à nouveau la formation souhaitée :';
-      buttonContainer.appendChild(helperText);
-
       const clearButton = document.createElement('button');
       clearButton.id = 'ecwid-clear-cart-button';
-      clearButton.textContent = 'Vider le panier';
+      clearButton.textContent = '🗑️ VIDER TOUT LE PANIER';
       clearButton.style.backgroundColor = '#e672f7';
       clearButton.style.color = '#ffffff';
       clearButton.style.border = 'none';
@@ -139,9 +134,8 @@ function attachToEcwid() {
 
       buttonContainer.appendChild(clearButton);
 
-      const summaryRow = cartContainer.querySelector('.ec-cart-item--summary');
-      if (summaryRow) {
-        cartContainer.insertBefore(buttonContainer, summaryRow);
+      if (cartContainer.firstChild && cartContainer.firstChild.nextSibling) {
+        cartContainer.insertBefore(buttonContainer, cartContainer.firstChild.nextSibling);
       } else {
         cartContainer.appendChild(buttonContainer);
       }
@@ -218,15 +212,9 @@ function attachToEcwid() {
     const style = document.createElement('style');
     style.textContent = `
     #ecwid-clear-cart-button:hover {
-      background-color: #000000 !important;
+      background-color: #d35400 !important;
       transform: scale(1.05);
       box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3) !important;
-    }
-
-    .ecwid-clear-cart-helper {
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #333333;
     }
 
     .ec-cart-item__count-value {
