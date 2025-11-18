@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test10*/
+    /* Masquer le prix unitaire et total ligne dès le début test11*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -91,6 +91,22 @@ function attachToEcwid() {
   Ecwid.OnAPILoaded.add(function () {
     logDebug("Ecwid API chargée");
 
+    function placeClearCartButton() {
+      const cartContainer = document.querySelector('.ec-cart__products-inner') || document.querySelector('.ec-cart__body');
+      const buttonContainer = document.getElementById('ecwid-clear-cart-button-container');
+
+      if (!cartContainer || !buttonContainer) {
+        return;
+      }
+
+      const summaryRow = cartContainer.querySelector('.ec-cart-item--summary');
+      if (summaryRow) {
+        cartContainer.insertBefore(buttonContainer, summaryRow);
+      } else {
+        cartContainer.appendChild(buttonContainer);
+      }
+    }
+
     function addClearCartButton() {
       if (currentPageType !== "CART") {
         const existingButton = document.getElementById('ecwid-clear-cart-button');
@@ -139,12 +155,8 @@ function attachToEcwid() {
 
       buttonContainer.appendChild(clearButton);
 
-      const summaryRow = cartContainer.querySelector('.ec-cart-item--summary');
-      if (summaryRow) {
-        cartContainer.insertBefore(buttonContainer, summaryRow);
-      } else {
-        cartContainer.appendChild(buttonContainer);
-      }
+      cartContainer.appendChild(buttonContainer);
+      placeClearCartButton();
     }
 
     function clearEntireCart() {
@@ -180,10 +192,11 @@ function attachToEcwid() {
     function setupMutationObserver() {
       const observer = new MutationObserver(function(mutations) {
         if (currentPageType === "CART") {
-          styliserCroixSuppression();
-          forcerMasquagePrixSiRedessiné();
-        }
-      });
+        styliserCroixSuppression();
+        forcerMasquagePrixSiRedessiné();
+        placeClearCartButton();
+      }
+    });
 
       // Observer le body pour les changements
       observer.observe(document.body, {
@@ -201,12 +214,14 @@ function attachToEcwid() {
           addClearCartButton();
           forcerMasquagePrixSiRedessiné();
           styliserCroixSuppression();
+          placeClearCartButton();
         }, 500);
 
         // Réappliquer après un délai supplémentaire pour gérer le chargement asynchrone
         setTimeout(() => {
           styliserCroixSuppression();
           forcerMasquagePrixSiRedessiné();
+          placeClearCartButton();
         }, 1500);
       }
     });
