@@ -1698,11 +1698,16 @@ Gagnez en indépendance</h3>		</div>
       }
     }
     
-    // Initialisation - Assurer que l'offre Duo est sélectionnée par défaut pour toutes les cartes
+    // Initialisation - Assurer que l'offre Duo est sélectionnée par défaut pour toutes les cartes présentes
     document.addEventListener('DOMContentLoaded', function() {
-      const cardIds = ['piscine', 'ecs', 'chauffage'];
+      const cardIds = Array.from(document.querySelectorAll('.product-card'))
+        .map(card => card.id.replace('card-', ''));
+
       cardIds.forEach(cardId => {
-        document.getElementById(cardId + '-content-duo').classList.add('active');
+        const duoContent = document.getElementById(cardId + '-content-duo');
+        if (duoContent) {
+          duoContent.classList.add('active');
+        }
       });
     });
   </script></div>
@@ -1741,28 +1746,26 @@ Gagnez en indépendance</h3>		</div>
 				</div>
 				<div class="elementor-element elementor-element-618f85b elementor-widget elementor-widget-html" data-id="618f85b" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			    
-    <div class="product-card card-ecs" id="card-ecs">
-      <h2>EAU CHAUDE</h2>
-      <div class="offer-tabs">
-        <button class="inactive" onclick="switchOffer('ecs', 'solo', this)">Solo - 190€</button>
-        <button class="active" onclick="switchOffer('ecs', 'duo', this)">Duo - 290€</button>
-      </div>
-      
-      
-      <div id="ecs-content-solo" class="content">
-        <div class="price">190€ <span class="old-price">290€</span></div>
-        <div class="description">Eau Chaude Sanitaire<br>Se branche sur le cumulus existant<br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('solo', 'ecs')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-      
-      
-      <div id="ecs-content-duo" class="content active">
-        <div class="price">290€ <span class="old-price">580€</span></div>
-        <div class="description">Eau Chaude Sanitaire<br>Se branche sur le cumulus existant<br><b>+<br>Une 2e formation de votre choix complète avec appli</b><br><font size="1em">(indiquez celle que vous souhaitez en commentaire lors de votre inscription :  piscine OU chauffage)</font><br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('duo', 'ecs')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-    </div>		</div>
+			<div class="product-card card-ecs" id="card-ecs">
+  <h2>EAU CHAUDE</h2>
+  <div class="offer-tabs">
+    <button class="inactive" onclick="switchOffer('ecs', 'solo', this)">Solo - 190€</button>
+    <button class="active" onclick="switchOffer('ecs', 'duo', this)">Duo - 290€</button>
+  </div>
+
+  <div id="ecs-content-solo" class="content">
+    <div class="price">190€ <span class="old-price">290€</span></div>
+    <div class="description">Eau Chaude Sanitaire<br>Se branche sur le cumulus existant<br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
+    <div class="cta" onclick="addToCart('solo', 'ecs')">JE M'INSCRIS<br>MAINTENANT</div>
+  </div>
+
+  <div id="ecs-content-duo" class="content active">
+    <div class="price">290€ <span class="old-price">580€</span></div>
+    <div class="description">Eau Chaude Sanitaire<br>Se branche sur le cumulus existant<br><b>+<br>Une 2e formation de votre choix complète avec appli</b><br><font size="1em">(indiquez celle que vous souhaitez en commentaire lors de votre inscription : piscine OU chauffage)</font><br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
+    <div class="cta" onclick="addToCart('duo', 'ecs')">JE M'INSCRIS<br>MAINTENANT</div>
+  </div>
+</div>
+		</div>
 				</div>
 				<div class="elementor-element elementor-element-839ef0f elementor-widget elementor-widget-spacer" data-id="839ef0f" data-element_type="widget" data-widget_type="spacer.default">
 				<div class="elementor-widget-container">
@@ -1793,29 +1796,26 @@ Gagnez en indépendance</h3>		</div>
 				</div>
 				<div class="elementor-element elementor-element-3268fbc elementor-widget elementor-widget-html" data-id="3268fbc" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			   
-    <div class="product-card card-chauffage" id="card-chauffage">
-      <h2>CHAUFFAGE</h2>
-      <div class="offer-tabs">
-        <button class="inactive" onclick="switchOffer('chauffage', 'solo', this)">Solo - 190€</button>
-        <button class="active" onclick="switchOffer('chauffage', 'duo', this)">Duo - 290€</button>
-      </div>
-      
-      
-      <div id="chauffage-content-solo" class="content">
-        <div class="price">190€ <span class="old-price">290€</span></div>
-        <div class="description">Chauffage d'Habitation<br>Se branche sur le système de chauffage existant<br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('solo', 'chauffage')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-      
-      
-      <div id="chauffage-content-duo" class="content active">
-        <div class="price">290€ <span class="old-price">580€</span></div>
-        <div class="description">Chauffage d'Habitation<br>Se branche sur le chauffage existant<br><b>+<br>Une 2e formation de votre choix complète avec appli</b><br><font size="1em">(indiquez celle que vous souhaitez en commentaire lors de votre inscription : piscine OU eau chaude)</font><br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('duo', 'chauffage')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-    </div>
-  </div>		</div>
+			<div class="product-card card-chauffage" id="card-chauffage">
+  <h2>CHAUFFAGE</h2>
+  <div class="offer-tabs">
+    <button class="inactive" onclick="switchOffer('chauffage', 'solo', this)">Solo - 190€</button>
+    <button class="active" onclick="switchOffer('chauffage', 'duo', this)">Duo - 290€</button>
+  </div>
+
+  <div id="chauffage-content-solo" class="content">
+    <div class="price">190€ <span class="old-price">290€</span></div>
+    <div class="description">Chauffage d'Habitation<br>Se branche sur le chauffage existant<br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
+    <div class="cta" onclick="addToCart('solo', 'chauffage')">JE M'INSCRIS<br>MAINTENANT</div>
+  </div>
+
+  <div id="chauffage-content-duo" class="content active">
+    <div class="price">290€ <span class="old-price">580€</span></div>
+    <div class="description">Chauffage d'Habitation<br>Se branche sur le chauffage existant<br><b>+<br>Une 2e formation de votre choix complète avec appli</b><br><font size="1em">(indiquez celle que vous souhaitez en commentaire lors de votre inscription : piscine OU eau chaude)</font><br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
+    <div class="cta" onclick="addToCart('duo', 'chauffage')">JE M'INSCRIS<br>MAINTENANT</div>
+  </div>
+</div>
+		</div>
 				</div>
 				<div class="elementor-element elementor-element-74deeab elementor-widget elementor-widget-spacer" data-id="74deeab" data-element_type="widget" data-widget_type="spacer.default">
 				<div class="elementor-widget-container">
@@ -1828,9 +1828,8 @@ Gagnez en indépendance</h3>		</div>
 			</div>
 		</div>
 						</div>
-			</section></div>
-		
-				<section class="elementor-element elementor-element-5007ed4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5007ed4" data-element_type="section"><div class="elementor-container elementor-column-gap-default">
+			</div>
+		</section><section class="elementor-element elementor-element-5007ed4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5007ed4" data-element_type="section"><div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
 				<div class="elementor-element elementor-element-ac68046 elementor-column elementor-col-100 elementor-top-column" data-id="ac68046" data-element_type="column">
 			<div class="elementor-column-wrap  elementor-element-populated">
@@ -4401,7 +4400,7 @@ Gagnez en indépendance</h3>		</div>
 			</div>
 		</div>
 		
-		
+		</div>
 	
 
 <script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/popup-builder/public/js/ecwid-customization.js" defer></script><div data-layout="BIG_ICON_TITLE_SUBTOTAL" data-icon="BASKET" data-fixed="TRUE" data-fixed-position="TOP_RIGHT" class="ec-cart-widget"></div>
