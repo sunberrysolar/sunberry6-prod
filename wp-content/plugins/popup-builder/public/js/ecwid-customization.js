@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test7*/
+    /* Masquer le prix unitaire et total ligne dès le début test8*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -134,8 +134,11 @@ function attachToEcwid() {
 
       buttonContainer.appendChild(clearButton);
 
-      if (cartContainer.firstChild && cartContainer.firstChild.nextSibling) {
-        cartContainer.insertBefore(buttonContainer, cartContainer.firstChild.nextSibling);
+      const summaryRow = cartContainer.querySelector('.ec-cart-item--summary');
+      if (summaryRow) {
+        cartContainer.insertBefore(buttonContainer, summaryRow);
+      } else if (cartContainer.firstChild) {
+        cartContainer.appendChild(buttonContainer);
       } else {
         cartContainer.appendChild(buttonContainer);
       }
