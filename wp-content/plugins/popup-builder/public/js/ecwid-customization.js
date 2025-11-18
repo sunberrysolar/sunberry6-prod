@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test5*/
+    /* Masquer le prix unitaire et total ligne dès le début test6*/
     .ec-cart__item-price,
     .ec-cart__total-price,
     .ec-cart-item__price-inner {
@@ -31,10 +31,56 @@ function logDebug(message) {
   console.log(`[DEBUG] ${message}`);
 }
 
+// Variable globale pour suivre le type de page
+var currentPageType = '';
+
+// Intercepter les clics au niveau du document AVANT le chargement d'Ecwid
+// pour bloquer l'événement avant qu'Ecwid ne le traite
+document.addEventListener('click', function(e) {
+  if (currentPageType !== "CART") return;
+
+  // Vérifier si le clic est sur une croix de suppression ou un de ses enfants
+  // Ajout de sélecteurs supplémentaires pour couvrir tous les cas possibles
+  const deleteButton = e.target.closest('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove, [class*="remove"], [class*="delete"], .ec-cart-item__control--remove');
+
+  if (deleteButton) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    logDebug("Clic sur croix de suppression - vidage complet du panier");
+
+    // Vider le panier via l'API Ecwid
+    if (typeof Ecwid !== 'undefined' && Ecwid.Cart) {
+      Ecwid.Cart.clear(function (success, error) {
+        if (success == true) {
+          logDebug("Panier vidé avec succès");
+        } else {
+          console.error("Erreur lors du vidage du panier:", error);
+        }
+      });
+    }
+
+    return false;
+  }
+}, true); // true = phase capture, avant la phase bubbling
+
+// Ajouter aussi sur mousedown pour intercepter encore plus tôt
+document.addEventListener('mousedown', function(e) {
+  if (currentPageType !== "CART") return;
+
+  const deleteButton = e.target.closest('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove, [class*="remove"], [class*="delete"], .ec-cart-item__control--remove');
+
+  if (deleteButton) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    return false;
+  }
+}, true);
+
 Ecwid.OnAPILoaded.add(function () {
   logDebug("Ecwid API chargée");
-
-  var currentPageType = '';
 
   function addClearCartButton() {
     if (currentPageType !== "CART") {
@@ -103,26 +149,6 @@ Ecwid.OnAPILoaded.add(function () {
       el.style.display = 'none';
     });
   }
-
-  // Intercepter les clics au niveau du document (phase capture)
-  // pour bloquer l'événement avant qu'Ecwid ne le traite
-  document.addEventListener('click', function(e) {
-    if (currentPageType !== "CART") return;
-
-    // Vérifier si le clic est sur une croix de suppression ou un de ses enfants
-    const deleteButton = e.target.closest('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove');
-
-    if (deleteButton) {
-      e.preventDefault();
-      e.stopPropagation();
-      e.stopImmediatePropagation();
-
-      logDebug("Clic sur croix de suppression - vidage complet du panier");
-      clearEntireCart();
-
-      return false;
-    }
-  }, true); // true = phase capture, avant la phase bubbling
 
   function styliserCroixSuppression() {
     // Rendre les croix visibles
