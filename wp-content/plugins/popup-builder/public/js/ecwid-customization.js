@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test2*/
+    /* Masquer le prix unitaire et total ligne dès le début test3*/
     .ec-cart__item-price,
     .ec-cart__total-price,
     .ec-cart-item__price-inner {
@@ -111,15 +111,18 @@ Ecwid.OnAPILoaded.add(function () {
     deleteButtons.forEach(button => {
       // Éviter de réattacher l'événement si déjà fait
       if (button.dataset.intercepted === 'true') return;
-      button.dataset.intercepted = 'true';
+
+      // Cloner le bouton pour supprimer tous les event listeners natifs d'Ecwid
+      const newButton = button.cloneNode(true);
+      newButton.dataset.intercepted = 'true';
 
       // Rendre le bouton visible
-      button.style.opacity = '1';
-      button.style.visibility = 'visible';
-      button.style.pointerEvents = 'auto';
+      newButton.style.opacity = '1';
+      newButton.style.visibility = 'visible';
+      newButton.style.pointerEvents = 'auto';
 
-      // Intercepter le clic
-      button.addEventListener('click', function (e) {
+      // Ajouter notre propre event listener
+      newButton.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -128,7 +131,10 @@ Ecwid.OnAPILoaded.add(function () {
         clearEntireCart();
 
         return false;
-      }, true); // capture phase pour intercepter avant Ecwid
+      }, true);
+
+      // Remplacer l'ancien bouton par le nouveau
+      button.parentNode.replaceChild(newButton, button);
     });
   }
 
