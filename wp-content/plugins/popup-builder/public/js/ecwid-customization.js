@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test3*/
+    /* Masquer le prix unitaire et total ligne dès le début test4*/
     .ec-cart__item-price,
     .ec-cart__total-price,
     .ec-cart-item__price-inner {
