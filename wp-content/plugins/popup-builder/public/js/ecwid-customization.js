@@ -12,9 +12,8 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début test6*/
+    /* Masquer le prix unitaire et total ligne dès le début test7*/
     .ec-cart__item-price,
-    .ec-cart__total-price,
     .ec-cart-item__price-inner {
       display: none !important;
     }
@@ -33,6 +32,7 @@ function logDebug(message) {
 
 // Variable globale pour suivre le type de page
 var currentPageType = '';
+const DELETE_BUTTON_SELECTOR = '.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove, .ec-cart-item__control--remove, .ec-cart-item__control-inner, .ec-cart-item__control';
 
 // Intercepter les clics au niveau du document AVANT le chargement d'Ecwid
 // pour bloquer l'événement avant qu'Ecwid ne le traite
@@ -41,7 +41,7 @@ document.addEventListener('click', function(e) {
 
   // Vérifier si le clic est sur une croix de suppression ou un de ses enfants
   // Ajout de sélecteurs supplémentaires pour couvrir tous les cas possibles
-  const deleteButton = e.target.closest('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove, [class*="remove"], [class*="delete"], .ec-cart-item__control--remove');
+  const deleteButton = e.target.closest(DELETE_BUTTON_SELECTOR);
 
   if (deleteButton) {
     e.preventDefault();
@@ -69,7 +69,7 @@ document.addEventListener('click', function(e) {
 document.addEventListener('mousedown', function(e) {
   if (currentPageType !== "CART") return;
 
-  const deleteButton = e.target.closest('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove, [class*="remove"], [class*="delete"], .ec-cart-item__control--remove');
+  const deleteButton = e.target.closest(DELETE_BUTTON_SELECTOR);
 
   if (deleteButton) {
     e.preventDefault();
@@ -79,129 +79,138 @@ document.addEventListener('mousedown', function(e) {
   }
 }, true);
 
-Ecwid.OnAPILoaded.add(function () {
-  logDebug("Ecwid API chargée");
-
-  function addClearCartButton() {
-    if (currentPageType !== "CART") {
-      const existingButton = document.getElementById('ecwid-clear-cart-button');
-      if (existingButton) existingButton.remove();
-      return;
-    }
-
-    if (document.getElementById('ecwid-clear-cart-button')) return;
-
-    const cartContainer = document.querySelector('.ec-cart__body');
-    if (!cartContainer) {
-      logDebug("Conteneur du panier non trouvé");
-      return;
-    }
-
-    const buttonContainer = document.createElement('div');
-    buttonContainer.id = 'ecwid-clear-cart-button-container';
-    buttonContainer.style.textAlign = 'center';
-    buttonContainer.style.margin = '20px 0';
-
-    const clearButton = document.createElement('button');
-    clearButton.id = 'ecwid-clear-cart-button';
-    clearButton.textContent = '🗑️ VIDER TOUT LE PANIER';
-    clearButton.style.backgroundColor = '#e672f7';
-    clearButton.style.color = '#ffffff';
-    clearButton.style.border = 'none';
-    clearButton.style.padding = '15px 30px';
-    clearButton.style.borderRadius = '8px';
-    clearButton.style.cursor = 'pointer';
-    clearButton.style.fontWeight = 'bold';
-    clearButton.style.fontSize = '16px';
-    clearButton.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
-    clearButton.style.transition = 'all 0.3s ease';
-
-    clearButton.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      clearEntireCart();
-      return false;
+function attachToEcwid() {
+  if (!(window.Ecwid && Ecwid.OnAPILoaded && Ecwid.OnPageLoaded)) {
+    document.addEventListener('ecwidLoaded', function handleEcwidLoaded() {
+      document.removeEventListener('ecwidLoaded', handleEcwidLoaded);
+      attachToEcwid();
     });
-
-    buttonContainer.appendChild(clearButton);
-
-    if (cartContainer.firstChild && cartContainer.firstChild.nextSibling) {
-      cartContainer.insertBefore(buttonContainer, cartContainer.firstChild.nextSibling);
-    } else {
-      cartContainer.appendChild(buttonContainer);
-    }
+    return;
   }
 
-  function clearEntireCart() {
-    logDebug("Vidage du panier demandé");
-    Ecwid.Cart.clear(function (success, error) {
-      if (success == true) {
-        logDebug("Panier vidé avec succès");
+  Ecwid.OnAPILoaded.add(function () {
+    logDebug("Ecwid API chargée");
+
+    function addClearCartButton() {
+      if (currentPageType !== "CART") {
+        const existingButton = document.getElementById('ecwid-clear-cart-button');
+        if (existingButton) existingButton.remove();
+        return;
+      }
+
+      if (document.getElementById('ecwid-clear-cart-button')) return;
+
+      const cartContainer = document.querySelector('.ec-cart__body');
+      if (!cartContainer) {
+        logDebug("Conteneur du panier non trouvé");
+        return;
+      }
+
+      const buttonContainer = document.createElement('div');
+      buttonContainer.id = 'ecwid-clear-cart-button-container';
+      buttonContainer.style.textAlign = 'center';
+      buttonContainer.style.margin = '20px 0';
+
+      const clearButton = document.createElement('button');
+      clearButton.id = 'ecwid-clear-cart-button';
+      clearButton.textContent = '🗑️ VIDER TOUT LE PANIER';
+      clearButton.style.backgroundColor = '#e672f7';
+      clearButton.style.color = '#ffffff';
+      clearButton.style.border = 'none';
+      clearButton.style.padding = '15px 30px';
+      clearButton.style.borderRadius = '8px';
+      clearButton.style.cursor = 'pointer';
+      clearButton.style.fontWeight = 'bold';
+      clearButton.style.fontSize = '16px';
+      clearButton.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+      clearButton.style.transition = 'all 0.3s ease';
+
+      clearButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        clearEntireCart();
+        return false;
+      });
+
+      buttonContainer.appendChild(clearButton);
+
+      if (cartContainer.firstChild && cartContainer.firstChild.nextSibling) {
+        cartContainer.insertBefore(buttonContainer, cartContainer.firstChild.nextSibling);
       } else {
-        console.error("Erreur lors du vidage du panier:", error);
+        cartContainer.appendChild(buttonContainer);
       }
-    });
-  }
-
-  function forcerMasquagePrixSiRedessiné() {
-    // Renforce le masquage après chargement dynamique
-    document.querySelectorAll('.ec-cart-item__price-inner, .ec-cart__item-price, .ec-cart__total-price, .ec-cart__tax').forEach(el => {
-      el.style.display = 'none';
-    });
-  }
-
-  function styliserCroixSuppression() {
-    // Rendre les croix visibles
-    const deleteButtons = document.querySelectorAll('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove');
-
-    deleteButtons.forEach(button => {
-      button.style.opacity = '1';
-      button.style.visibility = 'visible';
-      button.style.pointerEvents = 'auto';
-    });
-  }
-
-  // Observer les changements du DOM pour styliser les nouvelles croix
-  function setupMutationObserver() {
-    const observer = new MutationObserver(function(mutations) {
-      if (currentPageType === "CART") {
-        styliserCroixSuppression();
-        forcerMasquagePrixSiRedessiné();
-      }
-    });
-
-    // Observer le body pour les changements
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  }
-
-  Ecwid.OnPageLoaded.add(function (page) {
-    currentPageType = page.type;
-    logDebug(`Page chargée: ${page.type}`);
-
-    if (page.type === "CART") {
-      setTimeout(() => {
-        addClearCartButton();
-        forcerMasquagePrixSiRedessiné();
-        styliserCroixSuppression();
-      }, 500);
-
-      // Réappliquer après un délai supplémentaire pour gérer le chargement asynchrone
-      setTimeout(() => {
-        styliserCroixSuppression();
-        forcerMasquagePrixSiRedessiné();
-      }, 1500);
     }
-  });
 
-  // Initialiser l'observateur de mutations
-  setupMutationObserver();
+    function clearEntireCart() {
+      logDebug("Vidage du panier demandé");
+      Ecwid.Cart.clear(function (success, error) {
+        if (success == true) {
+          logDebug("Panier vidé avec succès");
+        } else {
+          console.error("Erreur lors du vidage du panier:", error);
+        }
+      });
+    }
 
-  // Styles CSS
-  const style = document.createElement('style');
-  style.textContent = `
+    function forcerMasquagePrixSiRedessiné() {
+      // Renforce le masquage après chargement dynamique
+      document.querySelectorAll('.ec-cart-item__price-inner, .ec-cart__item-price, .ec-cart__tax').forEach(el => {
+        el.style.display = 'none';
+      });
+    }
+
+    function styliserCroixSuppression() {
+      // Rendre les croix visibles
+      const deleteButtons = document.querySelectorAll('.ec-cart-item__wrap-remove, .ec-cart-item__remove, .ec-minicart-item__remove');
+
+      deleteButtons.forEach(button => {
+        button.style.opacity = '1';
+        button.style.visibility = 'visible';
+        button.style.pointerEvents = 'auto';
+      });
+    }
+
+    // Observer les changements du DOM pour styliser les nouvelles croix
+    function setupMutationObserver() {
+      const observer = new MutationObserver(function(mutations) {
+        if (currentPageType === "CART") {
+          styliserCroixSuppression();
+          forcerMasquagePrixSiRedessiné();
+        }
+      });
+
+      // Observer le body pour les changements
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    Ecwid.OnPageLoaded.add(function (page) {
+      currentPageType = page.type;
+      logDebug(`Page chargée: ${page.type}`);
+
+      if (page.type === "CART") {
+        setTimeout(() => {
+          addClearCartButton();
+          forcerMasquagePrixSiRedessiné();
+          styliserCroixSuppression();
+        }, 500);
+
+        // Réappliquer après un délai supplémentaire pour gérer le chargement asynchrone
+        setTimeout(() => {
+          styliserCroixSuppression();
+          forcerMasquagePrixSiRedessiné();
+        }, 1500);
+      }
+    });
+
+    // Initialiser l'observateur de mutations
+    setupMutationObserver();
+
+    // Styles CSS
+    const style = document.createElement('style');
+    style.textContent = `
     #ecwid-clear-cart-button:hover {
       background-color: #d35400 !important;
       transform: scale(1.05);
@@ -256,5 +265,8 @@ Ecwid.OnAPILoaded.add(function () {
       margin: 15px 0 !important;
     }
   `;
-  document.head.appendChild(style);
-});
+    document.head.appendChild(style);
+  });
+}
+
+attachToEcwid();
