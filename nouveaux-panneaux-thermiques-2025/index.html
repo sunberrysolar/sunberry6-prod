@@ -197,7 +197,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","h
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/cookie-notice/js/front.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
 var sibErrMsg = {"invalidMail":"Please fill out valid email address","requiredField":"Please fill out required fields","invalidDateFormat":"Please fill out valid date format","invalidSMSFormat":"Please fill out valid phone number"};
-var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"6b2d7ab59b","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
+var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"c847336b95","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
 /* ]]> */
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/mailin/js/mailin-front.js"></script><style type="text/css"> .ae_data .elementor-editor-element-setting {
                         display:none !important;
@@ -1591,27 +1591,38 @@ Gagnez en indépendance</h3>		</div>
       document.getElementById(cardId + '-content-' + offerType).classList.add('active');
     }
     
-    // Ajoute les produits puis attend la confirmation Ecwid avant d'ouvrir le panier
+    // Ajoute les produits séquentiellement avec callback Ecwid
     function addItemsSequentially(items, callback) {
       if (!items.length) {
         callback(true);
         return;
       }
 
-      const totalQuantityToAdd = items.reduce((sum, product) => {
-        const qty = (typeof product.quantity === 'number' && product.quantity > 0) ? product.quantity : 1;
-        return sum + qty;
-      }, 0);
+      var index = 0;
+      var allSuccess = true;
 
-      Ecwid.Cart.get(function(cartSnapshot) {
-        const initialQuantity = getCartQuantity(cartSnapshot);
+      function addNextProduct() {
+        if (index >= items.length) {
+          callback(allSuccess);
+          return;
+        }
 
-        items.forEach(function(item) {
-          Ecwid.Cart.addProduct(item);
+        var item = items[index];
+        Ecwid.Cart.addProduct({
+          id: item.id,
+          quantity: item.quantity || 1,
+          callback: function(success, product, cart, error) {
+            if (!success) {
+              console.error('Erreur ajout produit ID ' + item.id + ':', error);
+              allSuccess = false;
+            }
+            index++;
+            addNextProduct();
+          }
         });
+      }
 
-        waitForCartQuantity(initialQuantity + totalQuantityToAdd, callback);
-      });
+      addNextProduct();
     }
 
     function isCartCurrentlyClearing() {
@@ -1646,42 +1657,40 @@ Gagnez en indépendance</h3>		</div>
       }, 300);
     }
 
-    function getCartQuantity(cartSnapshot) {
-      if (!cartSnapshot || !Array.isArray(cartSnapshot.items)) return 0;
-      return cartSnapshot.items.reduce(function(total, cartItem) {
-        return total + (cartItem.quantity || 0);
-      }, 0);
+    // Variable pour savoir si l'API Ecwid est prête
+    var ecwidAPIReady = false;
+
+    // Attendre que l'API soit prête
+    if (typeof Ecwid !== 'undefined' && Ecwid.OnAPILoaded) {
+      Ecwid.OnAPILoaded.add(function() {
+        ecwidAPIReady = true;
+        console.log('Ecwid API prête');
+      });
     }
 
-    function waitForCartQuantity(expectedQuantity, callback, attemptsLeft = 20) {
-      if (attemptsLeft <= 0) {
-        callback(false);
+    // Fonction pour ajouter au panier
+    function addToCart(productType, cardId) {
+      // Vérification qu'Ecwid est disponible
+      if (typeof Ecwid === 'undefined') {
+        console.log('Ecwid n\'est pas chargé');
+        alert('Ajout au panier: Type ' + productType + ' pour ' + cardId);
         return;
       }
 
-      setTimeout(function() {
-        Ecwid.Cart.get(function(updatedCart) {
-          const currentQuantity = getCartQuantity(updatedCart);
-          if (currentQuantity >= expectedQuantity) {
-            callback(true);
-          } else {
-            waitForCartQuantity(expectedQuantity, callback, attemptsLeft - 1);
-          }
+      // Si l'API n'est pas encore prête, attendre
+      if (!ecwidAPIReady) {
+        Ecwid.OnAPILoaded.add(function() {
+          ecwidAPIReady = true;
+          addToCart(productType, cardId);
         });
-      }, 200);
-    }
-    
-    // Fonction pour ajouter au panier
-    function addToCart(productType, cardId) {
-      // Initialisation d'Ecwid (si disponible)
-      if (typeof Ecwid !== 'undefined') {
-        waitUntilCartCleared(function(cartReady) {
+        return;
+      }
+
+      waitUntilCartCleared(function(cartReady) {
           if (!cartReady) {
             console.warn('Le panier semble toujours en cours de vidage; tentative d\'ajout quand même.');
           }
 
-          Ecwid.init();
-          
           // Définition des produits à ajouter selon le type et la carte
           let items = [];
           
@@ -1738,17 +1747,16 @@ Gagnez en indépendance</h3>		</div>
             Ecwid.openPage('cart');
           });
         });
-      } else {
-        console.log('Ecwid n\'est pas chargé');
-        alert('Ajout au panier: Type ' + productType + ' pour ' + cardId);
-      }
     }
     
     // Initialisation - Assurer que l'offre Duo est sélectionnée par défaut pour toutes les cartes
     document.addEventListener('DOMContentLoaded', function() {
       const cardIds = ['piscine', 'ecs', 'chauffage'];
       cardIds.forEach(cardId => {
-        document.getElementById(cardId + '-content-duo').classList.add('active');
+        const element = document.getElementById(cardId + '-content-duo');
+        if (element) {
+          element.classList.add('active');
+        }
       });
     });
   </script></div>
