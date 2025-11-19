@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début testA*/
+    /* Masquer le prix unitaire et total ligne dès le début testB*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -40,6 +40,30 @@ function setCartClearingState(isClearing, source) {
   document.dispatchEvent(event);
 }
 
+function getCartQuantitySnapshot(cartSnapshot) {
+  if (!cartSnapshot || !Array.isArray(cartSnapshot.items)) return 0;
+  return cartSnapshot.items.reduce(function(total, cartItem) {
+    return total + (cartItem.quantity || 0);
+  }, 0);
+}
+
+function waitUntilCartIsEmpty(callback, attemptsLeft = 30) {
+  if (attemptsLeft <= 0) {
+    callback(false);
+    return;
+  }
+
+  Ecwid.Cart.get(function(cartSnapshot) {
+    if (getCartQuantitySnapshot(cartSnapshot) === 0) {
+      callback(true);
+    } else {
+      setTimeout(function() {
+        waitUntilCartIsEmpty(callback, attemptsLeft - 1);
+      }, 200);
+    }
+  });
+}
+
 function clearCartWithStateTracking(triggerLabel) {
   if (typeof Ecwid === 'undefined' || !Ecwid.Cart) {
     console.warn('Ecwid.Cart indisponible pour le vidage du panier');
@@ -54,11 +78,16 @@ function clearCartWithStateTracking(triggerLabel) {
   setCartClearingState(true, triggerLabel);
 
   Ecwid.Cart.clear(function (success, error) {
-    setCartClearingState(false, triggerLabel);
-
     if (success == true) {
-      logDebug("Panier vidé avec succès");
+      logDebug("Panier vidé (confirmation API), vérification de l'état vide...");
+      waitUntilCartIsEmpty(function(emptyConfirmed) {
+        if (!emptyConfirmed) {
+          console.warn("Impossible de confirmer que le panier est vide après clear");
+        }
+        setCartClearingState(false, triggerLabel);
+      });
     } else {
+      setCartClearingState(false, triggerLabel);
       console.error("Erreur lors du vidage du panier:", error);
     }
   });
