@@ -1591,34 +1591,52 @@ Gagnez en indépendance</h3>		</div>
       document.getElementById(cardId + '-content-' + offerType).classList.add('active');
     }
     
-    // Ajoute les produits un par un avant d'ouvrir le panier pour éviter qu'un ajout soit interrompu
+    // Ajoute les produits puis attend la confirmation Ecwid avant d'ouvrir le panier
     function addItemsSequentially(items, callback) {
       if (!items.length) {
         callback(true);
         return;
       }
 
-      let index = 0;
+      const totalQuantityToAdd = items.reduce((sum, product) => {
+        const qty = (typeof product.quantity === 'number' && product.quantity > 0) ? product.quantity : 1;
+        return sum + qty;
+      }, 0);
 
-      function addNext() {
-        if (index >= items.length) {
-          callback(true);
-          return;
-        }
+      Ecwid.Cart.get(function(cartSnapshot) {
+        const initialQuantity = getCartQuantity(cartSnapshot);
 
-        const currentItem = items[index];
-        Ecwid.Cart.addProduct(currentItem, function(success, error) {
-          if (success === true) {
-            index += 1;
-            addNext();
-          } else {
-            console.error('Erreur lors de l\'ajout du produit au panier', currentItem, error);
-            callback(false);
-          }
+        items.forEach(function(item) {
+          Ecwid.Cart.addProduct(item);
         });
+
+        waitForCartQuantity(initialQuantity + totalQuantityToAdd, callback);
+      });
+    }
+
+    function getCartQuantity(cartSnapshot) {
+      if (!cartSnapshot || !Array.isArray(cartSnapshot.items)) return 0;
+      return cartSnapshot.items.reduce(function(total, cartItem) {
+        return total + (cartItem.quantity || 0);
+      }, 0);
+    }
+
+    function waitForCartQuantity(expectedQuantity, callback, attemptsLeft = 20) {
+      if (attemptsLeft <= 0) {
+        callback(false);
+        return;
       }
 
-      addNext();
+      setTimeout(function() {
+        Ecwid.Cart.get(function(updatedCart) {
+          const currentQuantity = getCartQuantity(updatedCart);
+          if (currentQuantity >= expectedQuantity) {
+            callback(true);
+          } else {
+            waitForCartQuantity(expectedQuantity, callback, attemptsLeft - 1);
+          }
+        });
+      }, 200);
     }
     
     // Fonction pour ajouter au panier
