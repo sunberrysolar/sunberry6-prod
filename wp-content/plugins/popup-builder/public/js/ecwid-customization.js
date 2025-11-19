@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début testC*/
+    /* Masquer le prix unitaire et total ligne dès le début testAA*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -148,10 +148,16 @@ function attachToEcwid() {
   Ecwid.OnAPILoaded.add(function () {
     logDebug("Ecwid API chargée");
 
+    let addClearCartRetryTimeout = null;
+
     function addClearCartButton() {
       if (currentPageType !== "CART") {
         const existingButton = document.getElementById('ecwid-clear-cart-button');
         if (existingButton) existingButton.remove();
+        if (addClearCartRetryTimeout) {
+          clearTimeout(addClearCartRetryTimeout);
+          addClearCartRetryTimeout = null;
+        }
         return;
       }
 
@@ -159,7 +165,13 @@ function attachToEcwid() {
 
       const cartContainer = document.querySelector('.ec-cart__body');
       if (!cartContainer) {
-        logDebug("Conteneur du panier non trouvé");
+        logDebug("Conteneur du panier non trouvé, nouvelle tentative planifiée");
+        if (!addClearCartRetryTimeout) {
+          addClearCartRetryTimeout = setTimeout(function retryAddClearButton() {
+            addClearCartRetryTimeout = null;
+            addClearCartButton();
+          }, 400);
+        }
         return;
       }
 
@@ -225,6 +237,7 @@ function attachToEcwid() {
     function setupMutationObserver() {
       const observer = new MutationObserver(function(mutations) {
         if (currentPageType === "CART") {
+          addClearCartButton();
           styliserCroixSuppression();
           forcerMasquagePrixSiRedessiné();
         }
