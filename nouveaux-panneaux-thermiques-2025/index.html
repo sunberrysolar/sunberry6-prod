@@ -197,7 +197,7 @@ var cnArgs = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","h
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/cookie-notice/js/front.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
 var sibErrMsg = {"invalidMail":"Please fill out valid email address","requiredField":"Please fill out required fields","invalidDateFormat":"Please fill out valid date format","invalidSMSFormat":"Please fill out valid phone number"};
-var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"34e6289b0d","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
+var ajax_sib_front_object = {"ajax_url":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"6b2d7ab59b","flag_url":"https:\/\/www.sunberry.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
 /* ]]> */
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/mailin/js/mailin-front.js"></script><style type="text/css"> .ae_data .elementor-editor-element-setting {
                         display:none !important;
@@ -1591,6 +1591,36 @@ Gagnez en indépendance</h3>		</div>
       document.getElementById(cardId + '-content-' + offerType).classList.add('active');
     }
     
+    // Ajoute les produits un par un avant d'ouvrir le panier pour éviter qu'un ajout soit interrompu
+    function addItemsSequentially(items, callback) {
+      if (!items.length) {
+        callback(true);
+        return;
+      }
+
+      let index = 0;
+
+      function addNext() {
+        if (index >= items.length) {
+          callback(true);
+          return;
+        }
+
+        const currentItem = items[index];
+        Ecwid.Cart.addProduct(currentItem, function(success, error) {
+          if (success === true) {
+            index += 1;
+            addNext();
+          } else {
+            console.error('Erreur lors de l\'ajout du produit au panier', currentItem, error);
+            callback(false);
+          }
+        });
+      }
+
+      addNext();
+    }
+    
     // Fonction pour ajouter au panier
     function addToCart(productType, cardId) {
       // Initialisation d'Ecwid (si disponible)
@@ -1645,13 +1675,13 @@ Gagnez en indépendance</h3>		</div>
           }
         }
         
-        // Ajout des produits au panier
-        items.forEach(function(item) {
-          Ecwid.Cart.addProduct(item);
+        // Ajout des produits au panier un par un pour garantir que tous sont pris en compte
+        addItemsSequentially(items, function(allProductsAdded) {
+          if (!allProductsAdded) {
+            console.warn('Tous les produits n\'ont pas pu être ajoutés au panier.');
+          }
+          Ecwid.openPage('cart');
         });
-        
-        // Redirection vers le panier
-        Ecwid.openPage('cart');
       } else {
         console.log('Ecwid n\'est pas chargé');
         alert('Ajout au panier: Type ' + productType + ' pour ' + cardId);
