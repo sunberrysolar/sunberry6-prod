@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début remis2*/
+    /* Masquer le prix unitaire et total ligne dès le début testA*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -28,6 +28,40 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 
 function logDebug(message) {
   console.log(`[DEBUG] ${message}`);
+}
+
+// Suivi global de l'état de vidage pour que les autres scripts puissent patienter
+window.__ecwidCartClearing = window.__ecwidCartClearing || false;
+
+function setCartClearingState(isClearing, source) {
+  window.__ecwidCartClearing = isClearing;
+  const eventName = isClearing ? 'ecwidCartClearing' : 'ecwidCartCleared';
+  const event = new CustomEvent(eventName, { detail: { source: source || 'unknown' } });
+  document.dispatchEvent(event);
+}
+
+function clearCartWithStateTracking(triggerLabel) {
+  if (typeof Ecwid === 'undefined' || !Ecwid.Cart) {
+    console.warn('Ecwid.Cart indisponible pour le vidage du panier');
+    return;
+  }
+
+  if (window.__ecwidCartClearing) {
+    logDebug('Vidage déjà en cours, requête ignorée');
+    return;
+  }
+
+  setCartClearingState(true, triggerLabel);
+
+  Ecwid.Cart.clear(function (success, error) {
+    setCartClearingState(false, triggerLabel);
+
+    if (success == true) {
+      logDebug("Panier vidé avec succès");
+    } else {
+      console.error("Erreur lors du vidage du panier:", error);
+    }
+  });
 }
 
 // Variable globale pour suivre le type de page
@@ -52,13 +86,7 @@ document.addEventListener('click', function(e) {
 
     // Vider le panier via l'API Ecwid
     if (typeof Ecwid !== 'undefined' && Ecwid.Cart) {
-      Ecwid.Cart.clear(function (success, error) {
-        if (success == true) {
-          logDebug("Panier vidé avec succès");
-        } else {
-          console.error("Erreur lors du vidage du panier:", error);
-        }
-      });
+      clearCartWithStateTracking('delete-cross');
     }
 
     return false;
@@ -143,13 +171,7 @@ function attachToEcwid() {
 
     function clearEntireCart() {
       logDebug("Vidage du panier demandé");
-      Ecwid.Cart.clear(function (success, error) {
-        if (success == true) {
-          logDebug("Panier vidé avec succès");
-        } else {
-          console.error("Erreur lors du vidage du panier:", error);
-        }
-      });
+      clearCartWithStateTracking('custom-clear-button');
     }
 
     function forcerMasquagePrixSiRedessiné() {
