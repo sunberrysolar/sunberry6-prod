@@ -1614,6 +1614,26 @@ Gagnez en indépendance</h3>		</div>
       });
     }
 
+    function isCartCurrentlyClearing() {
+      return window.__ecwidCartClearing === true;
+    }
+
+    function waitUntilCartCleared(callback, attemptsLeft = 30) {
+      if (!isCartCurrentlyClearing()) {
+        callback(true);
+        return;
+      }
+
+      if (attemptsLeft <= 0) {
+        callback(false);
+        return;
+      }
+
+      setTimeout(function() {
+        waitUntilCartCleared(callback, attemptsLeft - 1);
+      }, 200);
+    }
+
     function getCartQuantity(cartSnapshot) {
       if (!cartSnapshot || !Array.isArray(cartSnapshot.items)) return 0;
       return cartSnapshot.items.reduce(function(total, cartItem) {
@@ -1643,62 +1663,68 @@ Gagnez en indépendance</h3>		</div>
     function addToCart(productType, cardId) {
       // Initialisation d'Ecwid (si disponible)
       if (typeof Ecwid !== 'undefined') {
-        Ecwid.init();
-        
-        // Définition des produits à ajouter selon le type et la carte
-        let items = [];
-        
-        // Structure conditionnelle pour déterminer quels produits ajouter
-        if (cardId === 'piscine') {
-          if (productType === 'solo') {
-            items = [
-              { id: 749857056, quantity: 1 }, // ID du produit piscine solo
-              { id: 749866251, quantity: 1 }
-            ];
-          } else if (productType === 'duo') {
-            items = [
-              { id: 749857056, quantity: 1 }, // ID du produit piscine duo
-              { id: 749866251, quantity: 1 },
-              { id: 750511112, quantity: 1 },
-              { id: 750532337, quantity: 1 }
-            ];
+        waitUntilCartCleared(function(cartReady) {
+          if (!cartReady) {
+            console.warn('Le panier semble toujours en cours de vidage; tentative d\'ajout quand même.');
           }
-        } else if (cardId === 'ecs') {
-          if (productType === 'solo') {
-            items = [
-              { id: 751168375, quantity: 1 }, // ID du produit ECS solo (à adapter)
-              { id: 751164881, quantity: 1 }
-            ];
-          } else if (productType === 'duo') {
-            items = [
-              { id: 751168375, quantity: 1 }, // ID du produit ECS duo (à adapter)
-              { id: 751164881, quantity: 1 },
-              { id: 750511112, quantity: 1 },
-              { id: 750532337, quantity: 1 }
-            ];
+
+          Ecwid.init();
+          
+          // Définition des produits à ajouter selon le type et la carte
+          let items = [];
+          
+          // Structure conditionnelle pour déterminer quels produits ajouter
+          if (cardId === 'piscine') {
+            if (productType === 'solo') {
+              items = [
+                { id: 749857056, quantity: 1 }, // ID du produit piscine solo
+                { id: 749866251, quantity: 1 }
+              ];
+            } else if (productType === 'duo') {
+              items = [
+                { id: 749857056, quantity: 1 }, // ID du produit piscine duo
+                { id: 749866251, quantity: 1 },
+                { id: 750511112, quantity: 1 },
+                { id: 750532337, quantity: 1 }
+              ];
+            }
+          } else if (cardId === 'ecs') {
+            if (productType === 'solo') {
+              items = [
+                { id: 751168375, quantity: 1 }, // ID du produit ECS solo (à adapter)
+                { id: 751164881, quantity: 1 }
+              ];
+            } else if (productType === 'duo') {
+              items = [
+                { id: 751168375, quantity: 1 }, // ID du produit ECS duo (à adapter)
+                { id: 751164881, quantity: 1 },
+                { id: 750511112, quantity: 1 },
+                { id: 750532337, quantity: 1 }
+              ];
+            }
+          } else if (cardId === 'chauffage') {
+            if (productType === 'solo') {
+              items = [
+                { id: 751164885, quantity: 1 }, // ID du produit chauffage solo (à adapter)
+                { id: 751164708, quantity: 1 }
+              ];
+            } else if (productType === 'duo') {
+              items = [
+                { id: 751164885, quantity: 1 }, // ID du produit chauffage duo (à adapter)
+                { id: 751164708, quantity: 1 },
+                { id: 750511112, quantity: 1 },
+                { id: 750532337, quantity: 1 }
+              ];
+            }
           }
-        } else if (cardId === 'chauffage') {
-          if (productType === 'solo') {
-            items = [
-              { id: 751164885, quantity: 1 }, // ID du produit chauffage solo (à adapter)
-              { id: 751164708, quantity: 1 }
-            ];
-          } else if (productType === 'duo') {
-            items = [
-              { id: 751164885, quantity: 1 }, // ID du produit chauffage duo (à adapter)
-              { id: 751164708, quantity: 1 },
-              { id: 750511112, quantity: 1 },
-              { id: 750532337, quantity: 1 }
-            ];
-          }
-        }
-        
-        // Ajout des produits au panier un par un pour garantir que tous sont pris en compte
-        addItemsSequentially(items, function(allProductsAdded) {
-          if (!allProductsAdded) {
-            console.warn('Tous les produits n\'ont pas pu être ajoutés au panier.');
-          }
-          Ecwid.openPage('cart');
+          
+          // Ajout des produits au panier un par un pour garantir que tous sont pris en compte
+          addItemsSequentially(items, function(allProductsAdded) {
+            if (!allProductsAdded) {
+              console.warn('Tous les produits n\'ont pas pu être ajoutés au panier.');
+            }
+            Ecwid.openPage('cart');
+          });
         });
       } else {
         console.log('Ecwid n\'est pas chargé');
