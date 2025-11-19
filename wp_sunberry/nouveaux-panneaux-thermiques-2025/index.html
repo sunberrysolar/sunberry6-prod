@@ -1629,9 +1629,21 @@ Gagnez en indépendance</h3>		</div>
         return;
       }
 
+      let resolved = false;
+
+      function handleClearedEvent() {
+        resolved = true;
+        document.removeEventListener('ecwidCartCleared', handleClearedEvent);
+        callback(true);
+      }
+
+      document.addEventListener('ecwidCartCleared', handleClearedEvent);
+
       setTimeout(function() {
+        if (resolved) return;
+        document.removeEventListener('ecwidCartCleared', handleClearedEvent);
         waitUntilCartCleared(callback, attemptsLeft - 1);
-      }, 200);
+      }, 300);
     }
 
     function getCartQuantity(cartSnapshot) {
