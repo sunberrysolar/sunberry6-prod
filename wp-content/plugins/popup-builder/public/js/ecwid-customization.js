@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début testXXX*/
+    /* Masquer le prix unitaire et total ligne dès le début testXXXX*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -198,8 +198,12 @@ function attachToEcwid() {
       const buttonContainer = document.createElement('div');
       buttonContainer.id = 'ecwid-clear-cart-button-container';
       buttonContainer.style.textAlign = 'left';
-      buttonContainer.style.margin = '10px 0';
+      buttonContainer.style.margin = '10px 15px';
       buttonContainer.style.background = 'transparent';
+      buttonContainer.style.display = 'block';
+      buttonContainer.style.visibility = 'visible';
+      buttonContainer.style.position = 'relative';
+      buttonContainer.style.zIndex = '1000';
 
       const clearButton = document.createElement('button');
       clearButton.id = 'ecwid-clear-cart-button';
@@ -214,6 +218,8 @@ function attachToEcwid() {
       clearButton.style.fontSize = '14px';
       clearButton.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
       clearButton.style.transition = 'all 0.3s ease';
+      clearButton.style.display = 'inline-block';
+      clearButton.style.visibility = 'visible';
 
       clearButton.addEventListener('click', function (e) {
         e.preventDefault();
@@ -224,13 +230,26 @@ function attachToEcwid() {
 
       buttonContainer.appendChild(clearButton);
 
-      // Insérer le bouton juste après le titre du panier
-      if (cartTitle.nextSibling) {
-        cartTitle.parentNode.insertBefore(buttonContainer, cartTitle.nextSibling);
-        logDebug("Bouton inséré après le titre via insertBefore");
+      // Insérer directement dans le h1 ou juste après
+      const h1Element = cartTitle.querySelector('.page-title__name');
+      if (h1Element && h1Element.parentNode) {
+        // Insérer après le h1, dans le même parent
+        if (h1Element.nextSibling) {
+          h1Element.parentNode.insertBefore(buttonContainer, h1Element.nextSibling);
+          logDebug("Bouton inséré après le h1 via insertBefore");
+        } else {
+          h1Element.parentNode.appendChild(buttonContainer);
+          logDebug("Bouton inséré après le h1 via appendChild");
+        }
       } else {
-        cartTitle.parentNode.appendChild(buttonContainer);
-        logDebug("Bouton inséré via appendChild");
+        // Fallback : insérer après .ec-page-title
+        if (cartTitle.nextSibling) {
+          cartTitle.parentNode.insertBefore(buttonContainer, cartTitle.nextSibling);
+          logDebug("Bouton inséré après .ec-page-title via insertBefore");
+        } else {
+          cartTitle.parentNode.appendChild(buttonContainer);
+          logDebug("Bouton inséré après .ec-page-title via appendChild");
+        }
       }
 
       // Vérifier que le bouton a bien été ajouté
@@ -351,9 +370,20 @@ function attachToEcwid() {
     /* Style pour le bouton vider le panier */
     #ecwid-clear-cart-button-container {
       padding: 0;
-      background: transparent;
+      background: transparent !important;
       border-radius: 0;
-      margin: 10px 0 !important;
+      margin: 10px 15px !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: relative !important;
+      z-index: 1000 !important;
+    }
+
+    #ecwid-clear-cart-button {
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
   `;
     document.head.appendChild(style);
