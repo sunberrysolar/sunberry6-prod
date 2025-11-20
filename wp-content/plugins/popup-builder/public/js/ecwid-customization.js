@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début testX*/
+    /* Masquer le prix unitaire et total ligne dès le début testXX*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -163,10 +163,10 @@ function attachToEcwid() {
 
       if (document.getElementById('ecwid-clear-cart-button')) return;
 
-      // Chercher le titre "Votre panier" ou le conteneur de titre
-      const cartTitle = document.querySelector('.ec-cart__title, .ec-cart-header, .ec-cart__header');
+      // Chercher le titre "Votre panier" - div qui contient le h1
+      const cartTitle = document.querySelector('.ec-page-title');
       if (!cartTitle) {
-        logDebug("Titre du panier non trouvé, nouvelle tentative planifiée");
+        logDebug("Titre du panier (.ec-page-title) non trouvé, nouvelle tentative planifiée");
         if (!addClearCartRetryTimeout) {
           addClearCartRetryTimeout = setTimeout(function retryAddClearButton() {
             addClearCartRetryTimeout = null;
