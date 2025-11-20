@@ -12,7 +12,7 @@ window.ec.config.storefrontUrls = window.ec.config.storefrontUrls || {};
 (function injectImmediateCSS() {
   const style = document.createElement('style');
   style.textContent = `
-    /* Masquer le prix unitaire et total ligne dès le début testAAA*/
+    /* Masquer le prix unitaire et total ligne dès le début testX*/
     .ec-cart__item-price,
     .ec-cart-item__price-inner {
       display: none !important;
@@ -163,9 +163,10 @@ function attachToEcwid() {
 
       if (document.getElementById('ecwid-clear-cart-button')) return;
 
-      const cartContainer = document.querySelector('.ec-cart__body');
-      if (!cartContainer) {
-        logDebug("Conteneur du panier non trouvé, nouvelle tentative planifiée");
+      // Chercher le titre "Votre panier" ou le conteneur de titre
+      const cartTitle = document.querySelector('.ec-cart__title, .ec-cart-header, .ec-cart__header');
+      if (!cartTitle) {
+        logDebug("Titre du panier non trouvé, nouvelle tentative planifiée");
         if (!addClearCartRetryTimeout) {
           addClearCartRetryTimeout = setTimeout(function retryAddClearButton() {
             addClearCartRetryTimeout = null;
@@ -177,21 +178,22 @@ function attachToEcwid() {
 
       const buttonContainer = document.createElement('div');
       buttonContainer.id = 'ecwid-clear-cart-button-container';
-      buttonContainer.style.textAlign = 'center';
-      buttonContainer.style.margin = '20px 0';
+      buttonContainer.style.textAlign = 'left';
+      buttonContainer.style.margin = '10px 0';
+      buttonContainer.style.background = 'transparent';
 
       const clearButton = document.createElement('button');
       clearButton.id = 'ecwid-clear-cart-button';
-      clearButton.textContent = '🗑️ VIDER TOUT LE PANIER';
-      clearButton.style.backgroundColor = '#e672f7';
+      clearButton.textContent = 'Vider le panier';
+      clearButton.style.backgroundColor = '#000000';
       clearButton.style.color = '#ffffff';
       clearButton.style.border = 'none';
-      clearButton.style.padding = '15px 30px';
-      clearButton.style.borderRadius = '8px';
+      clearButton.style.padding = '10px 20px';
+      clearButton.style.borderRadius = '5px';
       clearButton.style.cursor = 'pointer';
-      clearButton.style.fontWeight = 'bold';
-      clearButton.style.fontSize = '16px';
-      clearButton.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+      clearButton.style.fontWeight = 'normal';
+      clearButton.style.fontSize = '14px';
+      clearButton.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
       clearButton.style.transition = 'all 0.3s ease';
 
       clearButton.addEventListener('click', function (e) {
@@ -203,10 +205,11 @@ function attachToEcwid() {
 
       buttonContainer.appendChild(clearButton);
 
-      if (cartContainer.firstChild && cartContainer.firstChild.nextSibling) {
-        cartContainer.insertBefore(buttonContainer, cartContainer.firstChild.nextSibling);
+      // Insérer le bouton juste après le titre du panier
+      if (cartTitle.nextSibling) {
+        cartTitle.parentNode.insertBefore(buttonContainer, cartTitle.nextSibling);
       } else {
-        cartContainer.appendChild(buttonContainer);
+        cartTitle.parentNode.appendChild(buttonContainer);
       }
     }
 
@@ -276,9 +279,8 @@ function attachToEcwid() {
     const style = document.createElement('style');
     style.textContent = `
     #ecwid-clear-cart-button:hover {
-      background-color: #d35400 !important;
-      transform: scale(1.05);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3) !important;
+      background-color: #333333 !important;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
     }
 
     .ec-cart-item__count-value {
@@ -323,10 +325,10 @@ function attachToEcwid() {
 
     /* Style pour le bouton vider le panier */
     #ecwid-clear-cart-button-container {
-      padding: 10px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-      border-radius: 8px;
-      margin: 15px 0 !important;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      margin: 10px 0 !important;
     }
   `;
     document.head.appendChild(style);
