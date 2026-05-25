@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2025-11-08T11:38:23+01:00</lastmod>
+		<lastmod>2026-05-25T00:10:21+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -495,17 +495,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/lenergie-flambe-le-solaire-devient-de-plus-en-plus-interessant/</loc>
-		<lastmod>2021-11-21T18:53:06+01:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/11/evolution-prix-des-energies-2021.jpg</image:loc>
-			<image:title><![CDATA[evolution-prix-des-energies-2021]]></image:title>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/11/evolution-prix-des-energies-2021.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/kit-solaire-pour-les-ecoles/</loc>
 		<lastmod>2022-02-12T00:41:32+01:00</lastmod>
 		<image:image>
@@ -519,14 +508,6 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/02/vignette-youtube-alex-drome-e1687022130876.png</image:loc>
 			<image:title><![CDATA[vignette-youtube-alex-drome]]></image:title>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/construction-dun-chauffage-solaire-dappartement/</loc>
-		<lastmod>2022-04-07T15:09:53+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/04/Souflet-YouTube-Miniature.png</image:loc>
-			<image:title><![CDATA[Souflet - YouTube Miniature]]></image:title>
 		</image:image>
 	</url>
 	<url>
@@ -552,8 +533,27 @@
 		</image:image>
 	</url>
 	<url>
+		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/lenergie-flambe-le-solaire-devient-de-plus-en-plus-interessant/</loc>
+		<lastmod>2026-05-24T04:34:06+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/11/evolution-prix-des-energies-2021.jpg</image:loc>
+			<image:title><![CDATA[evolution-prix-des-energies-2021]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2021/11/evolution-prix-des-energies-2021.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/panneaux-solaires-thermiques-auto-construits/construction-dun-chauffage-solaire-dappartement/</loc>
+		<lastmod>2026-05-24T04:34:06+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2022/04/Souflet-YouTube-Miniature.png</image:loc>
+			<image:title><![CDATA[Souflet - YouTube Miniature]]></image:title>
+		</image:image>
+	</url>
+	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/2408/</loc>
-		<lastmod>2025-11-08T11:38:23+01:00</lastmod>
+		<lastmod>2026-05-25T00:10:21+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2025/11/2025-11-06_21-03.png</image:loc>
 			<image:title><![CDATA[2025-11-06_21-03]]></image:title>
