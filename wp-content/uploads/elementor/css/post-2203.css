@@ -374,7 +374,10 @@
 .elementor-2203 .elementor-element.elementor-element-6f9413c:not(.elementor-motion-effects-element-type-background), .elementor-2203 .elementor-element.elementor-element-6f9413c > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: #3a3a3a;}
 .elementor-2203 .elementor-element.elementor-element-6f9413c {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
 .elementor-2203 .elementor-element.elementor-element-6f9413c > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
-@media (min-width:768px) {.elementor-2203 .elementor-element.elementor-element-ed3dde1 {width: 21.937%;}
+@media (min-width:768px) {.elementor-2203 .elementor-element.elementor-element-c30c123 {width: 29.842%;}
+	.elementor-2203 .elementor-element.elementor-element-01af21f {width: 40.222%;}
+	.elementor-2203 .elementor-element.elementor-element-209014c {width: 29.932%;}
+	.elementor-2203 .elementor-element.elementor-element-ed3dde1 {width: 21.937%;}
 	.elementor-2203 .elementor-element.elementor-element-7aee9f0 {width: 78.06%;}
 	.elementor-2203 .elementor-element.elementor-element-19eb982 {width: 56.786%;}
 	.elementor-2203 .elementor-element.elementor-element-1b3c486 {width: 43.214%;}
