@@ -1,3 +1,2 @@
 User-agent: * Allow: /
-
 Sitemap: https://www.sunberry.fr/sitemap.xml
