@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/le-blog-du-chauffage-solaire-diy/</loc>
-		<lastmod>2026-05-25T00:10:21+02:00</lastmod>
+		<lastmod>2026-05-28T17:39:27+02:00</lastmod>
 	</url>
 	<url>
 		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/cest-parti-pour-le-chauffage-solaire-diy-le-moins-cher-au-monde/</loc>
@@ -13,9 +13,6 @@
 		<lastmod>2019-04-05T18:10:37+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/mesure-puissance-solaire-sunberry-app.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/Mesure-temp%C3%A9rature-panneaux-solaires-rapsberry-1024x236.png</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -557,6 +554,19 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2025/11/2025-11-06_21-03.png</image:loc>
 			<image:title><![CDATA[2025-11-06_21-03]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/blog-du-chauffage-solaire-sunberry/pourquoi-sunberry-relaie-campagne-ulule-low-tech-journal/</loc>
+		<lastmod>2026-05-28T17:39:27+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/lowtech-journal-ulule-20260528.gif</image:loc>
+			<image:title><![CDATA[Low-Tech Journal - campagne Ulule]]></image:title>
+			<image:caption><![CDATA[Low-Tech Journal - campagne Ulule]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/lowtech-journal-ulule-20260528.gif</image:loc>
+			<image:caption><![CDATA[Low-Tech Journal - campagne Ulule]]></image:caption>
 		</image:image>
 	</url>
 </urlset>
