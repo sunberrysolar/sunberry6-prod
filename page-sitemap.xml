@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.sunberry.fr/</loc>
-		<lastmod>2026-06-01T21:13:45+02:00</lastmod>
+		<lastmod>2026-06-02T01:23:00+02:00</lastmod>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/sunberry-photo-groupe-20170810-162130-850x638.jpeg</image:loc>
 			<image:caption><![CDATA[Fabrication d'un panneau solaire]]></image:caption>
@@ -150,19 +150,6 @@
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/consommation.gif</image:loc>
 			<image:caption><![CDATA[Consommation d'énergie chauffage en france]]></image:caption>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/reinventer-le-chauffage-solaire/</loc>
-		<lastmod>2019-04-16T21:28:51+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-300x225.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170502_125821-300x225.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170501_172246-300x225.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -477,20 +464,6 @@
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/elementor/thumbs/application-chauffage-solaire-1-852x457.jpeg-o594uzsniftrognxozqpzvanszetbgxkb0afk9xu68.png</image:loc>
 			<image:title><![CDATA[Application panneaux solaires]]></image:title>
 			<image:caption><![CDATA[Sunberry App chauffage solaire]]></image:caption>
-		</image:image>
-	</url>
-	<url>
-		<loc>https://www.sunberry.fr/questions-frequentes-sur-le-chauffage-solaire/</loc>
-		<lastmod>2026-05-24T04:36:02+02:00</lastmod>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2020/04/fabriquer-chauffage-solaire-logo.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/08/eau-chaude-sanitaire-solaire-schema.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/panneaux-solaires-thermiques-diy-bretagne.jpg</image:loc>
-			<image:caption><![CDATA[panneaux-solaires-thermiques-diy-bretagne]]></image:caption>
 		</image:image>
 	</url>
 	<url>
@@ -919,6 +892,19 @@
 		</image:image>
 		<image:image>
 			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/04/logo-twitter.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.sunberry.fr/reinventer-le-chauffage-solaire/</loc>
+		<lastmod>2026-06-02T00:58:24+02:00</lastmod>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-300x225.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170502_125821-300x225.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.sunberry.fr/wp-content/uploads/2019/03/20170501_172246-300x225.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
