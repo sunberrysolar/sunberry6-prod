@@ -1341,330 +1341,217 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 				<div class="elementor-element elementor-element-d6d4b50 elementor-widget elementor-widget-html" data-id="d6d4b50" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
 			<style>
-    /* Styles génériques pour toutes les cartes */
-    .product-card {
-      width: 100%;
-      max-width: 350px;
-      margin: 0px;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      font-family: Arial, sans-serif;
-      display: inline-block;
-      vertical-align: top;
-    }
-    
-    .product-card h2 {
-      font-size: 1.8em;
-      color: #333333;
-      margin-bottom: 10px;
-    }
-    
-    .offer-tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 15px;
-    }
-    
-    .offer-tabs button {
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-    }
-    
-    .offer-tabs button.active {
-      background-color: #7e22ce;
-      color: #ffffff;
-      border-radius: 5px 5px 0 0;
-      margin-right: 2px;
-    }
-    
-    .offer-tabs button.inactive {
-      background-color: #f4f4f4;
-      color: #333333;
-      border-radius: 5px 5px 0 0;
-    }
-    
-    .offer-tabs button.inactive:hover {
-      background-color: #e0e0e0;
-      color: #333333;
-    }
-    
-    .product-card .price {
-      font-size: 1.5em;
-      margin-bottom: 5px;
-    }
-    
-    .product-card .old-price {
-      text-decoration: line-through;
-      color: #888888;
-      font-size: 0.9em;
-    }
-    
-    .product-card .description {
-      font-size: 1em;
-      color: #555555;
-      margin-bottom: 15px;
-    }
-    
-    .product-card .cta {
-      display: block;
-      background-color: #7e22ce;
-      color: #ffffff;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 1em;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      width: 100%;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    
-    .product-card .cta:hover {
-      background-color: #5b159d;
-    }
-    
-    .product-card .content {
-      display: none;
-    }
-    
-    .product-card .content.active {
-      display: block;
-    }
-    
-    /* Styles spécifiques pour chaque type de carte */
-    .card-piscine h2 {
-      color: #0078d4;
-    }
-    
-    .card-ecs h2 {
-      color: #d83b01;
-    }
-    
-    .card-chauffage h2 {
-      color: #107c10;
-    }
-    
-    .container {
-      text-align: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  </style><div class="product-card card-piscine" id="card-piscine">
-      <h2>PISCINE</h2>
-      <div class="offer-tabs">
-        <button class="inactive" onclick="switchOffer('piscine', 'solo', this)">Solo - 290€</button>
-        <button class="active" onclick="switchOffer('piscine', 'duo', this)">Duo - 580€</button>
-      </div>
-      
-      
-      <div id="piscine-content-solo" class="content">
-        <div class="price">290€</div>
-        <div class="description">Chauffage Solaire<br>Piscine et Jacuzzi<br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('solo', 'piscine')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-      
-      
-      <div id="piscine-content-duo" class="content active">
-        <div class="price">580€</div>
-        <div class="description">Chauffage Solaire<br>Piscine et Jacuzzi<br><b>+<br>Une 2e formation de votre choix complète avec appli</b><br><font size="1em">(indiquez celle que vous souhaitez en commentaire lors de votre inscription : eau chaude OU chauffage)</font><br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('duo', 'piscine')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-    </div>
-    
+  .product-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .product-card h2 {
+    font-size: 1.8em;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+
+  .product-card .price {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 12px;
+  }
+
+  .product-card .description {
+    font-size: 1em;
+    color: #555555;
+    margin-bottom: 15px;
+    line-height: 1.45;
+  }
+
+  .product-card .cta {
+    display: block;
+    background-color: #7e22ce;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .product-card .cta:hover {
+    background-color: #5b159d;
+  }
+
+  .card-piscine h2 {
+    color: #0078d4;
+  }
+
+  .card-ecs h2 {
+    color: #d83b01;
+  }
+
+  .card-chauffage h2 {
+    color: #107c10;
+  }
+
+  .container {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style><div class="product-card card-piscine" id="card-piscine">
+  <h2>PISCINE</h2>
+  <div class="price">290€</div>
+  <div class="description">
+    Chauffage Solaire<br>
+    Piscine et Jacuzzi<br><br><b>Formation entierement en ligne</b><br><font size="1em">Acces illimite : commencez maintenant et construisez votre systeme plus tard, a votre rythme.</font>
+  </div>
+  <div class="cta" onclick="addToCart('piscine')">JE M'INSCRIS<br>MAINTENANT</div>
+</div>
+
 <script>
-    // Fonction pour basculer entre les offres Solo et Duo
-    function switchOffer(cardId, offerType, button) {
-      // Gestion des onglets
-      const tabs = button.parentElement.querySelectorAll('button');
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-        tab.classList.add('inactive');
-      });
-      button.classList.remove('inactive');
-      button.classList.add('active');
-      
-      // Affichage du contenu approprié
-      document.getElementById(cardId + '-content-solo').classList.remove('active');
-      document.getElementById(cardId + '-content-duo').classList.remove('active');
-      document.getElementById(cardId + '-content-' + offerType).classList.add('active');
+  function addItemsSequentially(items, callback) {
+    if (!items.length) {
+      callback(true);
+      return;
     }
-    
-    // Ajoute les produits séquentiellement avec callback Ecwid
-    function addItemsSequentially(items, callback) {
-      if (!items.length) {
-        callback(true);
+
+    var index = 0;
+    var allSuccess = true;
+
+    function addNextProduct() {
+      if (index >= items.length) {
+        callback(allSuccess);
         return;
       }
 
-      var index = 0;
-      var allSuccess = true;
-
-      function addNextProduct() {
-        if (index >= items.length) {
-          callback(allSuccess);
-          return;
-        }
-
-        var item = items[index];
-        Ecwid.Cart.addProduct({
-          id: item.id,
-          quantity: item.quantity || 1,
-          callback: function(success, product, cart, error) {
-            if (!success) {
-              console.error('Erreur ajout produit ID ' + item.id + ':', error);
-              allSuccess = false;
-            }
-            index++;
-            addNextProduct();
+      var item = items[index];
+      Ecwid.Cart.addProduct({
+        id: item.id,
+        quantity: item.quantity || 1,
+        callback: function(success, product, cart, error) {
+          if (!success) {
+            console.error('Erreur ajout produit ID ' + item.id + ':', error);
+            allSuccess = false;
           }
-        });
-      }
-
-      addNextProduct();
+          index++;
+          addNextProduct();
+        }
+      });
     }
 
-    function isCartCurrentlyClearing() {
-      return window.__ecwidCartClearing === true;
+    addNextProduct();
+  }
+
+  function isCartCurrentlyClearing() {
+    return window.__ecwidCartClearing === true;
+  }
+
+  function waitUntilCartCleared(callback, attemptsLeft = 30) {
+    if (!isCartCurrentlyClearing()) {
+      callback(true);
+      return;
     }
 
-    function waitUntilCartCleared(callback, attemptsLeft = 30) {
-      if (!isCartCurrentlyClearing()) {
-        callback(true);
-        return;
-      }
-
-      if (attemptsLeft <= 0) {
-        callback(false);
-        return;
-      }
-
-      let resolved = false;
-
-      function handleClearedEvent() {
-        resolved = true;
-        document.removeEventListener('ecwidCartCleared', handleClearedEvent);
-        callback(true);
-      }
-
-      document.addEventListener('ecwidCartCleared', handleClearedEvent);
-
-      setTimeout(function() {
-        if (resolved) return;
-        document.removeEventListener('ecwidCartCleared', handleClearedEvent);
-        waitUntilCartCleared(callback, attemptsLeft - 1);
-      }, 300);
+    if (attemptsLeft <= 0) {
+      callback(false);
+      return;
     }
 
-    // Variable pour savoir si l'API Ecwid est prête
-    var ecwidAPIReady = false;
+    var resolved = false;
 
-    // Attendre que l'API soit prête
-    if (typeof Ecwid !== 'undefined' && Ecwid.OnAPILoaded) {
+    function handleClearedEvent() {
+      resolved = true;
+      document.removeEventListener('ecwidCartCleared', handleClearedEvent);
+      callback(true);
+    }
+
+    document.addEventListener('ecwidCartCleared', handleClearedEvent);
+
+    setTimeout(function() {
+      if (resolved) return;
+      document.removeEventListener('ecwidCartCleared', handleClearedEvent);
+      waitUntilCartCleared(callback, attemptsLeft - 1);
+    }, 300);
+  }
+
+  var ecwidAPIReady = false;
+
+  if (typeof Ecwid !== 'undefined' && Ecwid.OnAPILoaded) {
+    Ecwid.OnAPILoaded.add(function() {
+      ecwidAPIReady = true;
+      console.log('Ecwid API prete');
+    });
+  }
+
+  function getItemsForProduct(cardId) {
+    if (cardId === 'piscine') {
+      return [
+        { id: 749857056, quantity: 1 },
+        { id: 749866251, quantity: 1 }
+      ];
+    }
+
+    if (cardId === 'ecs') {
+      return [
+        { id: 751168375, quantity: 1 },
+        { id: 751164881, quantity: 1 }
+      ];
+    }
+
+    if (cardId === 'chauffage') {
+      return [
+        { id: 751164885, quantity: 1 },
+        { id: 751164708, quantity: 1 }
+      ];
+    }
+
+    return [];
+  }
+
+  function addToCart(cardId) {
+    if (typeof Ecwid === 'undefined') {
+      console.log('Ecwid non charge');
+      alert('Ajout au panier indisponible pour le moment.');
+      return;
+    }
+
+    if (!ecwidAPIReady) {
       Ecwid.OnAPILoaded.add(function() {
         ecwidAPIReady = true;
-        console.log('Ecwid API prête');
+        addToCart(cardId);
       });
+      return;
     }
 
-    // Fonction pour ajouter au panier
-    function addToCart(productType, cardId) {
-      // Vérification qu'Ecwid est disponible
-      if (typeof Ecwid === 'undefined') {
-        console.log('Ecwid n\'est pas chargé');
-        alert('Ajout au panier: Type ' + productType + ' pour ' + cardId);
-        return;
+    waitUntilCartCleared(function(cartReady) {
+      if (!cartReady) {
+        console.warn('Le panier semble toujours en cours de vidage; tentative ajout quand meme.');
       }
 
-      // Si l'API n'est pas encore prête, attendre
-      if (!ecwidAPIReady) {
-        Ecwid.OnAPILoaded.add(function() {
-          ecwidAPIReady = true;
-          addToCart(productType, cardId);
-        });
-        return;
-      }
+      var items = getItemsForProduct(cardId);
 
-      waitUntilCartCleared(function(cartReady) {
-          if (!cartReady) {
-            console.warn('Le panier semble toujours en cours de vidage; tentative d\'ajout quand même.');
-          }
-
-          // Définition des produits à ajouter selon le type et la carte
-          let items = [];
-          
-          // Structure conditionnelle pour déterminer quels produits ajouter
-          if (cardId === 'piscine') {
-            if (productType === 'solo') {
-              items = [
-                { id: 749857056, quantity: 1 }, // ID du produit piscine solo
-                { id: 749866251, quantity: 1 }
-              ];
-            } else if (productType === 'duo') {
-              items = [
-                { id: 749857056, quantity: 1 }, // ID du produit piscine duo
-                { id: 749866251, quantity: 1 },
-                { id: 750511112, quantity: 1 },
-                { id: 750532337, quantity: 1 }
-              ];
-            }
-          } else if (cardId === 'ecs') {
-            if (productType === 'solo') {
-              items = [
-                { id: 751168375, quantity: 1 }, // ID du produit ECS solo (à adapter)
-                { id: 751164881, quantity: 1 }
-              ];
-            } else if (productType === 'duo') {
-              items = [
-                { id: 751168375, quantity: 1 }, // ID du produit ECS duo (à adapter)
-                { id: 751164881, quantity: 1 },
-                { id: 750511112, quantity: 1 },
-                { id: 750532337, quantity: 1 }
-              ];
-            }
-          } else if (cardId === 'chauffage') {
-            if (productType === 'solo') {
-              items = [
-                { id: 751164885, quantity: 1 }, // ID du produit chauffage solo (à adapter)
-                { id: 751164708, quantity: 1 }
-              ];
-            } else if (productType === 'duo') {
-              items = [
-                { id: 751164885, quantity: 1 }, // ID du produit chauffage duo (à adapter)
-                { id: 751164708, quantity: 1 },
-                { id: 750511112, quantity: 1 },
-                { id: 750532337, quantity: 1 }
-              ];
-            }
-          }
-          
-          // Ajout des produits au panier un par un pour garantir que tous sont pris en compte
-          addItemsSequentially(items, function(allProductsAdded) {
-            if (!allProductsAdded) {
-              console.warn('Tous les produits n\'ont pas pu être ajoutés au panier.');
-            }
-            Ecwid.openPage('cart');
-          });
-        });
-    }
-    
-    // Initialisation - Assurer que l'offre Duo est sélectionnée par défaut pour toutes les cartes
-    document.addEventListener('DOMContentLoaded', function() {
-      const cardIds = ['piscine', 'ecs', 'chauffage'];
-      cardIds.forEach(cardId => {
-        const element = document.getElementById(cardId + '-content-duo');
-        if (element) {
-          element.classList.add('active');
+      addItemsSequentially(items, function(allProductsAdded) {
+        if (!allProductsAdded) {
+          console.warn('Tous les produits n ont pas pu etre ajoutes au panier.');
         }
+        Ecwid.openPage('cart');
       });
     });
-  </script></div>
+  }
+</script></div>
 				</div>
 				<div class="elementor-element elementor-element-1936343 elementor-widget elementor-widget-text-editor" data-id="1936343" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
@@ -1700,28 +1587,15 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 				</div>
 				<div class="elementor-element elementor-element-618f85b elementor-widget elementor-widget-html" data-id="618f85b" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			    
-    <div class="product-card card-ecs" id="card-ecs">
-      <h2>EAU CHAUDE</h2>
-      <div class="offer-tabs">
-        <button class="inactive" onclick="switchOffer('ecs', 'solo', this)">Solo - 290€</button>
-        <button class="active" onclick="switchOffer('ecs', 'duo', this)">Duo - 580€</button>
-      </div>
-      
-      
-      <div id="ecs-content-solo" class="content">
-        <div class="price">290€</div>
-        <div class="description">Eau Chaude Sanitaire<br>Se branche sur le cumulus existant<br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('solo', 'ecs')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-      
-      
-      <div id="ecs-content-duo" class="content active">
-        <div class="price">580€</div>
-        <div class="description">Eau Chaude Sanitaire<br>Se branche sur le cumulus existant<br><b>+<br>Une 2e formation de votre choix complète avec appli</b><br><font size="1em">(indiquez celle que vous souhaitez en commentaire lors de votre inscription :  piscine OU chauffage)</font><br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('duo', 'ecs')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-    </div>		</div>
+			<div class="product-card card-ecs" id="card-ecs">
+  <h2>EAU CHAUDE</h2>
+  <div class="price">290€</div>
+  <div class="description">
+    Eau Chaude Sanitaire<br>
+    Se branche sur le cumulus existant<br><br><b>Formation entierement en ligne</b><br><font size="1em">Acces illimite : commencez maintenant et construisez votre systeme plus tard, a votre rythme.</font>
+  </div>
+  <div class="cta" onclick="addToCart('ecs')">JE M'INSCRIS<br>MAINTENANT</div>
+</div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-839ef0f elementor-widget elementor-widget-spacer" data-id="839ef0f" data-element_type="widget" data-widget_type="spacer.default">
 				<div class="elementor-widget-container">
@@ -1752,29 +1626,15 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 				</div>
 				<div class="elementor-element elementor-element-3268fbc elementor-widget elementor-widget-html" data-id="3268fbc" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			   
-    <div class="product-card card-chauffage" id="card-chauffage">
-      <h2>CHAUFFAGE</h2>
-      <div class="offer-tabs">
-        <button class="inactive" onclick="switchOffer('chauffage', 'solo', this)">Solo - 290€</button>
-        <button class="active" onclick="switchOffer('chauffage', 'duo', this)">Duo - 580€</button>
-      </div>
-      
-      
-      <div id="chauffage-content-solo" class="content">
-        <div class="price">290€</div>
-        <div class="description">Chauffage d'Habitation<br>Se branche sur le chauffage existant<br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('solo', 'chauffage')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-      
-      
-      <div id="chauffage-content-duo" class="content active">
-        <div class="price">580€</div>
-        <div class="description">Chauffage d'Habitation<br>Se branche sur le chauffage existant<br><b>+<br>Une 2e formation de votre choix complète avec appli</b><br><font size="1em">(indiquez celle que vous souhaitez en commentaire lors de votre inscription : piscine OU eau chaude)</font><br><br><b>Formations entierement en ligne</b><br><font size="1em">Accès illimité = profitez de l'offre maintenant, construisez votre système plus tard à votre rythme.</font></div>
-        <div class="cta" onclick="addToCart('duo', 'chauffage')">JE M'INSCRIS<br>MAINTENANT</div>
-      </div>
-    </div>
-  </div>		</div>
+			<div class="product-card card-chauffage" id="card-chauffage">
+  <h2>CHAUFFAGE</h2>
+  <div class="price">290€</div>
+  <div class="description">
+    Chauffage d'Habitation<br>
+    Se branche sur le chauffage existant<br><br><b>Formation entierement en ligne</b><br><font size="1em">Acces illimite : commencez maintenant et construisez votre systeme plus tard, a votre rythme.</font>
+  </div>
+  <div class="cta" onclick="addToCart('chauffage')">JE M'INSCRIS<br>MAINTENANT</div>
+</div>		</div>
 				</div>
 				<div class="elementor-element elementor-element-74deeab elementor-widget elementor-widget-spacer" data-id="74deeab" data-element_type="widget" data-widget_type="spacer.default">
 				<div class="elementor-widget-container">
@@ -1787,9 +1647,8 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 			</div>
 		</div>
 						</div>
-			</section></div>
-		
-				<section class="elementor-element elementor-element-5007ed4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5007ed4" data-element_type="section"><div class="elementor-container elementor-column-gap-default">
+			</div>
+		</section><section class="elementor-element elementor-element-5007ed4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="5007ed4" data-element_type="section"><div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-row">
 				<div class="elementor-element elementor-element-ac68046 elementor-column elementor-col-100 elementor-top-column" data-id="ac68046" data-element_type="column">
 			<div class="elementor-column-wrap  elementor-element-populated">
@@ -2604,9 +2463,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Si je m’inscris à la formation “Eau Chaude Sanitaire”, est ce que je pourrais avoir accès à la formation “Chauffage d’Habitation » ?</a>
+												<a href="">Est-ce que votre chauffe-eau solaire est aussi disponible hors de France ?</a>
 					</div>
-					<div id="elementor-tab-content-31313" class="elementor-tab-content elementor-clearfix" data-tab="13" role="tabpanel" aria-labelledby="elementor-tab-title-31313"><p>Oui, on vous offre la formation « Chauffage d’Habitation » tant que celle-ci n’est pas finalisée. Profitez-en maintenant car dès que cette dernière sera finalisée elle deviendra payante.</p></div>
+					<div id="elementor-tab-content-31313" class="elementor-tab-content elementor-clearfix" data-tab="13" role="tabpanel" aria-labelledby="elementor-tab-title-31313"><p>La formation vous donne accès à la liste du matériel pour la France, mais il ne sera pas compliqué de trouver des matériaux équivalents dans votre pays, en attendant qu’on puisse réaliser une liste par pays.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31314" class="elementor-tab-title" data-tab="14" role="tab" aria-controls="elementor-tab-content-31314">
@@ -2614,9 +2473,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce que votre chauffe-eau solaire est aussi disponible hors de France ?</a>
+												<a href="">Quelle est la meilleure orientation pour mes panneaux solaires ?</a>
 					</div>
-					<div id="elementor-tab-content-31314" class="elementor-tab-content elementor-clearfix" data-tab="14" role="tabpanel" aria-labelledby="elementor-tab-title-31314"><p>La formation vous donne accès à la liste du matériel pour la France, mais il ne sera pas compliqué de trouver des matériaux équivalents dans votre pays, en attendant qu’on puisse réaliser une liste par pays.</p></div>
+					<div id="elementor-tab-content-31314" class="elementor-tab-content elementor-clearfix" data-tab="14" role="tabpanel" aria-labelledby="elementor-tab-title-31314"><p>Un panneau solaire obtient son rendement maximum quand il est face au soleil, c’est-à-dire que chaque rayon solaire arrive perpendiculaire à celui-ci.</p><p>Mais le soleil se déplace dans le ciel au cours de la journée et il descend et monte en fonction des saisons (inclinaison de la terre). A moins d’avoir un traqueur solaire, il faut donc trouver le meilleur compromis pour capter le maximum d’énergie au fil d’une journée.</p><p>L’orientation idéale des panneaux est donc face au Sud, bien que cela fonctionne aussi vers l’Est et l’Ouest, avec un rendement moindre. Dans ce cas, il suffit de rajouter des panneaux pour compenser.</p><p>Concernant l’inclinaison, l’angle idéal est de 65° l’hiver (la position verticale convient aussi) et de 20° l’été (la position horizontale convient aussi).</p><p>Si vous installez vos panneaux solaires au sol, vous pourrez les installer sur un support orientable pour capter le maximum d’énergie, que vous réglerez au fil des saisons. S’ils sont fixes ou sur votre toit, cela ne pose pas de problème, vous capterez un peu moins d’énergie, mais il suffira d’installer des panneaux en plus pour compenser.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31315" class="elementor-tab-title" data-tab="15" role="tab" aria-controls="elementor-tab-content-31315">
@@ -2624,9 +2483,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Quelle est la meilleure orientation pour mes panneaux solaires ?</a>
+												<a href="">Est-ce que je peux chauffer ma piscine l’été avec le chauffe-eau solaire ?</a>
 					</div>
-					<div id="elementor-tab-content-31315" class="elementor-tab-content elementor-clearfix" data-tab="15" role="tabpanel" aria-labelledby="elementor-tab-title-31315"><p>Un panneau solaire obtient son rendement maximum quand il est face au soleil, c’est-à-dire que chaque rayon solaire arrive perpendiculaire à celui-ci.</p><p>Mais le soleil se déplace dans le ciel au cours de la journée et il descend et monte en fonction des saisons (inclinaison de la terre). A moins d’avoir un traqueur solaire, il faut donc trouver le meilleur compromis pour capter le maximum d’énergie au fil d’une journée.</p><p>L’orientation idéale des panneaux est donc face au Sud, bien que cela fonctionne aussi vers l’Est et l’Ouest, avec un rendement moindre. Dans ce cas, il suffit de rajouter des panneaux pour compenser.</p><p>Concernant l’inclinaison, l’angle idéal est de 65° l’hiver (la position verticale convient aussi) et de 20° l’été (la position horizontale convient aussi).</p><p>Si vous installez vos panneaux solaires au sol, vous pourrez les installer sur un support orientable pour capter le maximum d’énergie, que vous réglerez au fil des saisons. S’ils sont fixes ou sur votre toit, cela ne pose pas de problème, vous capterez un peu moins d’énergie, mais il suffira d’installer des panneaux en plus pour compenser.</p></div>
+					<div id="elementor-tab-content-31315" class="elementor-tab-content elementor-clearfix" data-tab="15" role="tabpanel" aria-labelledby="elementor-tab-title-31315"><p>La surface de panneaux est dimensionnée pour vous donner de l’eau chaude même en hiver. En été, vous risquez donc d’avoir un surplus de chaleur.</p><p>Vous pourrez alors utiliser les panneaux de votre chauffe-eau, avec quelques branchements relativement simples, pour chauffer votre piscine.</p><p>Pour une chauffe efficace, il faut compter environ une surface de panneaux équivalente à la moitié de la surface de la piscine. Par exemple, pour une piscine de 20 m², prévoyez environ 10 m² de panneaux. Vous pouvez ensuite ajuster selon votre région, l’exposition et la température souhaitée.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31316" class="elementor-tab-title" data-tab="16" role="tab" aria-controls="elementor-tab-content-31316">
@@ -2634,9 +2493,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce que je peux chauffer ma piscine l’été avec le chauffe-eau solaire ?</a>
+												<a href="">Ma maison n’a pas d’orientation au Sud utilisable. Est ce rédhibitoire pour installer un chauffage solaire ?</a>
 					</div>
-					<div id="elementor-tab-content-31316" class="elementor-tab-content elementor-clearfix" data-tab="16" role="tabpanel" aria-labelledby="elementor-tab-title-31316"><p>La surface de panneaux est dimensionnée pour vous donner de l’eau chaude même en hiver. En été, vous risquez donc d’avoir un surplus de chaleur.</p><p>Vous pourrez alors utiliser les panneaux de votre chauffe-eau, avec quelques branchements relativement simples, pour chauffer votre piscine.</p><p>Pour une chauffe efficace, il faut compter environ une surface de panneaux équivalente à la moitié de la surface de la piscine. Par exemple, pour une piscine de 20 m², prévoyez environ 10 m² de panneaux. Vous pouvez ensuite ajuster selon votre région, l’exposition et la température souhaitée.</p></div>
+					<div id="elementor-tab-content-31316" class="elementor-tab-content elementor-clearfix" data-tab="16" role="tabpanel" aria-labelledby="elementor-tab-title-31316"><p>Ce n’est pas rédhibitoire, vous pouvez aussi capter du soleil à l’est et à l’ouest. Le rendement sera moindre mais comme nos panneaux sont très peu chers vous pouvez facilement en ajouter pour compenser.</p><p>Il n’est pas obligatoire d’installer vos panneaux sur votre toit, si vous avez un terrain ou un jardin vous pouvez aussi les installer au sol sur un support que vous aurez construit ou acheté dans le commerce, qui peut être orientable.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31317" class="elementor-tab-title" data-tab="17" role="tab" aria-controls="elementor-tab-content-31317">
@@ -2644,9 +2503,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Ma maison n’a pas d’orientation au Sud utilisable. Est ce rédhibitoire pour installer un chauffage solaire ?</a>
+												<a href="">Mes panneaux solaires seront loin de mon chauffe-eau, est ce que ça fonctionnera quand même ?</a>
 					</div>
-					<div id="elementor-tab-content-31317" class="elementor-tab-content elementor-clearfix" data-tab="17" role="tabpanel" aria-labelledby="elementor-tab-title-31317"><p>Ce n’est pas rédhibitoire, vous pouvez aussi capter du soleil à l’est et à l’ouest. Le rendement sera moindre mais comme nos panneaux sont très peu chers vous pouvez facilement en ajouter pour compenser.</p><p>Il n’est pas obligatoire d’installer vos panneaux sur votre toit, si vous avez un terrain ou un jardin vous pouvez aussi les installer au sol sur un support que vous aurez construit ou acheté dans le commerce, qui peut être orientable.</p></div>
+					<div id="elementor-tab-content-31317" class="elementor-tab-content elementor-clearfix" data-tab="17" role="tabpanel" aria-labelledby="elementor-tab-title-31317"><p>Vous aurez le choix entre plusieurs pompes en fonction de la distance de vos panneaux. La plus puissante vous permettra d’alimenter les panneaux solaires même s’ils sont à 50m ou plus de votre habitation.</p><p>Concernant les pertes thermiques le long des canalisations, vous aurez le choix entre isoler les canalisations avec des manchons en mousse, utiliser de la gaine pré-isolée à enterrer, ou simplement rajouter un panneau solaire qui compensera les pertes.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31318" class="elementor-tab-title" data-tab="18" role="tab" aria-controls="elementor-tab-content-31318">
@@ -2654,9 +2513,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Mes panneaux solaires seront loin de mon chauffe-eau, est ce que ça fonctionnera quand même ?</a>
+												<a href="">Si je place mes panneaux solaires sur mon toit, la pompe sera-t’elle assez puissante pour les alimenter ?</a>
 					</div>
-					<div id="elementor-tab-content-31318" class="elementor-tab-content elementor-clearfix" data-tab="18" role="tabpanel" aria-labelledby="elementor-tab-title-31318"><p>Vous aurez le choix entre plusieurs pompes en fonction de la distance de vos panneaux. La plus puissante vous permettra d’alimenter les panneaux solaires même s’ils sont à 50m ou plus de votre habitation.</p><p>Concernant les pertes thermiques le long des canalisations, vous aurez le choix entre isoler les canalisations avec des manchons en mousse, utiliser de la gaine pré-isolée à enterrer, ou simplement rajouter un panneau solaire qui compensera les pertes.</p></div>
+					<div id="elementor-tab-content-31318" class="elementor-tab-content elementor-clearfix" data-tab="18" role="tabpanel" aria-labelledby="elementor-tab-title-31318"><p>Sans problème car la pompe la plus puissante qu’on propose à une hauteur statique de 15m. Cela vous permettra un débit correct dans les panneaux même s’ils sont à 10m au-dessus du niveau du réservoir.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31319" class="elementor-tab-title" data-tab="19" role="tab" aria-controls="elementor-tab-content-31319">
@@ -2664,9 +2523,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Si je place mes panneaux solaires sur mon toit, la pompe sera-t’elle assez puissante pour les alimenter ?</a>
+												<a href="">Est-ce que je dois acheter un ballon solaire et si oui de quel volume ?</a>
 					</div>
-					<div id="elementor-tab-content-31319" class="elementor-tab-content elementor-clearfix" data-tab="19" role="tabpanel" aria-labelledby="elementor-tab-title-31319"><p>Sans problème car la pompe la plus puissante qu’on propose à une hauteur statique de 15m. Cela vous permettra un débit correct dans les panneaux même s’ils sont à 10m au-dessus du niveau du réservoir.</p></div>
+					<div id="elementor-tab-content-31319" class="elementor-tab-content elementor-clearfix" data-tab="19" role="tabpanel" aria-labelledby="elementor-tab-title-31319"><p>Vous n’aurez pas besoin de ballon solaire, mais d’un simple réservoir (fût en métal ou plastique, de récupération par exemple). Un ancien ballon électrique peut aussi bien faire l’affaire. Ils sont déjà isolés et on en trouve facilement car les gens les jettent quand la résistance est grillée.</p><p>Les ballons solaires contiennent un serpentin qui permet de chauffer l’eau se trouvant à l’intérieur, et sont assez chers.</p><p>Dans notre cas c’est beaucoup plus simple car le circuit solaire n’est pas sous pression, donc pas besoin de ballon. Pas besoin de serpentin non plus, c’est notre échangeur qui se charge de transférer la chaleur vers le circuit de votre habitation.</p><p>Concernant le volume du réservoir d’eau chaude solaire, prévoir le même volume que celui de votre chauffe-eau actuel. Ajoutez 100l si vous voulez un peu plus d’autonomie et d’économies. Par exemple, si vous avez un ballon électrique de 200 litres (famille de 4 personnes en général), prévoir un réservoir de 200 à 300 litres.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31320" class="elementor-tab-title" data-tab="20" role="tab" aria-controls="elementor-tab-content-31320">
@@ -2674,9 +2533,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce que je dois acheter un ballon solaire et si oui de quel volume ?</a>
+												<a href="">Est-ce que le chauffe-eau solaire peut fonctionner sans électricité ?</a>
 					</div>
-					<div id="elementor-tab-content-31320" class="elementor-tab-content elementor-clearfix" data-tab="20" role="tabpanel" aria-labelledby="elementor-tab-title-31320"><p>Vous n’aurez pas besoin de ballon solaire, mais d’un simple réservoir (fût en métal ou plastique, de récupération par exemple). Un ancien ballon électrique peut aussi bien faire l’affaire. Ils sont déjà isolés et on en trouve facilement car les gens les jettent quand la résistance est grillée.</p><p>Les ballons solaires contiennent un serpentin qui permet de chauffer l’eau se trouvant à l’intérieur, et sont assez chers.</p><p>Dans notre cas c’est beaucoup plus simple car le circuit solaire n’est pas sous pression, donc pas besoin de ballon. Pas besoin de serpentin non plus, c’est notre échangeur qui se charge de transférer la chaleur vers le circuit de votre habitation.</p><p>Concernant le volume du réservoir d’eau chaude solaire, prévoir le même volume que celui de votre chauffe-eau actuel. Ajoutez 100l si vous voulez un peu plus d’autonomie et d’économies. Par exemple, si vous avez un ballon électrique de 200 litres (famille de 4 personnes en général), prévoir un réservoir de 200 à 300 litres.</p></div>
+					<div id="elementor-tab-content-31320" class="elementor-tab-content elementor-clearfix" data-tab="20" role="tabpanel" aria-labelledby="elementor-tab-title-31320"><p>Sans électricité non, mais il peut fonctionner avec un petit kit d’alimentation photovoltaïque avec batterie.</p><p>En effet, il faut de l’électricité pour alimenter la pompe solaire, la pompe d’échangeur et le Raspberry qui se charge de la régulation (mise en route et arrêt automatique).</p><p>Mais la puissance nécessaire pour ces éléments est très faible.</p><p>– 5W pour le Raspberry<br>– 25W pour la pompe solaire<br>– 40 à 100W pour la pompe d’échangeur</p><p>Un petit kit photovoltaïque vous permettra d’alimenter facilement le chauffe-eau.</p><p>Contrairement aux installations du commerce, on n’utilise pas directement l’eau chaude stockée, donc pas besoin de résistance pour monter l’eau à 60°C chaque jour afin de tuer les bactéries légionelles. L’eau solaire reste dans son circuit, on l’utilise juste pour réchauffer l’eau froide de votre réseau, comme une chaudière.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31321" class="elementor-tab-title" data-tab="21" role="tab" aria-controls="elementor-tab-content-31321">
@@ -2684,9 +2543,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce que le chauffe-eau solaire peut fonctionner sans électricité ?</a>
+												<a href="">Le chauffe-eau solaire Sunberry est-il compatible avec mon ballon thermodynamique ? </a>
 					</div>
-					<div id="elementor-tab-content-31321" class="elementor-tab-content elementor-clearfix" data-tab="21" role="tabpanel" aria-labelledby="elementor-tab-title-31321"><p>Sans électricité non, mais il peut fonctionner avec un petit kit d’alimentation photovoltaïque avec batterie.</p><p>En effet, il faut de l’électricité pour alimenter la pompe solaire, la pompe d’échangeur et le Raspberry qui se charge de la régulation (mise en route et arrêt automatique).</p><p>Mais la puissance nécessaire pour ces éléments est très faible.</p><p>– 5W pour le Raspberry<br>– 25W pour la pompe solaire<br>– 40 à 100W pour la pompe d’échangeur</p><p>Un petit kit photovoltaïque vous permettra d’alimenter facilement le chauffe-eau.</p><p>Contrairement aux installations du commerce, on n’utilise pas directement l’eau chaude stockée, donc pas besoin de résistance pour monter l’eau à 60°C chaque jour afin de tuer les bactéries légionelles. L’eau solaire reste dans son circuit, on l’utilise juste pour réchauffer l’eau froide de votre réseau, comme une chaudière.</p></div>
+					<div id="elementor-tab-content-31321" class="elementor-tab-content elementor-clearfix" data-tab="21" role="tabpanel" aria-labelledby="elementor-tab-title-31321"><p>Oui, il est compatible avec tous les types de chauffe-eau car il chauffe l’eau avant son entrée dans le ballon. Il n’y a donc aucune modification à prévoir au niveau de votre chauffe-eau existant.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31322" class="elementor-tab-title" data-tab="22" role="tab" aria-controls="elementor-tab-content-31322">
@@ -2694,9 +2553,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Le chauffe-eau solaire Sunberry est-il compatible avec mon ballon thermodynamique ? </a>
+												<a href="">Quelle est la différence avec un chauffe-eau du commerce ?</a>
 					</div>
-					<div id="elementor-tab-content-31322" class="elementor-tab-content elementor-clearfix" data-tab="22" role="tabpanel" aria-labelledby="elementor-tab-title-31322"><p>Oui, il est compatible avec tous les types de chauffe-eau car il chauffe l’eau avant son entrée dans le ballon. Il n’y a donc aucune modification à prévoir au niveau de votre chauffe-eau existant.</p></div>
+					<div id="elementor-tab-content-31322" class="elementor-tab-content elementor-clearfix" data-tab="22" role="tabpanel" aria-labelledby="elementor-tab-title-31322"><ol><li>Le chauffe-eau solaire Sunberry est 5 à 10 fois moins cher qu’une solution du commerce. Renseignez vous si vous trouvez que nous sommes trop chers.</li><li>Vous n’avez pas besoin de faire appel à un professionnel. On vous forme et ensuite vous êtes autonome. C’est un énorme avantage en terme de coût d’entretien.</li><li>Pas besoin de faire des dossiers de demande d’aide de l’état ou de subventions avec obligation de passer par un installateur agréé.</li><li>Un peu moins performant, 60% de rendement au lieu de 80%, mais pas de risque de surchauffe et pas besoin d’antigel cher et polluant. Vu le faible coût de nos panneaux, la différence de rendement est facilement compensée par l’ajout d’un panneau.</li><li>Application opensource qui permet de suivre le fonctionnement de l’installation et sa production d’énergie.</li><li>Le plaisir d’apprendre et faire par soi-même, pour plus d’indépendance et pour partager avec ses amis.</li><li>Facile a entretenir et réparer soi-même.</li></ol><p><strong>N’oubliez pas</strong> : un chauffe-eau solaire n’est pas une dépense comme une voiture ou un téléphone. Il ne coûte pas de l’argent chaque année, il en rapporte.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31323" class="elementor-tab-title" data-tab="23" role="tab" aria-controls="elementor-tab-content-31323">
@@ -2704,9 +2563,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Quelle est la différence avec un chauffe-eau du commerce ?</a>
+												<a href="">Quelle est la législation à respecter pour l’installation de mes panneaux solaires ?</a>
 					</div>
-					<div id="elementor-tab-content-31323" class="elementor-tab-content elementor-clearfix" data-tab="23" role="tabpanel" aria-labelledby="elementor-tab-title-31323"><ol><li>Le chauffe-eau solaire Sunberry est 5 à 10 fois moins cher qu’une solution du commerce. Renseignez vous si vous trouvez que nous sommes trop chers.</li><li>Vous n’avez pas besoin de faire appel à un professionnel. On vous forme et ensuite vous êtes autonome. C’est un énorme avantage en terme de coût d’entretien.</li><li>Pas besoin de faire des dossiers de demande d’aide de l’état ou de subventions avec obligation de passer par un installateur agréé.</li><li>Un peu moins performant, 60% de rendement au lieu de 80%, mais pas de risque de surchauffe et pas besoin d’antigel cher et polluant. Vu le faible coût de nos panneaux, la différence de rendement est facilement compensée par l’ajout d’un panneau.</li><li>Application opensource qui permet de suivre le fonctionnement de l’installation et sa production d’énergie.</li><li>Le plaisir d’apprendre et faire par soi-même, pour plus d’indépendance et pour partager avec ses amis.</li><li>Facile a entretenir et réparer soi-même.</li></ol><p><strong>N’oubliez pas</strong> : un chauffe-eau solaire n’est pas une dépense comme une voiture ou un téléphone. Il ne coûte pas de l’argent chaque année, il en rapporte.</p></div>
+					<div id="elementor-tab-content-31323" class="elementor-tab-content elementor-clearfix" data-tab="23" role="tabpanel" aria-labelledby="elementor-tab-title-31323"><p>Chaque cas est particulier (commune, monuments, PLU etc).</p><p>Vous trouverez tous les détails sur le site Oureka ici : <a href="https://panneau-solaire.ooreka.fr/comprendre/reglementation-panneau-solaire" target="_blank" rel="noopener">https://panneau-solaire.ooreka.fr/comprendre/reglementation-panneau-solaire</a></p><p>Toute installation au sol ne dépassant pas 1m80 n’est soumise à aucune demande d’autorisation.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31324" class="elementor-tab-title" data-tab="24" role="tab" aria-controls="elementor-tab-content-31324">
@@ -2714,9 +2573,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Quelle est la législation à respecter pour l’installation de mes panneaux solaires ?</a>
+												<a href="">Est-ce que je peux utiliser vos panneaux sur mon chauffe-eau solaire acheté dans le commerce ?</a>
 					</div>
-					<div id="elementor-tab-content-31324" class="elementor-tab-content elementor-clearfix" data-tab="24" role="tabpanel" aria-labelledby="elementor-tab-title-31324"><p>Chaque cas est particulier (commune, monuments, PLU etc).</p><p>Vous trouverez tous les détails sur le site Oureka ici : <a href="https://panneau-solaire.ooreka.fr/comprendre/reglementation-panneau-solaire" target="_blank" rel="noopener">https://panneau-solaire.ooreka.fr/comprendre/reglementation-panneau-solaire</a></p><p>Toute installation au sol ne dépassant pas 1m80 n’est soumise à aucune demande d’autorisation.</p></div>
+					<div id="elementor-tab-content-31324" class="elementor-tab-content elementor-clearfix" data-tab="24" role="tabpanel" aria-labelledby="elementor-tab-title-31324"><p>Les installations du commerce ne fonctionnent pas de la même manière : circuit sous pression, pas forcément d’autovidange, nécessité d’utiliser de l’antigel, régulateur au fonctionnement différent.</p><p>Pour ces raisons il sera difficile d’utiliser nos panneaux sur votre installation existante. Même si cela est sûrement possible, il faudra avoir une bonne connaissance du système et un bon niveau de bricolage.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31325" class="elementor-tab-title" data-tab="25" role="tab" aria-controls="elementor-tab-content-31325">
@@ -2724,9 +2583,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce que je peux utiliser vos panneaux sur mon chauffe-eau solaire acheté dans le commerce ?</a>
+												<a href="">Est-ce compatible avec mon ballon d’eau chaude actuel ?</a>
 					</div>
-					<div id="elementor-tab-content-31325" class="elementor-tab-content elementor-clearfix" data-tab="25" role="tabpanel" aria-labelledby="elementor-tab-title-31325"><p>Les installations du commerce ne fonctionnent pas de la même manière : circuit sous pression, pas forcément d’autovidange, nécessité d’utiliser de l’antigel, régulateur au fonctionnement différent.</p><p>Pour ces raisons il sera difficile d’utiliser nos panneaux sur votre installation existante. Même si cela est sûrement possible, il faudra avoir une bonne connaissance du système et un bon niveau de bricolage.</p></div>
+					<div id="elementor-tab-content-31325" class="elementor-tab-content elementor-clearfix" data-tab="25" role="tabpanel" aria-labelledby="elementor-tab-title-31325"><p>Oui, le principe est compatible avec tout type de ballon, car on ne modifie pratiquement pas le ballon lui-même.</p><p>Le système ajoute un échangeur thermique sur l’arrivée d’eau froide : au lieu de recevoir directement de l’eau froide, le ballon reçoit une eau déjà préchauffée par le solaire. Il a donc moins d’énergie à fournir pour atteindre la température souhaitée.</p><p>Le fonctionnement reste transparent : il n’y a pas d’électronique à ajouter sur le ballon, et le ballon continue de fonctionner comme avant, simplement avec une eau d’entrée plus chaude.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31326" class="elementor-tab-title" data-tab="26" role="tab" aria-controls="elementor-tab-content-31326">
@@ -2734,9 +2593,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce compatible avec mon ballon d’eau chaude actuel ?</a>
+												<a href="">Y a-t-il un risque sanitaire avec l’eau chaude solaire ?</a>
 					</div>
-					<div id="elementor-tab-content-31326" class="elementor-tab-content elementor-clearfix" data-tab="26" role="tabpanel" aria-labelledby="elementor-tab-title-31326"><p>Oui, le principe est compatible avec tout type de ballon, car on ne modifie pratiquement pas le ballon lui-même.</p><p>Le système ajoute un échangeur thermique sur l’arrivée d’eau froide : au lieu de recevoir directement de l’eau froide, le ballon reçoit une eau déjà préchauffée par le solaire. Il a donc moins d’énergie à fournir pour atteindre la température souhaitée.</p><p>Le fonctionnement reste transparent : il n’y a pas d’électronique à ajouter sur le ballon, et le ballon continue de fonctionner comme avant, simplement avec une eau d’entrée plus chaude.</p></div>
+					<div id="elementor-tab-content-31326" class="elementor-tab-content elementor-clearfix" data-tab="26" role="tabpanel" aria-labelledby="elementor-tab-title-31326"><p>Non, le système est conçu pour éviter le contact direct entre l’eau solaire et l’eau sanitaire du ballon.</p><p>Les calories sont transférées via un échangeur thermique : l’eau qui circule dans les panneaux ne se mélange jamais avec l’eau chaude utilisée dans la maison. C’est justement l’un des avantages de cette solution.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31327" class="elementor-tab-title" data-tab="27" role="tab" aria-controls="elementor-tab-content-31327">
@@ -2744,9 +2603,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Y a-t-il un risque sanitaire avec l’eau chaude solaire ?</a>
+												<a href="">Qu’est-ce que je reçois exactement après mon inscription ?</a>
 					</div>
-					<div id="elementor-tab-content-31327" class="elementor-tab-content elementor-clearfix" data-tab="27" role="tabpanel" aria-labelledby="elementor-tab-title-31327"><p>Non, le système est conçu pour éviter le contact direct entre l’eau solaire et l’eau sanitaire du ballon.</p><p>Les calories sont transférées via un échangeur thermique : l’eau qui circule dans les panneaux ne se mélange jamais avec l’eau chaude utilisée dans la maison. C’est justement l’un des avantages de cette solution.</p></div>
+					<div id="elementor-tab-content-31327" class="elementor-tab-content elementor-clearfix" data-tab="27" role="tabpanel" aria-labelledby="elementor-tab-title-31327"><p>Après votre inscription, vous obtenez un accès immédiat à la formation en ligne Sunberry.</p><p>La formation comprend les explications pas à pas, les plans, la liste détaillée du matériel, les guides de construction, les guides de branchement, l’application Sunberry et les indications nécessaires pour mettre votre installation en service.</p><p>Vous avez aussi accès au support Sunberry pour poser vos questions si un point n’est pas clair pendant la préparation, la fabrication ou l’installation.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31328" class="elementor-tab-title" data-tab="28" role="tab" aria-controls="elementor-tab-content-31328">
@@ -2754,9 +2613,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Qu’est-ce que je reçois exactement après mon inscription ?</a>
+												<a href="">Est-ce que je peux réussir si je ne suis pas expert ?</a>
 					</div>
-					<div id="elementor-tab-content-31328" class="elementor-tab-content elementor-clearfix" data-tab="28" role="tabpanel" aria-labelledby="elementor-tab-title-31328"><p>Après votre inscription, vous obtenez un accès immédiat à la formation en ligne Sunberry.</p><p>La formation comprend les explications pas à pas, les plans, la liste détaillée du matériel, les guides de construction, les guides de branchement, l’application Sunberry et les indications nécessaires pour mettre votre installation en service.</p><p>Vous avez aussi accès au support Sunberry pour poser vos questions si un point n’est pas clair pendant la préparation, la fabrication ou l’installation.</p></div>
+					<div id="elementor-tab-content-31328" class="elementor-tab-content elementor-clearfix" data-tab="28" role="tabpanel" aria-labelledby="elementor-tab-title-31328"><p>Oui, à condition d’être un minimum bricoleur et de prendre le temps de suivre les étapes dans l’ordre.</p><p>La formation est conçue pour vous guider progressivement : comprendre le principe, choisir le bon matériel, fabriquer les panneaux, réaliser les branchements, puis mettre le système en service.</p><p>Il n’est pas nécessaire d’être chauffagiste ou installateur solaire, mais il faut être à l’aise avec les outils de base, les mesures, les découpes simples et les raccordements expliqués dans la formation.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31329" class="elementor-tab-title" data-tab="29" role="tab" aria-controls="elementor-tab-content-31329">
@@ -2764,9 +2623,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce que je peux réussir si je ne suis pas expert ?</a>
+												<a href="">Que se passe-t-il si je bloque pendant la fabrication ou l’installation ?</a>
 					</div>
-					<div id="elementor-tab-content-31329" class="elementor-tab-content elementor-clearfix" data-tab="29" role="tabpanel" aria-labelledby="elementor-tab-title-31329"><p>Oui, à condition d’être un minimum bricoleur et de prendre le temps de suivre les étapes dans l’ordre.</p><p>La formation est conçue pour vous guider progressivement : comprendre le principe, choisir le bon matériel, fabriquer les panneaux, réaliser les branchements, puis mettre le système en service.</p><p>Il n’est pas nécessaire d’être chauffagiste ou installateur solaire, mais il faut être à l’aise avec les outils de base, les mesures, les découpes simples et les raccordements expliqués dans la formation.</p></div>
+					<div id="elementor-tab-content-31329" class="elementor-tab-content elementor-clearfix" data-tab="29" role="tabpanel" aria-labelledby="elementor-tab-title-31329"><p>Vous pouvez nous poser vos questions pendant votre projet.</p><p>Le support sert justement à vous aider à clarifier un choix de matériel, une étape de fabrication, un branchement ou un point de compréhension. L’objectif est que vous puissiez avancer avec méthode, sans rester seul face à un doute technique.</p><p>Avant de nous contacter, nous vous conseillons simplement de suivre les modules concernés et de rassembler les informations utiles sur votre installation : photos, dimensions, schéma, matériel envisagé ou étape précise qui bloque.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31330" class="elementor-tab-title" data-tab="30" role="tab" aria-controls="elementor-tab-content-31330">
@@ -2774,9 +2633,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Que se passe-t-il si je bloque pendant la fabrication ou l’installation ?</a>
+												<a href="">Est-ce que je dois acheter le matériel avant de commencer ?</a>
 					</div>
-					<div id="elementor-tab-content-31330" class="elementor-tab-content elementor-clearfix" data-tab="30" role="tabpanel" aria-labelledby="elementor-tab-title-31330"><p>Vous pouvez nous poser vos questions pendant votre projet.</p><p>Le support sert justement à vous aider à clarifier un choix de matériel, une étape de fabrication, un branchement ou un point de compréhension. L’objectif est que vous puissiez avancer avec méthode, sans rester seul face à un doute technique.</p><p>Avant de nous contacter, nous vous conseillons simplement de suivre les modules concernés et de rassembler les informations utiles sur votre installation : photos, dimensions, schéma, matériel envisagé ou étape précise qui bloque.</p></div>
+					<div id="elementor-tab-content-31330" class="elementor-tab-content elementor-clearfix" data-tab="30" role="tabpanel" aria-labelledby="elementor-tab-title-31330"><p>Non, il vaut mieux commencer par suivre la formation.</p><p>Une fois inscrit, vous recevrez la liste détaillée du matériel avec les références et les caractéristiques importantes. Nous vous conseillons d’abord de prendre connaissance de l’ensemble de la formation pour bien comprendre le fonctionnement du système, les étapes de fabrication et les choix adaptés à votre situation.</p><p>Ensuite seulement, vous pourrez acheter le matériel à partir des références fournies, en magasin ou en ligne, avec une vision claire de ce dont vous avez réellement besoin.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31331" class="elementor-tab-title" data-tab="31" role="tab" aria-controls="elementor-tab-content-31331">
@@ -2784,9 +2643,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Est-ce que je dois acheter le matériel avant de commencer ?</a>
+												<a href="">Comment savoir si mon projet est adapté à ma maison, ma piscine ou mon installation ?</a>
 					</div>
-					<div id="elementor-tab-content-31331" class="elementor-tab-content elementor-clearfix" data-tab="31" role="tabpanel" aria-labelledby="elementor-tab-title-31331"><p>Non, il vaut mieux commencer par suivre la formation.</p><p>Une fois inscrit, vous recevrez la liste détaillée du matériel avec les références et les caractéristiques importantes. Nous vous conseillons d’abord de prendre connaissance de l’ensemble de la formation pour bien comprendre le fonctionnement du système, les étapes de fabrication et les choix adaptés à votre situation.</p><p>Ensuite seulement, vous pourrez acheter le matériel à partir des références fournies, en magasin ou en ligne, avec une vision claire de ce dont vous avez réellement besoin.</p></div>
+					<div id="elementor-tab-content-31331" class="elementor-tab-content elementor-clearfix" data-tab="31" role="tabpanel" aria-labelledby="elementor-tab-title-31331"><p>Les principaux points à vérifier sont la place disponible pour les panneaux, l’exposition au soleil, la distance entre les panneaux et le point d’utilisation, le type de support possible, et la manière dont le système pourra être raccordé à votre installation existante.</p><p>La formation vous aide à comprendre ces critères pour adapter le projet à votre cas. Si votre situation est particulière, vous pourrez aussi nous poser vos questions avec quelques photos, dimensions et informations sur votre installation.</p></div>
 				</div>
 							<div class="elementor-accordion-item">
 					<div id="elementor-tab-title-31332" class="elementor-tab-title" data-tab="32" role="tab" aria-controls="elementor-tab-content-31332">
@@ -2794,19 +2653,9 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
 							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
 						</span>
-												<a href="">Comment savoir si mon projet est adapté à ma maison, ma piscine ou mon installation ?</a>
-					</div>
-					<div id="elementor-tab-content-31332" class="elementor-tab-content elementor-clearfix" data-tab="32" role="tabpanel" aria-labelledby="elementor-tab-title-31332"><p>Les principaux points à vérifier sont la place disponible pour les panneaux, l’exposition au soleil, la distance entre les panneaux et le point d’utilisation, le type de support possible, et la manière dont le système pourra être raccordé à votre installation existante.</p><p>La formation vous aide à comprendre ces critères pour adapter le projet à votre cas. Si votre situation est particulière, vous pourrez aussi nous poser vos questions avec quelques photos, dimensions et informations sur votre installation.</p></div>
-				</div>
-							<div class="elementor-accordion-item">
-					<div id="elementor-tab-title-31333" class="elementor-tab-title" data-tab="33" role="tab" aria-controls="elementor-tab-content-31333">
-												<span class="elementor-accordion-icon elementor-accordion-icon-left" aria-hidden="true">
-							<i class="elementor-accordion-icon-closed fa fa-plus"></i>
-							<i class="elementor-accordion-icon-opened fa fa-minus"></i>
-						</span>
 												<a href="">Est-ce que je peux commencer petit et agrandir plus tard ?</a>
 					</div>
-					<div id="elementor-tab-content-31333" class="elementor-tab-content elementor-clearfix" data-tab="33" role="tabpanel" aria-labelledby="elementor-tab-title-31333"><p>Oui, dans beaucoup de cas, vous pouvez commencer avec une surface de panneaux raisonnable puis agrandir ensuite.</p><p>C’est souvent une bonne manière de démarrer progressivement, de comprendre le fonctionnement du système et d’ajouter des panneaux si vous souhaitez produire plus de chaleur.</p><p>L’important est de prévoir dès le départ une installation cohérente : emplacement disponible, circulation de l’eau, raccordements, support des panneaux et possibilité d’ajouter des panneaux plus tard.</p></div>
+					<div id="elementor-tab-content-31332" class="elementor-tab-content elementor-clearfix" data-tab="32" role="tabpanel" aria-labelledby="elementor-tab-title-31332"><p>Oui, dans beaucoup de cas, vous pouvez commencer avec une surface de panneaux raisonnable puis agrandir ensuite.</p><p>C’est souvent une bonne manière de démarrer progressivement, de comprendre le fonctionnement du système et d’ajouter des panneaux si vous souhaitez produire plus de chaleur.</p><p>L’important est de prévoir dès le départ une installation cohérente : emplacement disponible, circulation de l’eau, raccordements, support des panneaux et possibilité d’ajouter des panneaux plus tard.</p></div>
 				</div>
 					</div>
 				</div>
@@ -3591,7 +3440,7 @@ Ensuite ce sont des bénéfices chaque mois grâce à l'énergie économisée su
 			</div>
 		</div>
 		
-		
+		</div>
 	
 
 <script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/popup-builder/public/js/ecwid-customization.js" defer></script><div data-layout="BIG_ICON_TITLE_SUBTOTAL" data-icon="BASKET" data-fixed="TRUE" data-fixed-position="TOP_RIGHT" class="ec-cart-widget"></div>
