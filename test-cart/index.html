@@ -542,14 +542,29 @@ display: none;
 
 
 
-<p></p>
-
-
-
-<div class="sunberry-sandbox-checkout">
-  <iframe id="sandbox-checkout-frame" title="Ajouter au panier Sunberry" src="https://checkout-sandbox.sunberry.fr/embed/fr/fr/products/test-sunberry" width="100%" height="640" style="border: 0; max-width: 100%;" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<div class="sunberry-storefront-host">
+  <iframe id="sunberry-storefront-frame" title="Ajouter au panier Sunberry" src="https://checkout-sandbox.sunberry.fr/embed/fr/fr/products/test-sunberry" width="100%" height="720" style="border: 0; max-width: 100%;" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
-			</div>
+<script>
+(() => {
+  const frame = document.getElementById("sunberry-storefront-frame");
+  if (!frame) return;
+  const storefrontOrigin = "https://checkout-sandbox.sunberry.fr";
+  const routes = { product: "/test-cart/", cart: "/panier/" };
+  window.addEventListener("message", (event) => {
+    if (event.origin !== storefrontOrigin || event.source !== frame.contentWindow) return;
+    const data = event.data;
+    if (!data || data.namespace !== "sunberry-storefront" || data.version !== 1) return;
+    if (data.type === "navigate" && (data.destination === "product" || data.destination === "cart")) {
+      window.location.assign(routes[data.destination]);
+      return;
+    }
+    if (data.type === "resize" && Number.isFinite(data.height)) {
+      frame.style.height = String(Math.max(640, Math.min(2400, Math.round(data.height)))) + "px";
+    }
+  });
+})();
+</script></div>
 					</div>
 	</article></div>
 	</div>
