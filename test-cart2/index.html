@@ -558,6 +558,22 @@ display: none;
       window.location.assign("https://www.sunberry.fr/panier/");
     }
   });
+})();</script><iframe id="sunberry-product-6c2ad5fb-cdb4-4597-8b7c-f1ffc322dde0" src="https://checkout-sandbox.sunberry.fr/embed/fr/fr/widgets/products/test-sunberry?cta=Test+ajout&description=0&image=0&options=0&title=0" title="Produit Sunberry" loading="lazy" allow="payment" style="width:100%;border:0;min-height:640px"></iframe>
+<script>
+(() => {
+  const frame = document.getElementById("sunberry-product-6c2ad5fb-cdb4-4597-8b7c-f1ffc322dde0");
+  if (!frame) return;
+  window.addEventListener("message", (event) => {
+    if (event.origin !== "https://checkout-sandbox.sunberry.fr" || event.source !== frame.contentWindow) return;
+    const data = event.data;
+    if (!data || data.namespace !== "sunberry-storefront" || data.version !== 1) return;
+    if (data.type === "resize" && Number.isFinite(data.height)) {
+      frame.style.height = String(Math.min(2400, Math.max(640, Math.round(data.height)))) + "px";
+    }
+    if (data.type === "navigate" && data.destination === "cart") {
+      window.location.assign("https://www.sunberry.fr/panier/");
+    }
+  });
 })();</script></div>
 					</div>
 	</article></div>
