@@ -486,6 +486,43 @@ border: 1px solid #904be5;
   gtag('js', new Date());
 
   gtag('config', 'G-QK1ZSDHCJ6');
+</script></head><body><div class="sunberry-cart-widget" aria-label="Panier Sunberry">
+  <iframe id="sunberry-cart-widget" src="https://checkout.sunberry.fr/embed/buy/widgets/cart" title="Panier Sunberry" allow="payment" loading="eager"></iframe>
+</div>
+
+<style>
+  .sunberry-cart-widget {
+    position: fixed;
+    z-index: 9999;
+    top: 16px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+  }
+  .sunberry-cart-widget iframe {
+    display: block;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    background: transparent;
+  }
+  @media (max-width: 640px) {
+    .sunberry-cart-widget { top: 10px; right: 10px; }
+  }
+</style><script>
+(() => {
+  const frame = document.getElementById("sunberry-cart-widget");
+  if (!frame) return;
+  window.addEventListener("message", (event) => {
+    if (event.origin !== "https://checkout.sunberry.fr") return;
+    if (event.source !== frame.contentWindow) return;
+    const data = event.data;
+    if (!data || data.namespace !== "sunberry-storefront" || data.version !== 1) return;
+    if (data.type === "navigate" && data.destination === "cart") {
+      window.location.assign("https://www.sunberry.fr/panier/");
+    }
+  });
+})();
 </script><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="32x32"><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><meta name="msapplication-TileImage" content="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><style type="text/css" id="wp-custom-css">
 			.page-id-1309 .navbar .navbar-nav {
 display: none;
@@ -494,8 +531,7 @@ display: none;
 display: none;
 }
 
-		</style><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Chauffage Solaire DIY - Sunberry"><meta property="og:title" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta property="og:url" content="https://www.sunberry.fr/page-daccueil/initiation-au-solaire-thermique/"><meta property="og:type" content="article"><meta property="og:description" content="Construiser vos panneaux solaires thermiques low tech. On vous explique les étapes de fabrication pour la réalisation d'un panneau solaire thermique efficace."><meta property="og:image" content="https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-e1553851933743.jpg"><meta property="article:publisher" content="https://www.facebook.com/sunberrychauffage/"><meta property="fb:admins" content="2304298656521290"><meta itemprop="name" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta itemprop="headline" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta itemprop="description" content="Construiser vos panneaux solaires thermiques low tech. On vous explique les étapes de fabrication pour la réalisation d'un panneau solaire thermique efficace."><meta itemprop="image" content="https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-e1553851933743.jpg"><meta itemprop="author" content="Sunberry"><meta name="twitter:title" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta name="twitter:url" content="https://www.sunberry.fr/page-daccueil/initiation-au-solaire-thermique/"><meta name="twitter:description" content="Construiser vos panneaux solaires thermiques low tech. On vous explique les étapes de fabrication pour la réalisation d'un panneau solaire thermique efficace."><meta name="twitter:image" content="https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-e1553851933743.jpg"><meta name="twitter:card" content="summary_large_image"></head><body class="page-template-default page page-id-1835 page-child parent-pageid-72 wp-custom-logo cookies-not-set blog-post header-layout-default elementor-default">
-	<div class="wrapper  default ">
+		</style><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="Chauffage Solaire DIY - Sunberry"><meta property="og:title" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta property="og:url" content="https://www.sunberry.fr/page-daccueil/initiation-au-solaire-thermique/"><meta property="og:type" content="article"><meta property="og:description" content="Construiser vos panneaux solaires thermiques low tech. On vous explique les étapes de fabrication pour la réalisation d'un panneau solaire thermique efficace."><meta property="og:image" content="https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-e1553851933743.jpg"><meta property="article:publisher" content="https://www.facebook.com/sunberrychauffage/"><meta property="fb:admins" content="2304298656521290"><meta itemprop="name" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta itemprop="headline" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta itemprop="description" content="Construiser vos panneaux solaires thermiques low tech. On vous explique les étapes de fabrication pour la réalisation d'un panneau solaire thermique efficace."><meta itemprop="image" content="https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-e1553851933743.jpg"><meta itemprop="author" content="Sunberry"><meta name="twitter:title" content="Initiation au solaire thermique - Chauffage Solaire DIY - Sunberry"><meta name="twitter:url" content="https://www.sunberry.fr/page-daccueil/initiation-au-solaire-thermique/"><meta name="twitter:description" content="Construiser vos panneaux solaires thermiques low tech. On vous explique les étapes de fabrication pour la réalisation d'un panneau solaire thermique efficace."><meta name="twitter:image" content="https://www.sunberry.fr/wp-content/uploads/2019/03/20170810_161009-e1553851933743.jpg"><meta name="twitter:card" content="summary_large_image"><div class="wrapper  default ">
 		<header class="header "><nav class="navbar navbar-default navbar-fixed-top  hestia_left navbar-not-transparent"><div class="container">
 						<div class="navbar-header">
 			<div class="title-logo-wrapper">
@@ -540,23 +576,12 @@ display: none;
 	
 		</div>
 	</div>
-
-<script type="text/javascript" src="https://www.sunberry.fr/wp-content/plugins/popup-builder/public/js/ecwid-customization.js" defer></script><div data-layout="BIG_ICON_TITLE_SUBTOTAL" data-icon="BASKET" data-fixed="TRUE" data-fixed-position="TOP_RIGHT" class="ec-cart-widget"></div>
-<div>
-<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71288281&data_platform=code" charset="utf-8"></script><script>Ecwid.init();</script></div>
-
-<style>
-html#ecwid_html body#ecwid_body .ec-minicart--fixed.ec-minicart--right {
-  right: 60px !important;
-}
-html#ecwid_html body#ecwid_body .ec-minicart--fixed.ec-minicart--top {
-  top: 12px !important;
-}
-</style><script type="text/javascript" src="https://www.sunberry.fr/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="https://www.sunberry.fr/wp-includes/js/jquery/ui/core.min.js"></script><script type="text/javascript">
+<script type="text/javascript" src="https://www.sunberry.fr/wp-content/themes/hestia/assets/bootstrap/js/bootstrap.min.js"></script><script type="text/javascript" src="https://www.sunberry.fr/wp-includes/js/jquery/ui/core.min.js"></script><script type="text/javascript">
 /* <![CDATA[ */
 var requestpost = {"ajaxurl":"https:\/\/www.sunberry.fr\/wp-admin\/admin-ajax.php","disable_autoslide":"","masonry":""};
 /* ]]> */
 </script><script type="text/javascript" src="https://www.sunberry.fr/wp-content/themes/hestia/assets/js/script.min.js"></script><div id="cookie-notice" role="banner" class="cn-bottom bootstrap" style="color: #fff; background-color: #000;"><div class="cookie-notice-container"><span id="cn-notice-text">Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site web. Si vous continuez à utiliser ce site, nous supposerons que vous en êtes satisfait.</span><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button bootstrap button">Ok</a>
 				</div>
 				
-			</div></body></html>
+			</div>
+</body></html>
