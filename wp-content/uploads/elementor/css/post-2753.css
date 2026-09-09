@@ -1,3 +1,4 @@
+.elementor-2753 .elementor-element.elementor-element-bc1c330 .elementor-spacer-inner {height: 10px;}
 .elementor-2753 .elementor-element.elementor-element-bec671f:not(.elementor-motion-effects-element-type-background) > .elementor-element-populated, .elementor-2753 .elementor-element.elementor-element-bec671f > .elementor-column-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-image: url("https://www.sunberry.fr/wp-content/uploads/2026/09/2026-09-08_05-25.png");background-position: center center;}
 .elementor-2753 .elementor-element.elementor-element-bec671f > .elementor-element-populated >  .elementor-background-overlay {background-color: transparent;background-image: linear-gradient(10deg,#000 13%,#f4ac02 100%);opacity: .65;filter: brightness(100%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);}
 .elementor-2753 .elementor-element.elementor-element-bec671f > .elementor-element-populated {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;margin: 0px 0px 0px 0px;}
@@ -7,3 +8,11 @@
 .elementor-2753 .elementor-element.elementor-element-aa9d3c8 {text-align: center;}
 .elementor-2753 .elementor-element.elementor-element-aa9d3c8.elementor-widget-heading .elementor-heading-title {color: #fff;}
 .elementor-2753 .elementor-element.elementor-element-aa9d3c8 .elementor-heading-title {line-height: 1.2em;}
+.elementor-2753 .elementor-element.elementor-element-74e5c28:not(.elementor-motion-effects-element-type-background), .elementor-2753 .elementor-element.elementor-element-74e5c28 > .elementor-motion-effects-container > .elementor-motion-effects-layer {background-color: transparent;background-image: linear-gradient(240deg,#e8a200 0%,#b12af9 100%);}
+.elementor-2753 .elementor-element.elementor-element-74e5c28 {transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;}
+.elementor-2753 .elementor-element.elementor-element-74e5c28 > .elementor-background-overlay {transition: background .3s,border-radius .3s,opacity .3s;}
+.elementor-2753 .elementor-element.elementor-element-7478908 .elementor-text-editor {text-align: center;}
+.elementor-2753 .elementor-element.elementor-element-7478908 {color: #fff;font-size: 2em;font-weight: bold;line-height: .8em;}
+.elementor-2753 .elementor-element.elementor-element-7478908 > .elementor-widget-container {margin: 2% 0% 0% 0%;padding: 0px 0px 0px 0px;border-radius: 12px 12px 12px 12px;}
+@media (max-width:767px) {.elementor-2753 .elementor-element.elementor-element-74e5c28 {margin-top: 0px;margin-bottom: 12px;}
+	.elementor-2753 .elementor-element.elementor-element-7478908 {font-size: 1.3em;line-height: 1.2em;}}
