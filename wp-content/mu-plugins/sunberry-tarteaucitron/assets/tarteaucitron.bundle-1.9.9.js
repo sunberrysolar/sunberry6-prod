@@ -3,14 +3,14 @@
 
 var scripts = document.getElementsByTagName('script'),
     path = scripts[scripts.length - 1].src.split('?')[0],
-    tarteaucitronForceCDN = (tarteaucitronForceCDN === undefined) ? '' : tarteaucitronForceCDN,
+    tarteaucitronForceCDN = (typeof tarteaucitronForceCDN === 'undefined') ? '' : tarteaucitronForceCDN,
     cdn = (tarteaucitronForceCDN === '') ? path.split('/').slice(0, -1).join('/') + '/' : tarteaucitronForceCDN,
-    alreadyLaunch = (alreadyLaunch === undefined) ? 0 : alreadyLaunch,
-    tarteaucitronForceLanguage = (tarteaucitronForceLanguage === undefined) ? '' : tarteaucitronForceLanguage,
-    tarteaucitronForceExpire = (tarteaucitronForceExpire === undefined) ? '' : tarteaucitronForceExpire,
-    tarteaucitronCustomText = (tarteaucitronCustomText === undefined) ? '' : tarteaucitronCustomText,
+    alreadyLaunch = (typeof alreadyLaunch === 'undefined') ? 0 : alreadyLaunch,
+    tarteaucitronForceLanguage = (typeof tarteaucitronForceLanguage === 'undefined') ? '' : tarteaucitronForceLanguage,
+    tarteaucitronForceExpire = (typeof tarteaucitronForceExpire === 'undefined') ? '' : tarteaucitronForceExpire,
+    tarteaucitronCustomText = (typeof tarteaucitronCustomText === 'undefined') ? '' : tarteaucitronCustomText,
     // tarteaucitronExpireInDay: true for day(s) value - false for hour(s) value
-    tarteaucitronExpireInDay = (tarteaucitronExpireInDay === undefined || typeof tarteaucitronExpireInDay !== "boolean") ? true : tarteaucitronExpireInDay,
+    tarteaucitronExpireInDay = (typeof tarteaucitronExpireInDay === 'undefined' || typeof tarteaucitronExpireInDay !== "boolean") ? true : tarteaucitronExpireInDay,
     timeExpire = 31536000000,
     tarteaucitronProLoadServices,
     tarteaucitronNoAdBlocker = false;
@@ -10637,4 +10637,3 @@ tarteaucitron.services.klaviyo = {
         tarteaucitron.addScript('//static.klaviyo.com/onsite/js/klaviyo.js?company_id=' + tarteaucitron.user.klaviyoCompanyId);
     }
 };
-
