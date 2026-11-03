@@ -679,7 +679,15 @@ display: none;
     const data = event.data;
     if (!data || data.namespace !== "sunberry-storefront" || data.version !== 1) return;
     if (data.type === "navigate" && (data.destination === "product" || data.destination === "cart" || data.destination === "site")) {
-      window.location.assign(routes[data.destination]);
+      let target = routes[data.destination];
+      if (data.destination === "product") {
+        target = "/formations-solaires-offre-speciale/";
+        try {
+          const origin = new URL(data.returnTo);
+          if (origin.origin === "https://www.sunberry.fr" && !origin.username && !origin.password && !/^\/(panier|test-cart)(\/|$)/.test(origin.pathname)) target = origin.pathname + origin.hash;
+        } catch (_) {}
+      }
+      window.location.assign(target);
       return;
     }
     if (data.type === "resize" && Number.isFinite(data.height)) {
