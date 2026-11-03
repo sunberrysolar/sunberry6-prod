@@ -673,12 +673,12 @@ display: none;
   const frame = document.getElementById("sunberry-storefront-frame");
   if (!frame) return;
   const storefrontOrigin = "https://checkout.sunberry.fr";
-  const routes = { product: "/test-cart/", cart: "/panier/" };
+  const routes = { product: "/", cart: "/panier/", site: "/" };
   window.addEventListener("message", (event) => {
     if (event.origin !== storefrontOrigin || event.source !== frame.contentWindow) return;
     const data = event.data;
     if (!data || data.namespace !== "sunberry-storefront" || data.version !== 1) return;
-    if (data.type === "navigate" && (data.destination === "product" || data.destination === "cart")) {
+    if (data.type === "navigate" && (data.destination === "product" || data.destination === "cart" || data.destination === "site")) {
       window.location.assign(routes[data.destination]);
       return;
     }
