@@ -51,49 +51,142 @@ window.addEventListener('tac.root_available', function () {
         'body #tarteaucitronRoot div#tarteaucitronAlertBig:before{display:none!important}#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert{display:block!important;margin:0!important;padding:0!important;text-align:left!important}#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert:before{content:"🍪";display:inline;margin-right:6px}#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert,#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert strong,#tarteaucitronAlertBig #tarteaucitronPrivacyUrl,#tarteaucitronAlertBig #tarteaucitronPrivacyUrlDialog{font-size:12px!important;line-height:1.25!important}body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronPersonalize2,body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronAllDenied2{display:inline-block!important;font-size:10px!important;letter-spacing:0!important;margin:6px 3px 0 0!important;min-width:0!important;padding:6px 8px!important;width:auto!important}body #tarteaucitronRoot div#tarteaucitronAlertBig #tarteaucitronCloseAlert{background:transparent!important;border:0!important;box-shadow:none!important;display:inline-block!important;font-size:10px!important;font-weight:600!important;letter-spacing:0!important;margin:6px 0 0 3px!important;min-width:0!important;padding:0!important;text-align:left!important;text-decoration:underline!important;vertical-align:middle!important;width:auto!important}#tarteaucitronAlertBig #tarteaucitronPrivacyUrl{display:block!important;font-size:9px!important;font-weight:400!important;margin:4px 0 0!important;text-align:center!important;text-transform:lowercase!important;width:100%!important}';
     document.head.appendChild(style);
 });
-// checkout.sunberry.fr is a distinct iframe document. Share the explicit
-// Facebook Pixel choice without exposing the Tarteaucitron state or accepting
-// messages from the iframe in return.
+/* Inlined by the MU-plugin so static exports contain the same bridge. */
 (function () {
-    var storefrontOrigin = 'https://checkout.sunberry.fr';
+    'use strict';
+    var origin = 'https://checkout.sunberry.fr';
     var selector = 'iframe[src^="https://checkout.sunberry.fr/embed/"]';
-    var lastState;
-
-    function marketingAllowed() {
-        return !!(window.tarteaucitron && tarteaucitron.state && tarteaucitron.state.facebookpixel === true);
+    var key = 'sunberry_analytics_v1';
+    var ttl = 30 * 24 * 60 * 60 * 1000;
+    var allowed = false, loaded = false, context = {}, lastState, recordedAt, nextIds = 0, generation = 0;
+    var fields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    function analyticsAllowed() { return !!(window.tarteaucitron && window.tarteaucitron.state && window.tarteaucitron.state.gtag === true); }
+    function marketingAllowed() { return !!(window.tarteaucitron && window.tarteaucitron.state && window.tarteaucitron.state.facebookpixel === true); }
+    function clean(value) { return typeof value === 'string' && /^[a-zA-Z0-9\u00c0-\u024f _.-]{1,120}$/.test(value) ? value : undefined; }
+    function touch(value) {
+        if (!value || typeof value !== 'object') return;
+        var time = Date.parse(value.captured_at);
+        if (!Number.isFinite(time) || time > Date.now() || Date.now() - time >= ttl) return;
+        var result = {}, any = false;
+        fields.forEach(function (field) { var v = clean(value[field]); if (v) { result[field] = v; any = true; } });
+        if (!any) return;
+        result.captured_at = new Date(time).toISOString(); return result;
     }
-
-    function broadcast(force) {
-        var allowed = marketingAllowed();
-        if (!force && allowed === lastState) return;
-        lastState = allowed;
-        Array.prototype.forEach.call(document.querySelectorAll(selector), function (frame) {
-            if (frame.contentWindow) {
-                frame.contentWindow.postMessage({
-                    namespace: 'sunberry-storefront',
-                    version: 1,
-                    type: 'marketing-consent',
-                    marketing: allowed
-                }, storefrontOrigin);
-            }
+    function save() {
+        if (!analyticsAllowed()) return;
+        try { window.localStorage.setItem(key, JSON.stringify({ first_touch: context.first_touch, last_touch: context.last_touch })); } catch (_) {}
+    }
+    function grant() {
+        context = {}; loaded = true;
+        try {
+            var previous = JSON.parse(window.localStorage.getItem(key) || '{}');
+            context.first_touch = touch(previous.first_touch); context.last_touch = touch(previous.last_touch);
+        } catch (_) {}
+        var params = new URLSearchParams(window.location.search), current = {};
+        fields.forEach(function (field) { var v = clean(params.get(field)); if (v) current[field] = v; });
+        if (Object.keys(current).length) {
+            current.captured_at = new Date().toISOString();
+            context.first_touch = context.first_touch || current; context.last_touch = current;
+        }
+        save();
+    }
+    function getIds() {
+        if (!analyticsAllowed() || typeof window.gtag !== 'function' || Date.now() < nextIds) return;
+        nextIds = Date.now() + 5000;
+        var epoch = generation;
+        ['client_id', 'session_id'].forEach(function (field) {
+            window.gtag('get', window.tarteaucitron.user.gtagUa, field, function (value) {
+                if (generation !== epoch || !analyticsAllowed()) return;
+                value = String(value || '');
+                if (/^[0-9.]{1,80}$/.test(value) && context[field] !== value) { context[field] = value; broadcast(false); }
+            });
         });
     }
-
-    document.addEventListener('load', function (event) {
-        if (event.target && event.target.matches && event.target.matches(selector)) {
-            broadcast(true);
+    function broadcast(force) {
+        var nowAllowed = analyticsAllowed();
+        if (nowAllowed !== allowed) {
+            generation++; allowed = nowAllowed; recordedAt = new Date().toISOString(); nextIds = 0;
+            if (!allowed) {
+                context = {}; loaded = false;
+                try { window.localStorage.removeItem(key); } catch (_) {}
+            }
         }
-    }, true);
+        if (allowed && !loaded) grant();
+        if (allowed) {
+            context.first_touch = touch(context.first_touch); context.last_touch = touch(context.last_touch);
+        }
+        var message = { namespace: 'sunberry-storefront', version: 1, type: 'marketing-consent', marketing: marketingAllowed(), analytics: allowed,
+            consent_recorded_at: recordedAt || new Date().toISOString() };
+        if (allowed) {
+            message.analytics_context = Object.assign({}, context);
+            message.parent_page = { origin: window.location.origin, path: /@|%40/i.test(window.location.pathname) ? '/' : window.location.pathname };
+        }
+        // Ignore changing recorded_at in the denied initial state when comparing.
+        var state = JSON.stringify([message.marketing, message.analytics, message.analytics_context, message.parent_page]);
+        if (force || state !== lastState) {
+            lastState = state;
+            Array.prototype.forEach.call(document.querySelectorAll(selector), function (frame) {
+                if (frame.contentWindow) frame.contentWindow.postMessage(message, origin);
+            });
+        }
+        getIds();
+    }
+    document.addEventListener('load', function (event) { if (event.target && event.target.matches && event.target.matches(selector)) broadcast(true); }, true);
+    var pendingEvents = [];
+    var events = ['view_item', 'view_item_list', 'select_item', 'view_cart', 'add_to_cart', 'remove_from_cart', 'begin_checkout', 'add_shipping_info', 'add_payment_info', 'purchase'];
+    function safeText(value, limit) {
+        return typeof value === 'string' && value.length <= limit && !/[@<>\r\n]|https?:/i.test(value) ? value : undefined;
+    }
+    function ecommercePayload(input) {
+        if (!input || typeof input !== 'object' || !Array.isArray(input.items) || input.items.length > 100) return;
+        var payload = {}, valid = true;
+        ['currency', 'transaction_id', 'coupon', 'shipping_tier', 'payment_type', 'item_list_id', 'item_list_name'].forEach(function (field) {
+            if (input[field] === undefined) return;
+            var value = safeText(input[field], 120);
+            if (value === undefined || (field === 'currency' && !/^[A-Z]{3}$/.test(value))) valid = false;
+            else payload[field] = value;
+        });
+        ['value', 'tax', 'shipping'].forEach(function (field) {
+            if (input[field] === undefined) return;
+            if (typeof input[field] !== 'number' || !Number.isFinite(input[field]) || input[field] < 0) valid = false;
+            else payload[field] = input[field];
+        });
+        payload.items = input.items.map(function (item) {
+            var result = {};
+            if (!item || typeof item !== 'object') { valid = false; return result; }
+            ['item_id', 'item_name', 'item_variant', 'item_category', 'item_list_id', 'item_list_name', 'coupon'].forEach(function (field) {
+                if (item[field] === undefined) return;
+                var value = safeText(item[field], 200); if (value === undefined) valid = false; else result[field] = value;
+            });
+            ['price', 'quantity', 'index', 'discount'].forEach(function (field) {
+                if (item[field] === undefined) return;
+                if (typeof item[field] !== 'number' || !Number.isFinite(item[field]) || item[field] < 0) valid = false;
+                else result[field] = item[field];
+            });
+            if (!result.item_id && !result.item_name) valid = false;
+            return result;
+        });
+        return valid ? payload : undefined;
+    }
+    function flushEvents() {
+        if (!analyticsAllowed()) { pendingEvents = []; return; }
+        if (typeof window.gtag !== 'function') return;
+        var queued = pendingEvents; pendingEvents = [];
+        queued.forEach(function (item) { if (Date.now() - item.at < 10000) window.gtag('event', item.event, item.payload); });
+    }
     window.addEventListener('message', function (event) {
         var data = event.data;
-        if (event.origin !== storefrontOrigin || !data || data.namespace !== 'sunberry-storefront' || data.version !== 1 || data.type !== 'marketing-consent-request') return;
-        Array.prototype.forEach.call(document.querySelectorAll(selector), function (frame) {
-            if (frame.contentWindow === event.source) {
-                broadcast(true);
-            }
-        });
+        if (event.origin !== origin || !data || data.namespace !== 'sunberry-storefront' || data.version !== 1) return;
+        var direct = Array.prototype.some.call(document.querySelectorAll(selector), function (frame) { return frame.contentWindow === event.source; });
+        if (!direct) return;
+        if (data.type === 'marketing-consent-request') { broadcast(true); return; }
+        if (data.type !== 'analytics-event' || !analyticsAllowed() || events.indexOf(data.event) === -1) return;
+        var payload = ecommercePayload(data.ecommerce);
+        if (!payload || (data.event === 'purchase' && !payload.transaction_id)) return;
+        if (pendingEvents.length < 20) pendingEvents.push({ at: Date.now(), event: data.event, payload: payload });
+        flushEvents();
     });
-    window.setInterval(function () { broadcast(false); }, 250);
+    window.setInterval(function () { broadcast(false); flushEvents(); }, 250);
     broadcast(true);
 }());
 tarteaucitron.job.push('gtag');tarteaucitron.job.push('facebookpixel');tarteaucitron.job.push('sharethis');tarteaucitron.job.push('tawkto');</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Page en cours de rédaction ! Abonnez vous à la newsletter pour être informé quand cette page du cours sera disponible."><meta name="twitter:title" content="Liste du matériel pour fabriquer un panneau solaire thermique - Chauffage Solaire DIY - Sunberry"><meta name="twitter:site" content="@SunberryIO"><meta name="twitter:image" content="https://www.sunberry.fr/wp-content/uploads/2019/03/chauffage-solaire-sunberry.png"><meta name="twitter:creator" content="@SunberryIO"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://www.sunberry.fr/","sameAs":["https://www.facebook.com/sunberrychauffage/","https://www.youtube.com/channel/UCjs4gTNzsI_Tiz-jQhMxdNA","https://twitter.com/SunberryIO"],"@id":"https://www.sunberry.fr/#organization","name":"Sunberry chauffage solaire","logo":"https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.sunberry.fr/","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.sunberry.fr/les-panneaux-solaires-thermiques/","name":"Les panneaux solaires"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.sunberry.fr/les-panneaux-solaires-thermiques/construire-un-panneau-solaire/","name":"Construire un panneau solaire"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.sunberry.fr/les-panneaux-solaires-thermiques/construire-un-panneau-solaire/construire-un-panneau-solaire-thermique/","name":"Construire un panneau solaire thermique"}},{"@type":"ListItem","position":5,"item":{"@id":"https://www.sunberry.fr/les-panneaux-solaires-thermiques/construire-un-panneau-solaire/construire-un-panneau-solaire-thermique/liste-du-materiel-pour-fabriquer-un-panneau-solaire-thermique/","name":"Liste du mat\u00e9riel pour fabriquer un panneau solaire thermique"}}]}</script><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="bootstrap-css" href="https://www.sunberry.fr/wp-content/themes/hestia/assets/bootstrap/css/bootstrap.min.css" type="text/css" media="all"><link rel="stylesheet" id="hestia-font-sizes-css" href="https://www.sunberry.fr/wp-content/themes/hestia/assets/css/font-sizes.min.css" type="text/css" media="all"><link rel="stylesheet" id="wp-block-library-css" href="https://www.sunberry.fr/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="page-list-style-css" href="https://www.sunberry.fr/wp-content/plugins/page-list/css/page-list.css" type="text/css" media="all"><link rel="stylesheet" id="theme.css-css" href="https://www.sunberry.fr/wp-content/plugins/popup-builder/public/css/theme.css" type="text/css" media="all"><link rel="stylesheet" id="if-menu-site-css-css" href="https://www.sunberry.fr/wp-content/plugins/if-menu/assets/if-menu-site.css" type="text/css" media="all"><link rel="stylesheet" id="font-awesome-css" href="https://www.sunberry.fr/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css" type="text/css" media="all"><link rel="stylesheet" id="hestia_style-css" href="https://www.sunberry.fr/wp-content/themes/hestia/style.min.css" type="text/css" media="all"><style id="hestia_style-inline-css" type="text/css">
