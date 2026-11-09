@@ -486,7 +486,22 @@ border: 1px solid #904be5;
   gtag('js', new Date());
 
   gtag('config', 'G-QK1ZSDHCJ6');
-</script><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="32x32"><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><meta name="msapplication-TileImage" content="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><style type="text/css" id="wp-custom-css">
+</script>
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // Évite la redirection dans l’éditeur et les aperçus WordPress.
+  if (params.has('elementor-preview') || params.has('preview')) return;
+
+  window.location.replace(
+    'https://www.sunberry.fr/chauffe-eau-solaire-diy/' +
+    window.location.search +
+    window.location.hash
+  );
+})();
+</script>	
+<link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="32x32"><link rel="icon" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><meta name="msapplication-TileImage" content="https://www.sunberry.fr/wp-content/uploads/2019/03/favicon-196x196-128x128.png"><style type="text/css" id="wp-custom-css">
 			.page-id-1309 .navbar .navbar-nav {
 display: none;
 }
